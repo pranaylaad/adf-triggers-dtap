@@ -1,0 +1,64 @@
+parameters:
+  - name: service_connection
+    type: string
+    values:
+      - 'scn-sub-cdp-preprd-we-001'
+  - name: env_path
+    type: string
+    values:
+      - 'cdp-preprd'
+  - name: datastore_name
+    type: string
+  - name: environment
+    type: string
+    values:
+      - dev
+  - name: dataset_name
+    type: string
+  - name: agent_pool_name
+    type: string
+    values:
+      - cdp-runners-nonprd
+      - cdp-runners-prd
+
+pool:
+  vmImage: 'ubuntu-latest'
+  name: ${{ parameters.agent_pool_name }}
+
+trigger: none
+
+steps:
+  - bash: curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+    displayName: Install Azure CLI
+
+  # Fetch data factory information from environment file
+  - bash: |
+      json_path="env/${{ parameters.env_path }}/vars/vars.tfvars.json"
+      factory_name=$(jq -r .adf_name $json_path)
+      resource_group_name=$(jq -r .adf_resource_group_name $json_path)
+      echo "Factory Name: $factory_name"
+      echo "Resource Group Name: $resource_group_name"
+      echo "##vso[task.setvariable variable=factory_name;]$factory_name"
+      echo "##vso[task.setvariable variable=resource_group_name;]$resource_group_name"
+    displayName: Get Factory Information
+
+  - task: AzureCLI@2
+    displayName: Run ADF Pipeline
+    inputs:
+        azureSubscription: ${{ parameters.service_connection }}
+        scriptType: bash
+        scriptLocation: inlineScript
+        inlineScript: |
+          trigger_name="${{ parameters.datastore_name }}_${{ parameters.environment }}__${{ parameters.dataset_name }}"
+          trigger_info=$(az datafactory trigger show --resource-group $(resource_group_name) --factory-name $(factory_name) --name $trigger_name)
+          echo "All information on trigger $trigger_name:"
+          echo $trigger_info | jq .
+          pipeline_name=$(echo $trigger_info | jq -r .properties.pipelines[0].pipelineReference.referenceName)
+          echo "Pipeline Name: $pipeline_name"
+          pipeline_parameters=$(echo $trigger_info | jq -c .properties.pipelines[0].parameters)
+          echo "Pipeline Parameters: $pipeline_parameters"
+          run_info=$(az datafactory pipeline create-run --resource-group $(resource_group_name) --factory-name $(factory_name) --name $pipeline_name --parameters "$pipeline_parameters")
+          run_id=$(echo $run_info | jq -r .runId)
+          factory_info=$(az datafactory show --resource-group $(resource_group_name) --name $(factory_name))
+          factory_id=$(echo $factory_info | jq -r '.id|@uri')
+          echo "Check the status at https://adf.azure.com/en/monitoring/pipelineruns/$run_id?factory=$factory_id"

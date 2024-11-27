@@ -1,0 +1,19 @@
+pipeline_name: pl_fileserver_zipped_csv_prd
+
+schedule:
+  frequency: Day
+  interval: 1
+  hours: [7,14]
+
+datastore_parameters:
+  keyvault_secret_name: 'fileserver-credentials-prd'
+  fileserver_user_name: 'PRD\SRV_AA_PRD'
+  fileserver_host_name: '\\SVNIBCFILP101\E'
+  fileserver_directory: 'Interfac\BagPro'
+  column_delimiter: ';'
+
+datasets:
+  - name: cddn_export_bag_pro
+    dataset_parameters:
+      source_file_name_pattern: 'cddn_export_bag_pro_*{file_date}.zip'
+      skip_line_count: '0'

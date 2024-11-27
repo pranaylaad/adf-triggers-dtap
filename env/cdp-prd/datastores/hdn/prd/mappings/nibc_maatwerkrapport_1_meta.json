@@ -1,0 +1,55 @@
+{
+	"type": "TabularTranslator",
+	"mappings": [
+		{
+			"source": {
+				"name": "StartDatum",
+				"type": "String"
+			},
+			"sink": {
+				"name": "StartDatum",
+				"type": "String"
+			}
+		},
+		{
+			"source": {
+				"name": "EindDatum",
+				"type": "String"
+			},
+			"sink": {
+				"name": "EindDatum",
+				"type": "String"
+			}
+		},
+		{
+			"source": {
+				"name": "Totaal aantal aanvragen",
+				"type": "String"
+			},
+			"sink": {
+				"name": "Totaal_aantal_aanvragen",
+				"type": "String"
+			}
+		},
+		{
+			"source": {
+				"name": "file_name",
+				"type": "String"
+			},
+			"sink": {
+				"name": "file_name",
+				"type": "String"
+			}
+		},
+		{
+			"source": {
+				"name": "file_date",
+				"type": "String"
+			},
+			"sink": {
+				"name": "file_date",
+				"type": "String"
+			}
+		}
+	]
+}

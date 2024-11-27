@@ -1,0 +1,93 @@
+{
+  "type": "TabularTranslator",
+  "mappings": [
+    {
+      "source": {"name": "Aanbieder"},
+      "sink": {"name": "Aanbieder"}
+    },
+    {
+      "source": {"name": "Product"},
+      "sink": {"name": "Product"}
+    },
+    {
+      "source": {"name": "Rente EUR 500"},
+      "sink": {"name": "Rente_EUR_500"}
+    },
+    {
+      "source": {"name": "Rente EUR 1.000"},
+      "sink": {"name": "Rente_EUR_1.000"}
+    },
+    {
+      "source": {"name": "Rente EUR 2.000"},
+      "sink": {"name": "Rente_EUR_2.000"}
+    },
+    {
+      "source": {"name": "Rente EUR 5.000"},
+      "sink": {"name": "Rente_EUR_5.000"}
+    },
+    {
+      "source": {"name": "Rente EUR 10.000"},
+      "sink": {"name": "Rente_EUR_10.000"}
+    },
+    {
+      "source": {"name": "Rente EUR 20.000"},
+      "sink": {"name": "Rente_EUR_20.000"}
+    },
+    {
+      "source": {"name": "Rente EUR 50.000"},
+      "sink": {"name": "Rente_EUR_50.000"}
+    },
+    {
+      "source": {"name": "Rente EUR 100.000"},
+      "sink": {"name": "Rente_EUR_100.000"}
+    },
+    {
+      "source": {"name": "Rente EUR 200.000"},
+      "sink": {"name": "Rente_EUR_200.000"}
+    },
+    {
+      "source": {"name": "Rente EUR 500.000"},
+      "sink": {"name": "Rente_EUR_500.000"}
+    },
+    {
+      "source": {"name": "Rente EUR 1.000.000"},
+      "sink": {"name": "Rente_EUR_1.000.000"}
+    },
+    {
+      "source": {"name": "Rente EUR 25.000"},
+      "sink": {"name": "Rente_EUR_25.000"}
+    },
+    {
+      "source": {"name": "Bonusopslag"},
+      "sink": {"name": "Bonusopslag"}
+    },
+    {
+      "source": {"name": "Laatste rentewijziging"},
+      "sink": {"name": "Laatste_rentewijziging"}
+    },
+    {
+      "source": {"name": "AanbiederId"},
+      "sink": {"name": "AanbiederId"}
+    },
+    {
+      "source": {"name": "ProductId"},
+      "sink": {"name": "ProductId"}
+    },
+    {
+      "source": {"name": "ANSProductId"},
+      "sink": {"name": "ANSProductId"}
+    },
+    {
+      "source": {"name": "ANSAanbiederId"},
+      "sink": {"name": "ANSAanbiederId"}
+    },
+    {
+      "source": {"name": "_input_file_name"},
+      "sink": {"name": "_input_file_name"}
+    },
+    {
+      "source": {"name": "_input_file_date"},
+      "sink": {"name": "_input_file_date"}
+    }
+  ]
+}

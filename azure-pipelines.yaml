@@ -1,0 +1,48 @@
+resources:
+  repositories:
+    - repository: templateRepo
+      type: git
+      name: Data Platform/azure-devops-templates
+      ref: refs/heads/main
+    - repository: azure-tf-foundation
+      type: git
+      name: azure-tf-foundation
+
+parameters:
+- name: skipApply
+  displayName: Skip Apply?
+  type: boolean
+  default: false
+
+name: terraform
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+pr:
+  autoCancel: false
+
+trigger:
+  branches:
+    include:
+      - main
+    exclude:
+      - /**/*.md
+
+variables:
+- name: working_directory
+  value: ./
+
+stages:
+- template: templates/test.yaml@templateRepo
+  parameters:
+    name: Validate
+- ${{ if or(eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['Build.Reason'], 'PullRequest'), eq(variables['Build.Reason'], 'Manual')) }}:
+  - template: templates/release-stage.yaml@templateRepo
+    parameters:
+      name: CDPPreProd
+      env_path: cdp-preprd
+      service_connection: scn-sub-cdp-preprd-we-001
+      skip_apply: ${{ parameters.skipApply }}
+      dependsOn: Validate
+      agent_pool_name: cdp-runners-prd

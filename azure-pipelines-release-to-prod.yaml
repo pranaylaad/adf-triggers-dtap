@@ -1,0 +1,47 @@
+resources:
+  repositories: 
+    - repository: templateRepo
+      type: git
+      name: Data Platform/azure-devops-templates
+      ref: refs/heads/main
+    - repository: azure-tf-foundation
+      type: git
+      name: azure-tf-foundation
+
+name: terraform-prod-release
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+pr:
+  autoCancel: false
+
+trigger:
+  tags:
+    include:
+    - '*'
+
+variables:
+- name: working_directory
+  value: ./
+
+stages:
+- template: templates/test.yaml@templateRepo
+  parameters:
+    name: Validate
+# csf:3.3.11a:Manual approval to release to Production
+- template: templates/approval-stage.yaml@templateRepo
+  parameters:
+    name: approve_release_to_production
+    dependsOn: Validate
+    approval_environment: production-approvers-infra
+# only release from tag, or a manual run which disables apply
+- ${{ if or(startsWith(variables['Build.SourceBranch'], 'refs/tags/'), eq(variables['Build.Reason'], 'Manual')) }}:
+  - template: templates/release-stage.yaml@templateRepo
+    parameters:
+      name: CDPProd
+      env_path: cdp-prd
+      service_connection: scn-cdp-prd-we-001
+      skip_apply: ${{ eq(variables['Build.Reason'], 'Manual') }}
+      dependsOn: approve_release_to_production
+      agent_pool_name: cdp-runners-prd

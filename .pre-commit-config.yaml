@@ -1,0 +1,28 @@
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: "v4.5.0" # Get the latest from: https://github.com/pre-commit/pre-commit-hooks/releases
+  hooks:
+    - id: check-merge-conflict
+    - id: check-yaml
+    - id: end-of-file-fixer
+- repo: https://github.com/gitleaks/gitleaks
+  rev: v8.16.1
+  hooks:
+    - id: gitleaks
+- repo: https://github.com/antonbabenko/pre-commit-terraform
+  rev: "v1.86.0" # Get the latest from: https://github.com/antonbabenko/pre-commit-terraform/releases
+  hooks:
+    - id: terraform_fmt
+    - id: terraform_tflint
+      alias: terraform_tflint_init
+      args:
+        - --args=--init
+    - id: terraform_tflint
+      alias: terraform_tflint_run
+      args:
+        - --args=--config=__GIT_WORKING_DIR__/.tflint.hcl
+- repo: https://github.com/terraform-docs/terraform-docs
+  rev: "v0.18.0"
+  hooks:
+    - id: terraform-docs-go
+      args: ["--config", ".terraform-docs.yml", "."]        

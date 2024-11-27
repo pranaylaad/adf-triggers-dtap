@@ -1,0 +1,41 @@
+pipeline_name: pl_hdn_maatwerkrapporten_append_only
+
+schedule:
+  frequency: Week
+  interval: 1
+  days_of_week: [Monday]
+  hours: [12]
+  minutes: [5]
+
+datastore_parameters:
+  sftp_host: 'qliksense3.hdn.nl'
+  sftp_port: 22
+  sftp_fingerprint: 'ssh-ed25519 32 01:d1:0c:35:32:c7:32:57:13:19:78:88:78:51:00:7d'
+  sftp_username: 'NIBC'
+  key_vault_secret_name_pkc: 'sftp-private-key-content-hdn'
+  key_vault_secret_name_pp: 'sftp-passphrase-hdn'
+
+datasets:
+  - name: nibc_maatwerkrapport_1_meta
+    dataset_parameters:
+      file_name_template: "NIBC_maatwerkrapport_1_Meta_{yyyymmdd}.csv"
+
+  - name: nibc_maatwerkrapport_1_mp
+    dataset_parameters:
+      file_name_template: "NIBC_maatwerkrapport_1_MP_{yyyymmdd}.csv"
+
+  - name: nibc_maatwerkrapport_1_rvp_ltv_mp
+    dataset_parameters:
+      file_name_template: "NIBC_maatwerkrapport_1_RVP_LTV_MP_{yyyymmdd}.csv"
+
+  - name: nibc_maatwerkrapport_1_rvp_ltv_mp_av
+    dataset_parameters:
+      file_name_template: "NIBC_maatwerkrapport_1_RVP_LTV_MP_AV_{yyyymmdd}.csv"
+
+  - name: nibc_maatwerkrapport_2_levels
+    dataset_parameters:
+      file_name_template: "NIBC_maatwerkrapport_2_levels_{yyyymmdd}.csv"
+
+  - name: nibc_maatwerkrapport_3_aansluitnummers
+    dataset_parameters:
+      file_name_template: "NIBC_maatwerkrapport_3_aansluitnummers_{yyyymmdd}.csv"                  

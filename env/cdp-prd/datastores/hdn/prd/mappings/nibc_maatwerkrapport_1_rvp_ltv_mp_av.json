@@ -1,0 +1,205 @@
+{
+	"type": "TabularTranslator",
+	"mappings": [
+		{
+			"source": {
+				"name": "Jaar",
+				"type": "String"
+			},
+			"sink": {
+				"name": "Jaar",
+				"type": "String"
+			}
+		},
+		{
+			"source": {
+				"name": "JaarMaand",
+				"type": "String"
+			},
+			"sink": {
+				"name": "JaarMaand",
+				"type": "String"
+			}
+		},
+		{
+			"source": {
+				"name": "RVP.NIBC",
+				"type": "String"
+			},
+			"sink": {
+				"name": "RVP.NIBC",
+				"type": "String"
+			}
+		},
+		{
+			"source": {
+				"name": "LTV.Klasse.NIBC",
+				"type": "String"
+			},
+			"sink": {
+				"name": "LTV.Klasse.NIBC",
+				"type": "String"
+			}
+		},
+		{
+			"source": {
+				"name": "MarketingCluster",
+				"type": "String"
+			},
+			"sink": {
+				"name": "MarketingCluster",
+				"type": "String"
+			}
+		},
+		{
+			"source": {
+				"name": "Aflossingsvorm.NIBC",
+				"type": "String"
+			},
+			"sink": {
+				"name": "Aflossingsvorm.NIBC",
+				"type": "String"
+			}
+		},
+		{
+			"source": {
+				"name": "Aanvragen_Lot",
+				"type": "String"
+			},
+			"sink": {
+				"name": "Aanvragen_Lot",
+				"type": "String"
+			}
+		},
+		{
+			"source": {
+				"name": "Aanvragen_NIBC",
+				"type": "String"
+			},
+			"sink": {
+				"name": "Aanvragen_NIBC",
+				"type": "String"
+			}
+		},
+		{
+			"source": {
+				"name": "Aanvragen_Markt",
+				"type": "String"
+			},
+			"sink": {
+				"name": "Aanvragen_Markt",
+				"type": "String"
+			}
+		},
+		{
+			"source": {
+				"name": "Aanvragen_TC",
+				"type": "String"
+			},
+			"sink": {
+				"name": "Aanvragen_TC",
+				"type": "String"
+			}
+		},
+		{
+			"source": {
+				"name": "Gewogen_Lot",
+				"type": "String"
+			},
+			"sink": {
+				"name": "Gewogen_Lot",
+				"type": "String"
+			}
+		},
+		{
+			"source": {
+				"name": "Gewogen_NIBC",
+				"type": "String"
+			},
+			"sink": {
+				"name": "Gewogen_NIBC",
+				"type": "String"
+			}
+		},
+		{
+			"source": {
+				"name": "Gewogen_Markt",
+				"type": "String"
+			},
+			"sink": {
+				"name": "Gewogen_Markt",
+				"type": "String"
+			}
+		},
+		{
+			"source": {
+				"name": "Gewogen_TC",
+				"type": "String"
+			},
+			"sink": {
+				"name": "Gewogen_TC",
+				"type": "String"
+			}
+		},
+		{
+			"source": {
+				"name": "Volume_Lot",
+				"type": "String"
+			},
+			"sink": {
+				"name": "Volume_Lot",
+				"type": "String"
+			}
+		},
+		{
+			"source": {
+				"name": "Volume_NIBC",
+				"type": "String"
+			},
+			"sink": {
+				"name": "Volume_NIBC",
+				"type": "String"
+			}
+		},
+		{
+			"source": {
+				"name": "Volume_Markt",
+				"type": "String"
+			},
+			"sink": {
+				"name": "Volume_Markt",
+				"type": "String"
+			}
+		},
+		{
+			"source": {
+				"name": "Volume_TC",
+				"type": "String"
+			},
+			"sink": {
+				"name": "Volume_TC",
+				"type": "String"
+			}
+		},
+		{
+			"source": {
+				"name": "file_name",
+				"type": "String"
+			},
+			"sink": {
+				"name": "file_name",
+				"type": "String"
+			}
+		},
+		{
+			"source": {
+				"name": "file_date",
+				"type": "String"
+			},
+			"sink": {
+				"name": "file_date",
+				"type": "String"
+			}
+		}
+	]
+}

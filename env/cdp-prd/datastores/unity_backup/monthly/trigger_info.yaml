@@ -1,0 +1,16 @@
+pipeline_name: pl_backup_databricks_catalog
+
+schedule:
+  frequency: Month
+  interval: 1
+  hours: [13]
+
+datasets:
+  - name: transformation
+    dataset_parameters:
+      catalog_name: "cdp_prd_transformation"
+      dbx_cluster_id: '1219-115818-pb4nlwc5'
+      dbx_workspace_resource_id: '/subscriptions/50c97cee-4d5e-44b3-ba85-6b12b2634abe/resourceGroups/rg-transformation-cdp-prd-we-kutk/providers/Microsoft.Databricks/workspaces/dbw-transformation-cdp-prd-we'
+      dbx_workspace_url: 'https://adb-6545544933368564.4.azuredatabricks.net'
+      external_backup_location: "abfss://monthly@stbackupcdpprdwekutk.dfs.core.windows.net"
+      notebook_path: '/Repos/Data Platform/adf-cdp-pipelines/Databricks_notebooks/backup_databricks_table_notebook'

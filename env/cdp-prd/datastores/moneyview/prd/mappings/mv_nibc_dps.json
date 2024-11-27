@@ -1,0 +1,133 @@
+{
+  "type": "TabularTranslator",
+  "mappings": [
+    {
+      "source": {"name": "Aanbieder"},
+      "sink": {"name": "Aanbieder"}
+    },
+    {
+      "source": {"name": "Product"},
+      "sink": {"name": "Product"}
+    },
+    {
+      "source": {"name": "1 maand"},
+      "sink": {"name": "1_maand"}
+    },
+    {
+      "source": {"name": "2 maanden"},
+      "sink": {"name": "2_maanden"}
+    },
+    {
+      "source": {"name": "3 maanden"},
+      "sink": {"name": "3_maanden"}
+    },
+    {
+      "source": {"name": "6 maanden"},
+      "sink": {"name": "6_maanden"}
+    },
+    {
+      "source": {"name": "9 maanden"},
+      "sink": {"name": "9_maanden"}
+    },
+    {
+      "source": {"name": "12 maanden"},
+      "sink": {"name": "12_maanden"}
+    },
+    {
+      "source": {"name": "1 maand *"},
+      "sink": {"name": "1_maand_*"}
+    },
+    {
+      "source": {"name": "2 maanden *"},
+      "sink": {"name": "2_maanden_*"}
+    },
+    {
+      "source": {"name": "3 maanden *"},
+      "sink": {"name": "3_maanden_*"}
+    },
+    {
+      "source": {"name": "6 maanden *"},
+      "sink": {"name": "6_maanden_*"}
+    },
+    {
+      "source": {"name": "9 maanden *"},
+      "sink": {"name": "9_maanden_*"}
+    },
+    {
+      "source": {"name": "12 maanden *"},
+      "sink": {"name": "12_maanden_*"}
+    },
+    {
+      "source": {"name": "1 maand **"},
+      "sink": {"name": "1_maand_**"}
+    },
+    {
+      "source": {"name": "2 maanden **"},
+      "sink": {"name": "2_maanden_**"}
+    },
+    {
+      "source": {"name": "3 maanden **"},
+      "sink": {"name": "3_maanden_**"}
+    },
+    {
+      "source": {"name": "6 maanden **"},
+      "sink": {"name": "6_maanden_**"}
+    },
+    {
+      "source": {"name": "9 maanden **"},
+      "sink": {"name": "9_maanden_**"}
+    },
+    {
+      "source": {"name": "12 maanden **"},
+      "sink": {"name": "12_maanden_**"}
+    },
+    {
+      "source": {"name": "1 maand ***"},
+      "sink": {"name": "1_maand_***"}
+    },
+    {
+      "source": {"name": "2 maanden ***"},
+      "sink": {"name": "2_maanden_***"}
+    },
+    {
+      "source": {"name": "3 maanden ***"},
+      "sink": {"name": "3_maanden_***"}
+    },
+    {
+      "source": {"name": "6 maanden ***"},
+      "sink": {"name": "6_maanden_***"}
+    },
+    {
+      "source": {"name": "9 maanden ***"},
+      "sink": {"name": "9_maanden_***"}
+    },
+    {
+      "source": {"name": "12 maanden ***"},
+      "sink": {"name": "12_maanden_***"}
+    },
+    {
+      "source": {"name": "Rente aangepast"},
+      "sink": {"name": "Rente_aangepast"}
+    },
+    {
+      "source": {"name": "AanbiederId"},
+      "sink": {"name": "AanbiederId"}
+    },
+    {
+      "source": {"name": "ProductId"},
+      "sink": {"name": "ProductId"}
+    },
+    {
+      "source": {"name": "ANSProductId"},
+      "sink": {"name": "ANSProductId"}
+    },
+    {
+      "source": {"name": "ANSAanbiederId"},
+      "sink": {"name": "ANSAanbiederId"}
+    },
+    {
+      "source": {"name": "_input_file_name"},
+      "sink": {"name": "_input_file_name"}
+    }
+  ]
+}

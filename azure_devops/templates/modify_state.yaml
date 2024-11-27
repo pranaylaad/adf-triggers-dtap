@@ -1,0 +1,36 @@
+parameters:
+- name: env_path
+  type: string
+- name: service_connection
+  type: string
+- name: custom_command
+  type: string
+- name: custom_command_arguments
+  type: string
+- name: agent_pool_name
+  type: string
+  values:
+    - data-platform
+    - cdp-runners-nonprd
+    - cdp-runners-prd
+
+resources:
+  repositories: 
+    - repository: templateRepo
+      type: git
+      name: Data Platform/azure-devops-templates
+      ref: refs/heads/main
+    - repository: azure-tf-foundation
+      type: git
+      name: azure-tf-foundation
+
+trigger: none
+
+stages:
+- template: templates/modify_state.yaml@templateRepo
+  parameters:
+    env_path: ${{ parameters.env_path }} 
+    service_connection: ${{ parameters.service_connection }}
+    custom_command: ${{ parameters.custom_command }}
+    custom_command_arguments: ${{ parameters.custom_command_arguments }}
+    agent_pool_name: ${{ parameters.agent_pool_name }}

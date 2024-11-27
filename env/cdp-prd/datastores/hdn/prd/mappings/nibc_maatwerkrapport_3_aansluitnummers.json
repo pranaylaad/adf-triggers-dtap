@@ -1,0 +1,293 @@
+{
+	"type": "TabularTranslator",
+	"mappings": [
+		{
+			"source": {
+				"name": "AanvraagVolgNummer",
+				"type": "String",
+				"physicalType": "String"
+			},
+			"sink": {
+				"name": "AanvraagVolgNummer",
+				"type": "String",
+				"physicalType": "UTF8"
+			}
+		},
+		{
+			"source": {
+				"name": "VerzenderNaam",
+				"type": "String",
+				"physicalType": "String"
+			},
+			"sink": {
+				"name": "VerzenderNaam",
+				"type": "String",
+				"physicalType": "UTF8"
+			}
+		},
+		{
+			"source": {
+				"name": "VerzenderNummer",
+				"type": "String",
+				"physicalType": "String"
+			},
+			"sink": {
+				"name": "VerzenderNummer",
+				"type": "String",
+				"physicalType": "UTF8"
+			}
+		},
+		{
+			"source": {
+				"name": "OntvangerNaam",
+				"type": "String",
+				"physicalType": "String"
+			},
+			"sink": {
+				"name": "OntvangerNaam",
+				"type": "String",
+				"physicalType": "UTF8"
+			}
+		},
+		{
+			"source": {
+				"name": "OntvangerNummer",
+				"type": "String",
+				"physicalType": "String"
+			},
+			"sink": {
+				"name": "OntvangerNummer",
+				"type": "String",
+				"physicalType": "UTF8"
+			}
+		},
+		{
+			"source": {
+				"name": "VerzendDt",
+				"type": "String",
+				"physicalType": "String"
+			},
+			"sink": {
+				"name": "VerzendDt",
+				"type": "String",
+				"physicalType": "UTF8"
+			}
+		},
+		{
+			"source": {
+				"name": "VerzendTijd",
+				"type": "String",
+				"physicalType": "String"
+			},
+			"sink": {
+				"name": "VerzendTijd",
+				"type": "String",
+				"physicalType": "UTF8"
+			}
+		},
+		{
+			"source": {
+				"name": "BerichtVersie",
+				"type": "String",
+				"physicalType": "String"
+			},
+			"sink": {
+				"name": "BerichtVersie",
+				"type": "String",
+				"physicalType": "UTF8"
+			}
+		},
+		{
+			"source": {
+				"name": "AanvraagVersie",
+				"type": "String",
+				"physicalType": "String"
+			},
+			"sink": {
+				"name": "AanvraagVersie",
+				"type": "String",
+				"physicalType": "UTF8"
+			}
+		},
+		{
+			"source": {
+				"name": "PakketNaam",
+				"type": "String",
+				"physicalType": "String"
+			},
+			"sink": {
+				"name": "PakketNaam",
+				"type": "String",
+				"physicalType": "UTF8"
+			}
+		},
+		{
+			"source": {
+				"name": "TussenpersoonNr",
+				"type": "String",
+				"physicalType": "String"
+			},
+			"sink": {
+				"name": "TussenpersoonNr",
+				"type": "String",
+				"physicalType": "UTF8"
+			}
+		},
+		{
+			"source": {
+				"name": "SoortPartij_TP",
+				"type": "String",
+				"physicalType": "String"
+			},
+			"sink": {
+				"name": "SoortPartij_TP",
+				"type": "String",
+				"physicalType": "UTF8"
+			}
+		},
+		{
+			"source": {
+				"name": "PlaatsNaam_TP",
+				"type": "String",
+				"physicalType": "String"
+			},
+			"sink": {
+				"name": "PlaatsNaam_TP",
+				"type": "String",
+				"physicalType": "UTF8"
+			}
+		},
+		{
+			"source": {
+				"name": "Postcode_TP",
+				"type": "String",
+				"physicalType": "String"
+			},
+			"sink": {
+				"name": "Postcode_TP",
+				"type": "String",
+				"physicalType": "UTF8"
+			}
+		},
+		{
+			"source": {
+				"name": "AFMRegistratieNr",
+				"type": "String",
+				"physicalType": "String"
+			},
+			"sink": {
+				"name": "AFMRegistratieNr",
+				"type": "String",
+				"physicalType": "UTF8"
+			}
+		},
+		{
+			"source": {
+				"name": "ServiceProviderNaam",
+				"type": "String",
+				"physicalType": "String"
+			},
+			"sink": {
+				"name": "ServiceProviderNaam",
+				"type": "String",
+				"physicalType": "UTF8"
+			}
+		},
+		{
+			"source": {
+				"name": "ServiceProviderNr",
+				"type": "String",
+				"physicalType": "String"
+			},
+			"sink": {
+				"name": "ServiceProviderNr",
+				"type": "String",
+				"physicalType": "UTF8"
+			}
+		},
+		{
+			"source": {
+				"name": "PlaatsNaam_SP",
+				"type": "String",
+				"physicalType": "String"
+			},
+			"sink": {
+				"name": "PlaatsNaam_SP",
+				"type": "String",
+				"physicalType": "UTF8"
+			}
+		},
+		{
+			"source": {
+				"name": "Postcode_SP",
+				"type": "String",
+				"physicalType": "String"
+			},
+			"sink": {
+				"name": "Postcode_SP",
+				"type": "String",
+				"physicalType": "UTF8"
+			}
+		},
+		{
+			"source": {
+				"name": "Intern leningnummer",
+				"type": "String",
+				"physicalType": "String"
+			},
+			"sink": {
+				"name": "Intern_leningnummer",
+				"type": "String",
+				"physicalType": "UTF8"
+			}
+		},
+		{
+			"source": {
+				"name": "MarketingProfiel",
+				"type": "String",
+				"physicalType": "String"
+			},
+			"sink": {
+				"name": "MarketingProfiel",
+				"type": "String",
+				"physicalType": "UTF8"
+			}
+		},
+		{
+			"source": {
+				"name": "AanvraagDatum",
+				"type": "String",
+				"physicalType": "String"
+			},
+			"sink": {
+				"name": "AanvraagDatum",
+				"type": "String",
+				"physicalType": "UTF8"
+			}
+		},
+		{
+			"source": {
+				"name": "file_name",
+				"type": "String",
+				"physicalType": "String"
+			},
+			"sink": {
+				"name": "file_name",
+				"type": "String",
+				"physicalType": "UTF8"
+			}
+		},
+		{
+			"source": {
+				"name": "file_date",
+				"type": "String",
+				"physicalType": "String"
+			},
+			"sink": {
+				"name": "file_date",
+				"type": "String",
+				"physicalType": "UTF8"
+			}
+		}		
+	]
+}

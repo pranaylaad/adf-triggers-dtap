@@ -1,0 +1,18 @@
+{
+  "type": "TabularTranslator",
+  "mappings": [
+    {
+      "source": {"path": "$['termijnrekening']"},
+      "sink": {"name": "$['termijnrekening']"}
+    },
+    {
+      "source": {"path": "file_name"},
+      "sink": {"name": "file_name"}
+    },
+    {
+      "source": {"path": "download_timestamp"},
+      "sink": {"name": "download_timestamp"}
+    }
+  ],
+  "mapComplexValuesToString": true
+}

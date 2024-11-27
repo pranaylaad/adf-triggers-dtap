@@ -1,0 +1,36 @@
+pipeline_name: pl_custom_moneyview
+
+schedule:
+  frequency: Day
+  interval: 1
+  hours: [3]
+
+datastore_parameters:
+  keyvault_secret_name: 'api-credentials-moneyview'
+  dbx_workspace_url: 'https://adb-6545544933368564.4.azuredatabricks.net'
+  dbx_workspace_resource_id: '/subscriptions/50c97cee-4d5e-44b3-ba85-6b12b2634abe/resourceGroups/rg-transformation-cdp-prd-we-kutk/providers/Microsoft.Databricks/workspaces/dbw-transformation-cdp-prd-we'
+  dbx_cluster_version: '14.3.x-scala2.12'
+  dbx_cluster_node_type: 'Standard_DS3_v2'
+  notebook_path: '/Repos/Data Platform/adf-cdp-pipelines/Databricks_notebooks/decode_moneyView_base64_cp1252'
+
+
+datasets:
+  - name: hypotheekrentes_mv_nibc
+    dataset_parameters:
+      file_name_template: "HypotheekrentesMV-NIBC_{yyyymmdd}.csv"
+
+  - name: hypotheekrentes_nb_mv_nibc
+    dataset_parameters:
+      file_name_template: "HypotheekrentesNB-MV-NIBC_{yyyymmdd}.csv"
+
+  - name: mv_nibc_dov
+    dataset_parameters:
+      file_name_template: "MV_NIBC_DOV_{yyyymmdd}.csv"
+
+  - name: mv_nibc_dps
+    dataset_parameters:
+      file_name_template: "MV_NIBC_DPS_{yyyymmdd}.csv"
+
+  - name: mv_nibc_ltd
+    dataset_parameters:
+      file_name_template: "MV_NIBC_LTD_{yyyymmdd}.csv"

@@ -1,0 +1,17 @@
+pipeline_name: pl_anonymous_http_xml_spaargids_be
+
+schedule:
+  frequency: Day
+  interval: 1
+  hours: [1, 13]
+
+datastore_parameters:
+  base_url: https://www.spaargids.be/download/
+
+datasets:
+  - name: rentes_nibc_all
+    dataset_parameters:
+      relative_url: rentes_nibc_all.xml
+  - name: termijnrekening_nibc
+    dataset_parameters:
+      relative_url: termijnrekening_NIBC.xml

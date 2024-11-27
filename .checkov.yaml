@@ -1,0 +1,4 @@
+directory: .
+framework: terraform
+skip-check: CKV_TF_1
+download-external-modules: true
