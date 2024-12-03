@@ -59,7 +59,7 @@ datasets:
       skip_line_count: '2'
       
   - name: hds_t_loan
-    pipeline_name: pl_fileserver_csv_ods_metadata_dev
+    pipeline_name: pl_fileserver_csv_on_prem_ods_metadata
     dataset_parameters:
       source_file_name_pattern: 'hds_t_loan_file*'  
       skip_line_count: '2'
@@ -71,7 +71,7 @@ datasets:
       skip_line_count: '2'
 
   - name: hds_t_property
-    pipeline_name: pl_fileserver_csv_ods_metadata_dev
+    pipeline_name: pl_fileserver_csv_on_prem_ods_metadata
     dataset_parameters:
       source_file_name_pattern: 'hds_t_property_file*'
       skip_line_count: '2'
