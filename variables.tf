@@ -9,6 +9,6 @@ variable "adf_resource_group_name" {
 }
 
 variable "env_path" {
-  description = "The path where vars and configs are. Eg, prd/cdp-prd etc."
+  description = "The path where vars and configs are. Eg, env/prd etc."
   type        = string
 }

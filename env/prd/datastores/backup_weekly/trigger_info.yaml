@@ -1,0 +1,9 @@
+pipeline_name: pl_copy_backup
+
+schedule:
+  frequency: Week
+  interval: 1
+  hours: [13]
+
+datasets:
+  - name: ingestion-prd

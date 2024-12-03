@@ -39,8 +39,8 @@ stages:
 - ${{ if or(startsWith(variables['Build.SourceBranch'], 'refs/tags/'), eq(variables['Build.Reason'], 'Manual')) }}:
   - template: templates/release-stage.yaml@templateRepo
     parameters:
-      name: CDPProd
-      env_path: cdp-prd
+      name: Production
+      env_path: prd
       service_connection: scn-cdp-prd-we-001
       skip_apply: ${{ eq(variables['Build.Reason'], 'Manual') }}
       dependsOn: approve_release_to_production

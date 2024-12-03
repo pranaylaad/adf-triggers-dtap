@@ -1,0 +1,121 @@
+{
+  "type": "TabularTranslator",
+  "mappings": [
+    {
+      "source": {"name": "Aanbieder"},
+      "sink": {"name": "Aanbieder"}
+    },
+    {
+      "source": {"name": "Product"},
+      "sink": {"name": "Product"}
+    },
+    {
+      "source": {"name": "1 Jaar"},
+      "sink": {"name": "1_Jaar"}
+    },
+    {
+      "source": {"name": "2 Jaar"},
+      "sink": {"name": "2_Jaar"}
+    },
+    {
+      "source": {"name": "3 Jaar"},
+      "sink": {"name": "3_Jaar"}
+    },
+    {
+      "source": {"name": "4 Jaar"},
+      "sink": {"name": "4_Jaar"}
+    },
+    {
+      "source": {"name": "5 Jaar"},
+      "sink": {"name": "5_Jaar"}
+    },
+    {
+      "source": {"name": "6 Jaar"},
+      "sink": {"name": "6_Jaar"}
+    },
+    {
+      "source": {"name": "7 Jaar"},
+      "sink": {"name": "7_Jaar"}
+    },
+    {
+      "source": {"name": "8 Jaar"},
+      "sink": {"name": "8_Jaar"}
+    },
+    {
+      "source": {"name": "9 Jaar"},
+      "sink": {"name": "9_Jaar"}
+    },
+    {
+      "source": {"name": "10 Jaar"},
+      "sink": {"name": "10_Jaar"}
+    },
+    {
+      "source": {"name": "11 Jaar"},
+      "sink": {"name": "11_Jaar"}
+    },
+    {
+      "source": {"name": "12 Jaar"},
+      "sink": {"name": "12_Jaar"}
+    },
+    {
+      "source": {"name": "13 Jaar"},
+      "sink": {"name": "13_Jaar"}
+    },
+    {
+      "source": {"name": "14 Jaar"},
+      "sink": {"name": "14_Jaar"}
+    },
+    {
+      "source": {"name": "15 Jaar"},
+      "sink": {"name": "15_Jaar"}
+    },
+    {
+      "source": {"name": "16 Jaar"},
+      "sink": {"name": "16_Jaar"}
+    },
+    {
+      "source": {"name": "17 Jaar"},
+      "sink": {"name": "17_Jaar"}
+    },
+    {
+      "source": {"name": "18 Jaar"},
+      "sink": {"name": "18_Jaar"}
+    },
+    {
+      "source": {"name": "19 Jaar"},
+      "sink": {"name": "19_Jaar"}
+    },
+    {
+      "source": {"name": "20 Jaar"},
+      "sink": {"name": "20_Jaar"}
+    },
+    {
+      "source": {"name": "Laatste rentewijziging"},
+      "sink": {"name": "Laatste_rentewijziging"}
+    },
+    {
+      "source": {"name": "AanbiederId"},
+      "sink": {"name": "AanbiederId"}
+    },
+    {
+      "source": {"name": "ProductId"},
+      "sink": {"name": "ProductId"}
+    },
+    {
+      "source": {"name": "ANSProductId"},
+      "sink": {"name": "ANSProductId"}
+    },
+    {
+      "source": {"name": "ANSAanbiederId"},
+      "sink": {"name": "ANSAanbiederId"}
+    },
+    {
+      "source": {"name": "_input_file_name"},
+      "sink": {"name": "_input_file_name"}
+    },
+    {
+      "source": {"name": "_input_file_date"},
+      "sink": {"name": "_input_file_date"}
+    }
+  ]
+}

@@ -40,9 +40,27 @@ stages:
 - ${{ if or(eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['Build.Reason'], 'PullRequest'), eq(variables['Build.Reason'], 'Manual')) }}:
   - template: templates/release-stage.yaml@templateRepo
     parameters:
-      name: CDPPreProd
-      env_path: cdp-preprd
+      name: Development
+      env_path: dev
       service_connection: scn-sub-cdp-preprd-we-001
       skip_apply: ${{ parameters.skipApply }}
       dependsOn: Validate
+      agent_pool_name: cdp-runners-prd
+- ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/main') }}:
+  - template: templates/release-stage.yaml@templateRepo
+    parameters:
+      name: Test
+      env_path: tst
+      service_connection: scn-sub-cdp-preprd-we-001
+      skip_apply: ${{ parameters.skipApply }}
+      dependsOn: Development
+      agent_pool_name: cdp-runners-prd
+- ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/main') }}:
+  - template: templates/release-stage.yaml@templateRepo
+    parameters:
+      name: Acceptance
+      env_path: acp
+      service_connection: scn-sub-cdp-preprd-we-001
+      skip_apply: ${{ parameters.skipApply }}
+      dependsOn: Test
       agent_pool_name: cdp-runners-prd

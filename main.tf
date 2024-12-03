@@ -3,7 +3,9 @@ locals {
   time_zone = "W. Europe Standard Time"
 
   datastore_path    = "${var.env_path}/datastores"
-  datastore_pattern = "^(?P<datastore>[0-9A-Za-z_]+)/(?P<env>[0-9A-Za-z_]+)/trigger_info\\.yaml"
+  datastore_pattern = "^(?P<datastore>[0-9A-Za-z_]+)/trigger_info\\.yaml"
+
+  environment = replace(var.env_path, "env/", "")
 
   datastore_configs = {
     for filename in fileset(local.datastore_path, "**/trigger_info.yaml") :
@@ -13,13 +15,14 @@ locals {
   triggers = merge(flatten([
     for filename, datastore in local.datastore_configs : [
       for dataset in datastore.datasets : {
-        # spaargids_be/dev/trigger_info.yaml -> spaargids_be_dev__rentes_nibc_all
+        # spaargids_be/trigger_info.yaml -> spaargids_be__rentes_nibc_all
         "${replace(replace(filename, "/trigger_info.yaml", ""), "/", "_")}__${dataset.name}" = {
+
           "pipeline_name" = try(dataset.pipeline_name, datastore.pipeline_name)
           "schedule"      = datastore.schedule
 
           "datastore_name" = regex(local.datastore_pattern, filename).datastore
-          "environment"    = regex(local.datastore_pattern, filename).env
+          "environment"    = local.environment
           "dataset_name"   = dataset.name
 
           "datastore_parameters" = try(datastore.datastore_parameters, {})

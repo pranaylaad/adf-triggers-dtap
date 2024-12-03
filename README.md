@@ -280,7 +280,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_adf_name"></a> [adf\_name](#input\_adf\_name) | Name of data factory instance to deploy schedules | `string` | n/a | yes |
 | <a name="input_adf_resource_group_name"></a> [adf\_resource\_group\_name](#input\_adf\_resource\_group\_name) | Resource group name of data factory instance to deploy schedules | `string` | n/a | yes |
-| <a name="input_env_path"></a> [env\_path](#input\_env\_path) | The path where vars and configs are. Eg, prd/cdp-prd etc. | `string` | n/a | yes |
+| <a name="input_env_path"></a> [env\_path](#input\_env\_path) | The path where vars and configs are. Eg, env/prd etc. | `string` | n/a | yes |
 
 ## Outputs
 

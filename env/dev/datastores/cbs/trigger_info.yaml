@@ -1,0 +1,24 @@
+pipeline_name: pl_rest_api_cloud
+
+schedule:
+  frequency: Month
+  interval: 1
+  days_of_month: [2]
+  hours: [6]
+
+datastore_parameters:
+  base_url: https://apim.dev.cloud.nibc.com/internal/cbs/kadaster-api/1.0/dataset
+  key_vault_secret_name: apim-authorization-access-token
+
+datasets:
+  - name: cbs_corop_hpi_oom_85819NED
+    dataset_parameters: 
+      relative_url: 85819NED
+
+  - name: cbs_corop_codes_85755NED
+    dataset_parameters:
+      relative_url: 85755NED
+
+  - name: cbs_province_hpi_oom_85792NED
+    dataset_parameters:
+      relative_url: 85792NED
