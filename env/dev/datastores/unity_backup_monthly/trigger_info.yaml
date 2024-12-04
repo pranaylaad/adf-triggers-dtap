@@ -14,5 +14,4 @@ datasets:
       dbx_workspace_url: 'https://adb-1053042427915632.12.azuredatabricks.net'
       # TODO: this location might need to be updated?
       external_backup_location: "abfss://monthly@stbackupcdppreprdweojsu.dfs.core.windows.net"
-      # TODO: once the adf pipelines repo contains the notebook, update the path
-      notebook_path: '/Workspace/Repos/ADF_databricks_Hermes_team/adf-cdp-pipelines/Databricks_notebooks/backup_databricks_table_notebook'
+      notebook_path: '/Workspace/Shared/adf-pipelines/scn_sub_cdp_preprd_we_001/dev/files/databricks_notebooks/backup_databricks_table_notebook'

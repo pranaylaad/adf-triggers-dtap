@@ -11,8 +11,7 @@ datasets:
       catalog_name: "cdp_prd_transformation"
       dbx_cluster_id: '1220-112536-2dhkacra'
       dbx_workspace_resource_id: '/subscriptions/d12cd7ca-ec96-4566-8890-89f3194d1169/resourceGroups/rg-transformation-cdp-preprd-we-ojsu/providers/Microsoft.Databricks/workspaces/dbw-transformation-cdp-preprd'
-      dbx_workspace_url: 'https://adb-1053042427915632.12.azuredatabricks.net'
+      dbx_workspace_url: 'https://adb-6545544933368564.4.azuredatabricks.net'
       # TODO: this location might need to be updated?
       external_backup_location: "abfss://weekly@stbackupcdppreprdweojsu.dfs.core.windows.net"
-      # TODO: once the adf pipelines repo contains the notebook, update the path
-      notebook_path: '/Workspace/Repos/Data Platform/adf-cdp-pipelines/Databricks_notebooks/backup_databricks_table_notebook'
+      notebook_path: '/Workspace/adf-pipelines/prd/files/databricks_notebooks/backup_databricks_table_notebook'

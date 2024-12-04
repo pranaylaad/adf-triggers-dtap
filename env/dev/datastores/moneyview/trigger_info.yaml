@@ -11,8 +11,7 @@ datastore_parameters:
   dbx_workspace_resource_id: '/subscriptions/d12cd7ca-ec96-4566-8890-89f3194d1169/resourceGroups/rg-transformation-cdp-preprd-we-ojsu/providers/Microsoft.Databricks/workspaces/dbw-transformation-cdp-preprd'
   dbx_cluster_version: '14.3.x-scala2.12'
   dbx_cluster_node_type: 'Standard_DS3_v2'
-  # TODO: once the adf pipelines repo contains the notebook, update the path
-  notebook_path: '/Workspace/Repos/ADF_databricks_Hermes_team/adf-cdp-pipelines/Databricks_notebooks/decode_moneyView_base64_cp1252'
+  notebook_path: '/Workspace/Shared/adf-pipelines/scn_sub_cdp_preprd_we_001/dev/files/databricks_notebooks/decode_moneyview_base64_cp1252'
 
 
 datasets:
