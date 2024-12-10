@@ -8,7 +8,6 @@ schedule:
 datasets:
   - name: transformation
     dataset_parameters:
-      # TODO: update this job ID after deployment
-      job_id: '321661410506962'
+      job_id: '29551386996210'
       workspace_url: 'https://adb-1053042427915632.12.azuredatabricks.net'
       job_parameters: '{"catalog_name": "cdp_transformation_acp", "backup_location": "abfss://daily-acp@stbackupcdppreprdweojsu.dfs.core.windows.net"}'
