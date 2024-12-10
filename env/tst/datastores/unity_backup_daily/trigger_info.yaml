@@ -1,4 +1,4 @@
-pipeline_name: pl_backup_databricks_catalog
+pipeline_name: pl_databricks_job
 
 schedule:
   frequency: Day
@@ -8,10 +8,7 @@ schedule:
 datasets:
   - name: transformation
     dataset_parameters:
-      catalog_name: "cdp_tst_transformation"
-      dbx_cluster_id: '1220-112536-2dhkacra'
-      dbx_workspace_resource_id: '/subscriptions/d12cd7ca-ec96-4566-8890-89f3194d1169/resourceGroups/rg-transformation-cdp-preprd-we-ojsu/providers/Microsoft.Databricks/workspaces/dbw-transformation-cdp-preprd'
-      dbx_workspace_url: 'https://adb-1053042427915632.12.azuredatabricks.net'
-      # TODO: this location might need to be updated?
-      external_backup_location: "abfss://daily@stbackupcdppreprdweojsu.dfs.core.windows.net"
-      notebook_path: '/Workspace/adf-pipelines/tst/files/databricks_notebooks/backup_databricks_table_notebook'
+      # TODO: update this job ID after deployment
+      job_id: '321661410506962'
+      workspace_url: 'https://adb-1053042427915632.12.azuredatabricks.net'
+      job_parameters: '{"catalog_name": "cdp_transformation_tst", "backup_location": "abfss://daily-tst@stbackupcdppreprdweojsu.dfs.core.windows.net"}'
