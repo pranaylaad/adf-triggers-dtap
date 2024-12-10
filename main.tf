@@ -19,7 +19,7 @@ locals {
         "${replace(replace(filename, "/trigger_info.yaml", ""), "/", "_")}__${dataset.name}" = {
 
           "pipeline_name" = try(dataset.pipeline_name, datastore.pipeline_name)
-          "schedule"      = datastore.schedule
+          "schedule"      = try(dataset.schedule, datastore.schedule)
 
           "datastore_name" = regex(local.datastore_pattern, filename).datastore
           "environment"    = local.environment
