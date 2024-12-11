@@ -12,7 +12,7 @@ datastore_parameters:
   dbx_cluster_version: '14.3.x-scala2.12'
   dbx_cluster_node_type: 'Standard_DS3_v2'
   # TODO: once the adf pipelines repo contains the notebook, update the path
-  notebook_path: '/Workspace/adf-pipelines/tst/files/databricks_notebooks/decode_moneyView_base64_cp1252'
+  notebook_path: '/Workspace/adf-pipelines/tst/files/databricks_notebooks/decode_moneyview_base64_cp1252'
 
 
 datasets:

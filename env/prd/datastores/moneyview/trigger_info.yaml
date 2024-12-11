@@ -11,7 +11,7 @@ datastore_parameters:
   dbx_workspace_resource_id: '/subscriptions/50c97cee-4d5e-44b3-ba85-6b12b2634abe/resourceGroups/rg-transformation-cdp-prd-we-kutk/providers/Microsoft.Databricks/workspaces/dbw-transformation-cdp-prd-we'
   dbx_cluster_version: '14.3.x-scala2.12'
   dbx_cluster_node_type: 'Standard_DS3_v2'
-  notebook_path: '/Workspace/adf-pipelines/prd/files/databricks_notebooks/decode_moneyView_base64_cp1252'
+  notebook_path: '/Workspace/adf-pipelines/prd/files/databricks_notebooks/decode_moneyview_base64_cp1252'
 
 
 datasets:
