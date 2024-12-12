@@ -7,4 +7,5 @@ schedule:
 
 datasets:
   - name: ingestion-dev
-    container_name: weekly-dev
+    dataset_parameters:
+      container_name: weekly-dev

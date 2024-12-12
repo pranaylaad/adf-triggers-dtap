@@ -7,4 +7,5 @@ schedule:
 
 datasets:
   - name: ingestion-acp
-    container_name: daily-acp
+    dataset_parameters:
+      container_name: daily-acp

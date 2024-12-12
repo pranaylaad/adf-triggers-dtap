@@ -7,4 +7,5 @@ schedule:
 
 datasets:
   - name: ingestion-prd
-    container_name: daily-prd
+    dataset_parameters:
+      container_name: daily-prd

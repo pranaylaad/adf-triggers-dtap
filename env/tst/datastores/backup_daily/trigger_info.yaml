@@ -7,4 +7,5 @@ schedule:
 
 datasets:
   - name: ingestion-tst
-    container_name: daily-tst
+    dataset_parameters:
+      container_name: daily-tst
