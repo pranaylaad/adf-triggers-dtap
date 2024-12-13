@@ -1,0 +1,123 @@
+{
+    "type": "TabularTranslator",
+    "mappings": [
+        {
+            "source": {
+                "path": "['ID']"
+            },
+            "sink": {
+                "name": "ID",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['RegioS']"
+            },
+            "sink": {
+                "name": "RegioS",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['Perioden']"
+            },
+            "sink": {
+                "name": "Perioden",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['PrijsindexVerkoopprijzen_1']"
+            },
+            "sink": {
+                "name": "PrijsindexVerkoopprijzen_1",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['k_95BetrouwbaarheidsmargeOndergrens_2']"
+            },
+            "sink": {
+                "name": "k_95BetrouwbaarheidsmargeOndergrens_2",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['k_95BetrouwbaarheidsmargeBovengrens_3']"
+            },
+            "sink": {
+                "name": "k_95BetrouwbaarheidsmargeBovengrens_3",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['OntwikkelingTOVVorigePeriode_4']"
+            },
+            "sink": {
+                "name": "OntwikkelingTOVVorigePeriode_4",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['OntwikkelingTOVEenJaarEerder_5']"
+            },
+            "sink": {
+                "name": "OntwikkelingTOVEenJaarEerder_5",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['VerkochteWoningen_6']"
+            },
+            "sink": {
+                "name": "VerkochteWoningen_6",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['OntwikkelingTOVVorigePeriode_7']"
+            },
+            "sink": {
+                "name": "OntwikkelingTOVVorigePeriode_7",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['OntwikkelingTOVEenJaarEerder_8']"
+            },
+            "sink": {
+                "name": "OntwikkelingTOVEenJaarEerder_8",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['GemiddeldeVerkoopprijs_9']"
+            },
+            "sink": {
+                "name": "GemiddeldeVerkoopprijs_9",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['TotaleWaardeVerkoopprijzen_10']"
+            },
+            "sink": {
+                "name": "TotaleWaardeVerkoopprijzen_10",
+                "type": "String"
+            }
+        }
+    ],
+    "collectionReference": "$['value']"
+}

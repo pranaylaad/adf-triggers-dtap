@@ -9,15 +9,17 @@ schedule:
 datastore_parameters:
   base_url: https://apim.dev.cloud.nibc.com/internal/cbs/kadaster-api/1.0/dataset
   key_vault_secret_name: apim-authorization-access-token
+  microsoft_entra_cid: a1bb61c1-d7c6-468b-9e6a-720dcd63ce91
+  microsoft_entra_scope: 0c28ca60-24cd-45bd-95f1-01fdaee9c41c/.default
 
 datasets:
-  - name: cbs_corop_hpi_oom_85819NED
-    dataset_parameters: 
-      relative_url: 85819NED
-
   - name: cbs_corop_codes_85755NED
     dataset_parameters:
       relative_url: 85755NED
+
+  - name: cbs_corop_hpi_oom_85819NED
+    dataset_parameters: 
+      relative_url: 85819NED
 
   - name: cbs_province_hpi_oom_85792NED
     dataset_parameters:
