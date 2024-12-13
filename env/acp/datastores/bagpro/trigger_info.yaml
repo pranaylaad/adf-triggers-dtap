@@ -1,4 +1,4 @@
-pipeline_name: pl_fileserver_zipped_csv
+pipeline_name: pl_fileserver_zipped_csv_bagpro
 
 schedule:
   frequency: Day
