@@ -1,0 +1,92 @@
+{
+    "$id": "https://example.com/product.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "ADF Trigger",
+    "description": "A definition of triggers for a pipeline",
+    "type": "object",
+    "properties": {
+        "pipeline_name": {
+            "description": "The exact name of the ADF pipeline which should be triggered",
+            "type": "string"
+        },
+        "schedule": {
+            "type": "object",
+			"description": "The schedule at which the ADF pipeline should be triggered",
+            "properties": {
+                "frequency": {
+                    "type": "string"
+                },
+                "interval": {
+                    "type": "number"
+                },
+                "minutes": {
+                    "items": {
+                        "type": "number"
+                    },
+                    "minItems": 1,
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "hours": {
+                    "items": {
+                        "type": "number"
+                    },
+                    "minItems": 1,
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "days_of_month": {
+                    "items": {
+                        "type": "number"
+                    },
+                    "minItems": 1,
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "days_of_week": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "minItems": 1,
+                    "type": "array",
+                    "uniqueItems": true
+                }
+            },
+            "required": [ "frequency", "interval" ],
+            "additionalProperties": false
+        },
+        "datastore_parameters":{
+            "description": "Additional parameters passed to each dataset trigger.",
+            "type": "object"
+        },
+        "datasets": {
+			"description": "The list of datasets for each of which a trigger will be created",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "pipeline_name": {
+                        "description": "Use different pipeline for this specific trigger",
+                        "type": "string"
+                    },
+                    "dataset_parameters": {
+                        "description": "Additional parameters passed to this specific dataset trigger.",
+                        "type": "object"
+                    }
+                },
+                "required": [ "name" ],
+                "additionalProperties": false
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "pipeline_name",
+        "schedule",
+        "datasets"
+    ]
+}
