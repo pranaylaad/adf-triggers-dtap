@@ -7,8 +7,8 @@ schedule:
 datastore_parameters:
   keyvault_secret_name: 'fileserver-credentials-ods'
   fileserver_user_name: 'PRD\SRV_AA_ACP'
-  fileserver_host_name: '\\SVNIBCFILA101\e$'
-  fileserver_directory: 'CDP\Retail_ODS\hds_mortgages'
+  fileserver_host_name: '\\SVNIBCFILA101\E'
+  fileserver_directory: 'Interfac\Retail_ODS\hds_mortgages\CDP'
   column_delimiter: '|&|'
 
 datasets:
