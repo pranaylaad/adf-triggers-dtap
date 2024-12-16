@@ -26,4 +26,4 @@ datasets:
   - name: psa_osx_t_str_account_view_fa_2018
   - name: psa_osx_t_str_legal_view
   - name: psa_osx_t_str_management_view_2019
-  - name: psa_osx_t_management_view_new
+  - name: psa_osx_t_str_management_view_new
