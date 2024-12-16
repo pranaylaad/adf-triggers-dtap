@@ -269,7 +269,7 @@ datasets:
 
   - name: hds_history_t_client
     dataset_parameters:
-      source_file_name_pattern: 'hds_mortgage_history.hds.t_client'
+      source_file_name_pattern: 'hds_mortgage_history.hds.t_client.csv'
       skip_line_count: '0'
 
   - name: hds_history_t_property
