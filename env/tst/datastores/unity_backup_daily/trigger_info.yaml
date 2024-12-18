@@ -4,6 +4,7 @@ schedule:
   frequency: Day
   interval: 1
   hours: [13]
+  minutes: [30]
 
 datasets:
   - name: transformation
