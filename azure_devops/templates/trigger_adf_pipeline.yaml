@@ -49,7 +49,7 @@ stages:
               echo "##vso[task.setvariable variable=resource_group_name;]$resource_group_name"
             displayName: Get Factory Information
 
-          - task: AzureCLI@2
+          - task: AzureCLI@2.249.8
             displayName: Run ADF Pipeline
             inputs:
                 azureSubscription: ${{ parameters.service_connection }}
