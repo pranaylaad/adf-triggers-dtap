@@ -39,82 +39,64 @@
         },
         {
             "source": {
-                "path": "['k_95BetrouwbaarheidsmargeOndergrens_2']"
+                "path": "['OntwikkelingTOVVoorgaandePeriode_2']"
             },
             "sink": {
-                "name": "k_95BetrouwbaarheidsmargeOndergrens_2",
+                "name": "OntwikkelingTOVVoorgaandePeriode_2",
                 "type": "String"
             }
         },
         {
             "source": {
-                "path": "['k_95BetrouwbaarheidsmargeBovengrens_3']"
+                "path": "['OntwikkelingTOVEenJaarEerder_3']"
             },
             "sink": {
-                "name": "k_95BetrouwbaarheidsmargeBovengrens_3",
+                "name": "OntwikkelingTOVEenJaarEerder_3",
                 "type": "String"
             }
         },
         {
             "source": {
-                "path": "['OntwikkelingTOVVorigePeriode_4']"
+                "path": "['VerkochteWoningen_4']"
             },
             "sink": {
-                "name": "OntwikkelingTOVVorigePeriode_4",
+                "name": "VerkochteWoningen_4",
                 "type": "String"
             }
         },
         {
             "source": {
-                "path": "['OntwikkelingTOVEenJaarEerder_5']"
+                "path": "['OntwikkelingTOVVoorgaandePeriode_5']"
             },
             "sink": {
-                "name": "OntwikkelingTOVEenJaarEerder_5",
+                "name": "OntwikkelingTOVVoorgaandePeriode_5",
                 "type": "String"
             }
         },
         {
             "source": {
-                "path": "['VerkochteWoningen_6']"
+                "path": "['OntwikkelingTOVEenJaarEerder_6']"
             },
             "sink": {
-                "name": "VerkochteWoningen_6",
+                "name": "OntwikkelingTOVEenJaarEerder_6",
                 "type": "String"
             }
         },
         {
             "source": {
-                "path": "['OntwikkelingTOVVorigePeriode_7']"
+                "path": "['GemiddeldeVerkoopprijs_7']"
             },
             "sink": {
-                "name": "OntwikkelingTOVVorigePeriode_7",
+                "name": "GemiddeldeVerkoopprijs_7",
                 "type": "String"
             }
         },
         {
             "source": {
-                "path": "['OntwikkelingTOVEenJaarEerder_8']"
+                "path": "['TotaleWaardeVerkoopprijzen_8']"
             },
             "sink": {
-                "name": "OntwikkelingTOVEenJaarEerder_8",
-                "type": "String"
-            }
-        },
-        {
-            "source": {
-                "path": "['GemiddeldeVerkoopprijs_9']"
-            },
-            "sink": {
-                "name": "GemiddeldeVerkoopprijs_9",
-                "type": "String"
-            }
-        },
-        {
-            "source": {
-                "path": "['TotaleWaardeVerkoopprijzen_10']"
-            },
-            "sink": {
-                "name": "TotaleWaardeVerkoopprijzen_10",
+                "name": "TotaleWaardeVerkoopprijzen_8",
                 "type": "String"
             }
         }
