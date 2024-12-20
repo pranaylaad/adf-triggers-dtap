@@ -4,6 +4,7 @@ schedule:
   frequency: Day
   interval: 1
   hours: [16]
+  minutes: [30]
 
 
 datastore_parameters:
@@ -523,10 +524,10 @@ datasets:
       skip_line_count: '2'
 
 
-  - name: hds_t_transactie
-    dataset_parameters:
-      source_file_name_pattern: 'hds_t_transactie_file*'
-      skip_line_count: '2'
+  # - name: hds_t_transactie
+  #   dataset_parameters:
+  #     source_file_name_pattern: 'hds_t_transactie_file*'
+  #     skip_line_count: '2'
 
 
   - name: mda_t_loan
