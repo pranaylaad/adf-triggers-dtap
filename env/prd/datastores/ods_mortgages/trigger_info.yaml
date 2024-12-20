@@ -198,83 +198,83 @@ datasets:
   #     skip_line_count: '2'
 
 
-# one-time loads
+#one-time loads
 
-  # - name: hds_history_t_arrears
-  #   dataset_parameters:
-  #     source_file_name_pattern: 'hds_mortgage_history.hds.t_arrears.csv'
-  #     skip_line_count: '0'
+  - name: hds_history_t_arrears
+    dataset_parameters:
+      source_file_name_pattern: 'hds_mortgage_history.hds.t_arrears.csv'
+      skip_line_count: '0'
       
 
-  # - name: hds_history_t_brdg_loan_arrears
-  #   dataset_parameters:
-  #     source_file_name_pattern: 'hds_mortgage_history.hds.t_brdg_loan_arrears.csv'
-  #     skip_line_count: '0'
+  - name: hds_history_t_brdg_loan_arrears
+    dataset_parameters:
+      source_file_name_pattern: 'hds_mortgage_history.hds.t_brdg_loan_arrears.csv'
+      skip_line_count: '0'
       
 
-  # - name: hds_history_t_brdg_loan_client
-  #   dataset_parameters:
-  #     source_file_name_pattern: 'hds_mortgage_history.hds.t_brdg_loan_client.csv'
-  #     skip_line_count: '0'
+  - name: hds_history_t_brdg_loan_client
+    dataset_parameters:
+      source_file_name_pattern: 'hds_mortgage_history.hds.t_brdg_loan_client.csv'
+      skip_line_count: '0'
       
 
-  # # - name: hds_history_t_brdg_loan_loan_part
-  # #   dataset_parameters:
-  # #     source_file_name_pattern: 'hds_mortgage_history.hds.t_brdg_loan_loan_part.csv'
-  # #     skip_line_count: '0'
+  - name: hds_history_t_brdg_loan_loan_part
+    dataset_parameters:
+      source_file_name_pattern: 'hds_mortgage_history.hds.t_brdg_loan_loan_part.csv'
+      skip_line_count: '0'
           
 
-  # - name: hds_history_t_brdg_loan_part_policy
-  #   dataset_parameters:
-  #     source_file_name_pattern: 'hds_mortgage_history.hds.t_brdg_loan_part_policy.csv'
-  #     skip_line_count: '0'
+  - name: hds_history_t_brdg_loan_part_policy
+    dataset_parameters:
+      source_file_name_pattern: 'hds_mortgage_history.hds.t_brdg_loan_part_policy.csv'
+      skip_line_count: '0'
           
 
-  # - name: hds_history_t_brdg_loan_period
-  #   dataset_parameters:
-  #     source_file_name_pattern: 'hds_mortgage_history.hds.t_brdg_loan_period.csv'
-  #     skip_line_count: '0'
+  - name: hds_history_t_brdg_loan_period
+    dataset_parameters:
+      source_file_name_pattern: 'hds_mortgage_history.hds.t_brdg_loan_period.csv'
+      skip_line_count: '0'
           
      
-  # - name: hds_history_t_brdg_loan_property
-  #   dataset_parameters:
-  #     source_file_name_pattern: 'hds_mortgage_history.hds.t_brdg_loan_property.csv'
-  #     skip_line_count: '0'
+  - name: hds_history_t_brdg_loan_property
+    dataset_parameters:
+      source_file_name_pattern: 'hds_mortgage_history.hds.t_brdg_loan_property.csv'
+      skip_line_count: '0'
           
 
-  # - name: hds_history_t_loan
-  #   dataset_parameters:
-  #     source_file_name_pattern: 'hds_mortgage_history.hds.t_loan.csv'
-  #     skip_line_count: '0'
+  - name: hds_history_t_loan
+    dataset_parameters:
+      source_file_name_pattern: 'hds_mortgage_history.hds.t_loan.csv'
+      skip_line_count: '0'
           
 
-  # - name: hds_history_t_loan_part
-  #   dataset_parameters:
-  #     source_file_name_pattern: 'hds_mortgage_history.hds.t_loan_part.csv'
-  #     skip_line_count: '0'
+  - name: hds_history_t_loan_part
+    dataset_parameters:
+      source_file_name_pattern: 'hds_mortgage_history.hds.t_loan_part.csv'
+      skip_line_count: '0'
               
 
-  # - name: hds_history_t_offer_part
-  #   dataset_parameters:
-  #     source_file_name_pattern: 'hds_mortgage_history.hds.t_offer_part.csv'
-  #     skip_line_count: '0'
+  - name: hds_history_t_offer_part
+    dataset_parameters:
+      source_file_name_pattern: 'hds_mortgage_history.hds.t_offer_part.csv'
+      skip_line_count: '0'
           
      
-  # - name: hds_history_t_policy
-  #   dataset_parameters:
-  #     source_file_name_pattern: 'hds_mortgage_history.hds.t_policy.csv'
-  #     skip_line_count: '0'
+  - name: hds_history_t_policy
+    dataset_parameters:
+      source_file_name_pattern: 'hds_mortgage_history.hds.t_policy.csv'
+      skip_line_count: '0'
         
 
-  # - name: hds_history_t_client
-  #   dataset_parameters:
-  #     source_file_name_pattern: 'hds_mortgage_history.hds.t_client.csv'
-  #     skip_line_count: '0'
+  - name: hds_history_t_client
+    dataset_parameters:
+      source_file_name_pattern: 'hds_mortgage_history.hds.t_client.csv'
+      skip_line_count: '0'
 
-  # - name: hds_history_t_property
-  #   dataset_parameters:
-  #     source_file_name_pattern: 'hds_mortgage_history.hds.t_property.csv'
-  #     skip_line_count: '0'
+  - name: hds_history_t_property
+    dataset_parameters:
+      source_file_name_pattern: 'hds_mortgage_history.hds.t_property.csv'
+      skip_line_count: '0'
 
 
 
