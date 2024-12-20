@@ -3,7 +3,7 @@ pipeline_name: pl_fileserver_csv_on_prem
 schedule:
   frequency: Day
   interval: 1
-  hours: [15]
+  hours: [16]
 
 
 datastore_parameters:
