@@ -13,11 +13,11 @@ repos:
       files: ^env/.*trigger_info.yaml$
       args: ["--schemafile", ".trigger-schema.json", "--verbose"]    
 - repo: https://github.com/gitleaks/gitleaks
-  rev: v8.21.3
+  rev: v8.22.1
   hooks:
     - id: gitleaks
 - repo: https://github.com/antonbabenko/pre-commit-terraform
-  rev: "v1.96.2" # Get the latest from: https://github.com/antonbabenko/pre-commit-terraform/releases
+  rev: "v1.96.3" # Get the latest from: https://github.com/antonbabenko/pre-commit-terraform/releases
   hooks:
     - id: terraform_fmt
     - id: terraform_tflint
