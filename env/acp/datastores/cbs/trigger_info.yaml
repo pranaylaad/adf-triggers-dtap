@@ -3,8 +3,8 @@ pipeline_name: pl_rest_api_cloud
 schedule:
   frequency: Month
   interval: 1
-  days_of_month: [7]
-  hours: [11]
+  days_of_month: [2]
+  hours: [6]
 
 datastore_parameters:
   base_url: https://apim.acp.cloud.nibc.com/internal/cbs/kadaster-api/1.0/dataset
