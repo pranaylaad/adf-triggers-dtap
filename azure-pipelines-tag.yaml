@@ -2,13 +2,13 @@ resources:
   repositories: 
     - repository: templateRepo
       type: git
-      name: Data Platform/azure-devops-templates
-      ref: refs/heads/main
+      name: azure-devops-templates
+      ref: refs/tags/1.0.10
 
 trigger: none
 
 stages:
-- template: templates/tagging-stage.yaml@templateRepo
+- template: utils/tag.yaml@templateRepo
   parameters:
     major: 1
     minor: 1

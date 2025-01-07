@@ -2,8 +2,8 @@ resources:
   repositories: 
     - repository: templateRepo
       type: git
-      name: Data Platform/azure-devops-templates
-      ref: refs/heads/main
+      name: azure-devops-templates
+      ref: refs/tags/1.0.10
     - repository: azure-tf-foundation
       type: git
       name: azure-tf-foundation
@@ -26,18 +26,18 @@ variables:
   value: ./
 
 stages:
-- template: templates/test.yaml@templateRepo
+- template: test-stage/terraform.yaml@templateRepo
   parameters:
     name: Validate
 # csf:3.3.11a:Manual approval to release to Production
-- template: templates/approval-stage.yaml@templateRepo
+- template: utils/approval.yaml@templateRepo
   parameters:
     name: approve_release_to_production
     dependsOn: Validate
     approval_environment: production-approvers-infra
 # only release from tag, or a manual run which disables apply
 - ${{ if or(startsWith(variables['Build.SourceBranch'], 'refs/tags/'), eq(variables['Build.Reason'], 'Manual')) }}:
-  - template: templates/release-stage.yaml@templateRepo
+  - template: release-stage/terraform.yaml@templateRepo
     parameters:
       name: Production
       env_path: prd

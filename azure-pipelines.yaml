@@ -2,8 +2,8 @@ resources:
   repositories:
     - repository: templateRepo
       type: git
-      name: Data Platform/azure-devops-templates
-      ref: refs/heads/main
+      name: azure-devops-templates
+      ref: refs/tags/1.0.10
     - repository: azure-tf-foundation
       type: git
       name: azure-tf-foundation
@@ -21,24 +21,25 @@ pool:
 
 pr:
   autoCancel: false
+  branches:
+    include:
+      - main  
 
 trigger:
   branches:
     include:
       - main
-    exclude:
-      - /**/*.md
 
 variables:
 - name: working_directory
   value: ./
 
 stages:
-- template: templates/test.yaml@templateRepo
+- template: test-stage/terraform.yaml@templateRepo
   parameters:
     name: Validate
 - ${{ if or(eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['Build.Reason'], 'PullRequest'), eq(variables['Build.Reason'], 'Manual')) }}:
-  - template: templates/release-stage.yaml@templateRepo
+  - template: release-stage/terraform.yaml@templateRepo
     parameters:
       name: Development
       env_path: dev
@@ -47,7 +48,7 @@ stages:
       dependsOn: Validate
       agent_pool_name: cdp-runners-prd
 - ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/main') }}:
-  - template: templates/release-stage.yaml@templateRepo
+  - template: release-stage/terraform.yaml@templateRepo
     parameters:
       name: Test
       env_path: tst
@@ -56,7 +57,7 @@ stages:
       dependsOn: Development
       agent_pool_name: cdp-runners-prd
 - ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/main') }}:
-  - template: templates/release-stage.yaml@templateRepo
+  - template: release-stage/terraform.yaml@templateRepo
     parameters:
       name: Acceptance
       env_path: acp
