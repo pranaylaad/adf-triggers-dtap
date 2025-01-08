@@ -10,6 +10,7 @@ datastore_parameters:
   fileserver_host_name: '\\SVNIBCFILD101\e$'
   fileserver_directory: 'CDP\Retail_ODS\hds_mortgages'
   column_delimiter: '|&|'
+  enable_delete: false
 
 datasets:
 
