@@ -150,11 +150,11 @@ datasets:
       source_file_name_pattern: 'hds_t_brdg_loan_arrears_file*{functional_date}.csv'
       skip_line_count: '2'
 
-  # - name: hds_t_brdg_loan_client
-  #   pipeline_name: pl_fileserver_csv_on_prem_append_only_last_month
-  #   dataset_parameters:
-  #     source_file_name_pattern: 'hds_t_brdg_loan_client_file*{functional_date}.csv'
-  #     skip_line_count: '2'
+  - name: hds_t_brdg_loan_client
+    pipeline_name: pl_fileserver_csv_on_prem_append_only_last_month
+    dataset_parameters:
+      source_file_name_pattern: 'hds_t_brdg_loan_client_file*{functional_date}.csv'
+      skip_line_count: '2'
 
   - name: hds_t_brdg_loan_loan_part
     pipeline_name: pl_fileserver_csv_on_prem_append_only_last_month
@@ -190,11 +190,11 @@ datasets:
 
 ## daily incremental loads
 
-  # - name: hds_t_transactie
-  #   pipeline_name: pl_fileserver_csv_on_prem_append_only_last_month
-  #   dataset_parameters:
-  #     source_file_name_pattern: 'hds_t_transactie_file*{functional_date}.csv'
-  #     skip_line_count: '2'
+  - name: hds_t_transactie
+    pipeline_name: pl_fileserver_csv_on_prem_append_only_last_month
+    dataset_parameters:
+      source_file_name_pattern: 'hds_t_transactie_file*{functional_date}.csv'
+      skip_line_count: '2'
 
 
 #one-time loads
@@ -324,11 +324,11 @@ datasets:
 
 ## monthly incremental loads
 
-  # - name: ab_AFM_framework_rtl550
-  #   pipeline_name: pl_fileserver_csv_on_prem_append_only_last_month
-  #   dataset_parameters:
-  #     source_file_name_pattern: 'ab_AFM_framework_rtl550_file*{functional_date}.csv'
-  #     skip_line_count: '2'
+  - name: ab_AFM_framework_rtl550
+    pipeline_name: pl_fileserver_csv_on_prem_append_only_last_month
+    dataset_parameters:
+      source_file_name_pattern: 'ab_AFM_framework_rtl550_file*{functional_date}.csv'
+      skip_line_count: '2'
 
 
 
@@ -480,18 +480,3 @@ datasets:
 
 ## One time loads that did not happen in the first go live
 ## To be reverted back to append only after the onboarding
-
-  - name: ab_AFM_framework_rtl550
-    dataset_parameters:
-      source_file_name_pattern: 'ab_AFM_framework_rtl550_file*'
-      skip_line_count: '2'
-
-  - name: hds_t_brdg_loan_client
-    dataset_parameters:
-      source_file_name_pattern: 'hds_t_brdg_loan_client_file*'
-      skip_line_count: '2'
-
-  - name: hds_t_transactie
-    dataset_parameters:
-      source_file_name_pattern: 'hds_t_transactie_file*'
-      skip_line_count: '2'
