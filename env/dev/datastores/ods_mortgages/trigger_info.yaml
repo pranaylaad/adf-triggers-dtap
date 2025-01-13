@@ -93,6 +93,10 @@ datasets:
       source_file_name_pattern: 'hds_t_rep_forbearance_file*'
       skip_line_count: '2'
 
+  - name: hds_t_conversions
+    dataset_parameters:
+      source_file_name_pattern: 'hds_t_conversions_file*'
+      skip_line_count: '2'
 
 ## daily full loads
 
@@ -151,6 +155,10 @@ datasets:
       source_file_name_pattern: 'hds_t_periods_file*'
       skip_line_count: '2'
 
+  - name: hds_t_offer_property
+    dataset_parameters:
+      source_file_name_pattern: 'hds_t_offer_property*'
+      skip_line_count: '2'
   
 ## monthly incremental loads
 
@@ -190,6 +198,12 @@ datasets:
       source_file_name_pattern: 'hds_t_brdg_loan_property_file*{functional_date}.csv'
       skip_line_count: '2'
       metadata_column_delimiter: ','
+
+  - name: hds_t_brdg_loan_loan_part_after_interest_reset
+    pipeline_name: pl_fileserver_csv_on_prem_append_only_last_month
+    dataset_parameters:
+      source_file_name_pattern: 'hds_t_brdg_loan_loan_part_after_interest_reset_file*{functional_date}.csv'
+      skip_line_count: '2'
 
 
 ## daily incremental loads
