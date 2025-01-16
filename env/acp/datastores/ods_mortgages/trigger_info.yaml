@@ -143,6 +143,11 @@ datasets:
       source_file_name_pattern: 'hds_t_periods_file*'
       skip_line_count: '2'
 
+  - name: hds_t_offer_property
+    dataset_parameters:
+      source_file_name_pattern: 'hds_t_offer_property*'
+      skip_line_count: '2'
+
   
 ## monthly incremental loads
 
@@ -193,7 +198,7 @@ datasets:
 ## daily incremental loads
 
   - name: hds_t_transactie
-    pipeline_name: pl_fileserver_csv_on_prem_append_only_last_month
+    pipeline_name: pl_fileserver_csv_on_prem_append_only_last_day
     dataset_parameters:
       source_file_name_pattern: 'hds_t_transactie_file*{functional_date}.csv'
       skip_line_count: '2'
@@ -413,6 +418,10 @@ datasets:
       source_file_name_pattern: 'loan_part_prommise_portfolio_file*'
       skip_line_count: '2'
 
+  - name: legacy_rationalisation_hypinvest
+    dataset_parameters:
+      source_file_name_pattern: 'legacy_rationalisation_hypinvest_file*'
+      skip_line_count: '2'
 
 ####  dbo schema   ####
 
