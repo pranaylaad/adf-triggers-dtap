@@ -3,7 +3,7 @@ resources:
     - repository: templateRepo
       type: git
       name: azure-devops-templates
-      ref: refs/tags/1.0.13
+      ref: refs/tags/1.0.14
 
 trigger: none
 
