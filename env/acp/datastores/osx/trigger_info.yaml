@@ -1,0 +1,27 @@
+pipeline_name: pl_sql_server_on_prem
+
+schedule:
+  frequency: Day
+  interval: 1
+  hours: [3]
+
+datastore_parameters:
+  connection_string_secret_name: 'sql-connection-string-osx-acp'
+  schema_name: dbo
+
+datasets:
+  - name: t_account_category
+  - name: t_account_code
+  - name: t_account_section
+  - name: t_common_key_consolidation
+  - name: t_common_key_extra
+  - name: t_common_key_movement
+  - name: t_currency_rate
+  - name: t_dim_account_code
+  - name: t_dim_profit_centre
+  - name: t_entity
+  - name: t_profit_centre
+  - name: t_str_account_view_fa_2018
+  - name: t_str_legal_view
+  - name: t_str_management_view_2019
+  - name: t_str_management_view_new
