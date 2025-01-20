@@ -9,7 +9,7 @@ datastore_parameters:
   keyvault_secret_name: 'fileserver-credentials-ods'
   fileserver_user_name: 'PRD\SRV_AA_ACP'
   fileserver_host_name: '\\SVNIBCFILA101\E'
-  fileserver_directory: 'Archive\BagPro'
+  fileserver_directory: 'Interfac\BagPro'
   column_delimiter: ';'
 
 datasets:
