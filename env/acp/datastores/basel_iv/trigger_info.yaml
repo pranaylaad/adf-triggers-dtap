@@ -10,10 +10,10 @@ datasets:
   - name: basel_iv_orchestration
     dataset_parameters:
       dbx_workspace_url: https://adb-7348359736582708.8.azuredatabricks.net
-      dbx_job_id_check: 587733919011562
-      dbx_job_id_model: 922408450420182
-      fileserver_host_name: \\SVNIBCFILD101\e$
-      fileserver_user_name: PRD\SRV_AA_DEV
+      dbx_job_id_check: 915171780847061
+      dbx_job_id_model: 1010959370097240
+      fileserver_host_name: \\SVNIBCFILA101\E
+      fileserver_user_name: PRD\SRV_AA_ACP
       fileserver_credentials_secret_name: fileserver-credentials-ods
       fileserver_directory: Interfac\AA\aa_retail\Monthly\IRB
       sink_file_name_template: basel_4_model_output_cdp_{period_end_date}.csv
