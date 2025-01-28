@@ -1,0 +1,13 @@
+{
+    "extensionBundle": {
+        "id": "Microsoft.Azure.Functions.ExtensionBundle",
+        "version": "[4.*, 5.0.0)"
+    },
+    "logging": {
+        "logLevel": {
+            "Function.DBTJobCompletionWebhook.User": "Error",
+            "__init__": "Information"
+        }
+    },
+    "version": "2.0"
+}

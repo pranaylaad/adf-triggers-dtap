@@ -3,7 +3,7 @@ resources:
     - repository: templateRepo
       type: git
       name: azure-devops-templates
-      ref: refs/tags/1.0.18
+      ref: refs/tags/1.0.19
     - repository: azure-tf-foundation
       type: git
       name: azure-tf-foundation
@@ -45,3 +45,25 @@ stages:
       skip_apply: ${{ eq(variables['Build.Reason'], 'Manual') }}
       dependsOn: approve_release_to_production
       agent_pool_name: cdp-runners-prd
+# we do not have function in prod yet, this is just a placeholder for future development
+# - ${{ if startsWith(variables['Build.SourceBranch'], 'refs/tags/') }}:
+#   - template: test-stage/function.yaml@templateRepo
+#     parameters:
+#       name: ValidateAndBuildFunctionDBTRunCompleted
+#       root_folder: dbt_run_completed_function
+#       dependsOn: approve_release_to_production
+#       additional_source_dir: env/prd/functions/DBTJobCompletionWebhook
+# - ${{ if startsWith(variables['Build.SourceBranch'], 'refs/tags/') }}:
+#   - template: release-stage/function.yaml@templateRepo
+#     parameters:
+#       name: DeployDBTRunCompleteFunction
+#       environment: CDPProdFunction
+#       env_path: cdp-prd
+#       service_connection: scn-cdp-prd-we-001
+#       dependsOn:
+#         - ValidateAndBuildFunctionDBTRunCompleted
+#         - Validate
+#       agent_pool_name: cdp-runners-prd
+#       function_name: func-dbtcompleted-cdp-prd-prd-we-kutk
+#       root_folder: dbt_run_completed_function
+#       app_settings: "-DBT_CLOUD_AUTH_TOKEN  $(dbt_run_completed_webhook_token_prd)" # TODO: this needs to be added to the function env vars

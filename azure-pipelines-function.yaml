@@ -1,0 +1,75 @@
+#csf:3.3.3i:In this yaml file we configure the steps to deploy our DTAP environments.
+resources:
+  repositories:
+    - repository: templateRepo
+      type: git
+      name: azure-devops-templates
+      ref: refs/tags/1.0.19
+    - repository: azure-tf-foundation
+      type: git
+      name: azure-tf-foundation
+
+name: terraform
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+trigger:
+  branches:
+    include:
+    - main
+  paths:
+    include:
+    - dbt_run_completed_function
+
+pr:
+  autoCancel: false
+  branches:
+    include:
+      - main
+  paths:
+    include:
+    - dbt_run_completed_function
+
+stages:
+# dev deployment
+- template: test-stage/function.yaml@templateRepo
+  parameters:
+    name: ValidateAndBuildDBTRunCompletedFunctionDev
+    root_folder: dbt_run_completed_function
+    additional_source_dir: env/dev/functions/DBTJobCompletionWebhook
+- ${{ if or(eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['Build.Reason'], 'PullRequest'), eq(variables['Build.Reason'], 'Manual')) }}:
+  - template: release-stage/function.yaml@templateRepo
+    parameters:
+      name: DeployDBTRunCompleteFunctionDev
+      dependsOn: ValidateAndBuildDBTRunCompletedFunctionDev
+      function_name: func-dbtcompleted-cdp-preprd-dev-we-ojsu
+      environment: Development
+      env_path: dev
+      service_connection: scn-sub-cdp-preprd-we-001
+      agent_pool_name: cdp-runners-prd
+      root_folder: dbt_run_completed_function
+      app_settings: "-DBT_CLOUD_AUTH_TOKEN  $(dbt_run_completed_webhook_token_dev)"
+# tst deployment
+# The function doesn't need to be deployed to the tst environment as tst environment is not available
+# in the output system (AA servers).
+# acp deployment
+- ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/main') }}:
+  - template: test-stage/function.yaml@templateRepo
+    parameters:
+      name: ValidateAndBuildDBTRunCompletedFunctionAcp
+      root_folder: dbt_run_completed_function
+      additional_source_dir: env/acp/functions/DBTJobCompletionWebhook
+      dependsOn: DeployDBTRunCompleteFunctionDev
+- ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/main') }}:
+  - template: release-stage/function.yaml@templateRepo
+    parameters:
+      name: DeployDBTRunCompleteFunctionAcp
+      dependsOn: ValidateAndBuildDBTRunCompletedFunctionAcp
+      function_name: func-dbtcompleted-cdp-preprd-acp-we-ojsu
+      environment: Acceptance
+      env_path: acp
+      service_connection: scn-sub-cdp-preprd-we-001
+      agent_pool_name: cdp-runners-prd
+      root_folder: dbt_run_completed_function
+      app_settings: "-DBT_CLOUD_AUTH_TOKEN  $(dbt_run_completed_webhook_token_acp)"

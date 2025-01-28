@@ -1,0 +1,14 @@
+{
+    "bindings": [
+        {
+            "authLevel": "anonymous",
+            "direction": "in",
+            "methods": [
+                "post"
+            ],
+            "name": "req",
+            "type": "httpTrigger"
+        }
+    ],
+    "scriptFile": "__init__.py"
+}
