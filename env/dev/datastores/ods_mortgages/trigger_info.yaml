@@ -23,11 +23,6 @@ datasets:
       source_file_name_pattern: 'hds_t_kadaster_cbs_index*'
       skip_line_count: '0'
       column_delimiter: ','
-
-  - name: hds_t_client_mortgage_savings
-    dataset_parameters:
-      source_file_name_pattern: 'hds_t_client_mortgage_savings_file*'
-      skip_line_count: '2'
       
   - name: hds_t_foreclosures
     dataset_parameters:
@@ -160,7 +155,13 @@ datasets:
       source_file_name_pattern: 'hds_t_offer_property*'
       skip_line_count: '2'
   
-## monthly incremental loads
+## monthly incremental loads  
+
+  - name: hds_t_client_mortgage_savings
+    pipeline_name: pl_fileserver_csv_on_prem_append_only_last_month
+    dataset_parameters:
+      source_file_name_pattern: 'hds_t_client_mortgage_savings_file*{functional_date}.csv'
+      skip_line_count: '2'
 
   - name: hds_t_brdg_loan_arrears
     pipeline_name: pl_fileserver_csv_on_prem_append_only_last_month
