@@ -4,7 +4,7 @@ resources:
     - repository: templateRepo
       type: git
       name: azure-devops-templates
-      ref: refs/tags/1.0.19
+      ref: refs/tags/1.0.21
     - repository: azure-tf-foundation
       type: git
       name: azure-tf-foundation
@@ -38,6 +38,7 @@ stages:
     name: ValidateAndBuildDBTRunCompletedFunctionDev
     root_folder: dbt_run_completed_function
     additional_source_dir: env/dev/functions/DBTJobCompletionWebhook
+    artifact_name_suffix: _dev
 - ${{ if or(eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['Build.Reason'], 'PullRequest'), eq(variables['Build.Reason'], 'Manual')) }}:
   - template: release-stage/function.yaml@templateRepo
     parameters:
@@ -50,6 +51,7 @@ stages:
       agent_pool_name: cdp-runners-prd
       root_folder: dbt_run_completed_function
       app_settings: "-DBT_CLOUD_AUTH_TOKEN  $(dbt_run_completed_webhook_token_dev)"
+      artifact_name_suffix: _dev
 # tst deployment
 # The function doesn't need to be deployed to the tst environment as tst environment is not available
 # in the output system (AA servers).
@@ -61,6 +63,7 @@ stages:
       root_folder: dbt_run_completed_function
       additional_source_dir: env/acp/functions/DBTJobCompletionWebhook
       dependsOn: DeployDBTRunCompleteFunctionDev
+      artifact_name_suffix: _acp
 - ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/main') }}:
   - template: release-stage/function.yaml@templateRepo
     parameters:
@@ -73,3 +76,4 @@ stages:
       agent_pool_name: cdp-runners-prd
       root_folder: dbt_run_completed_function
       app_settings: "-DBT_CLOUD_AUTH_TOKEN  $(dbt_run_completed_webhook_token_acp)"
+      artifact_name_suffix: _acp

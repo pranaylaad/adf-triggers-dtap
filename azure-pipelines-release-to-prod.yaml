@@ -3,7 +3,7 @@ resources:
     - repository: templateRepo
       type: git
       name: azure-devops-templates
-      ref: refs/tags/1.0.19
+      ref: refs/tags/1.0.21
     - repository: azure-tf-foundation
       type: git
       name: azure-tf-foundation
@@ -58,7 +58,7 @@ stages:
 #     parameters:
 #       name: DeployDBTRunCompleteFunction
 #       environment: CDPProdFunction
-#       env_path: cdp-prd
+#       env_path: prd
 #       service_connection: scn-cdp-prd-we-001
 #       dependsOn:
 #         - ValidateAndBuildFunctionDBTRunCompleted
