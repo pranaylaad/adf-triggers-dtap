@@ -33,3 +33,8 @@ repos:
   hooks:
     - id: terraform-docs-go
       args: ["--config", ".terraform-docs.yml", "."]        
+# python specific formatters
+-   repo: https://github.com/psf/black
+    rev: 24.10.0
+    hooks:
+    -   id: black
