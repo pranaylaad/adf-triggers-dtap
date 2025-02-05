@@ -4,7 +4,7 @@ resources:
     - repository: templateRepo
       type: git
       name: azure-devops-templates
-      ref: refs/tags/1.0.23
+      ref: refs/tags/1.0.24
     - repository: azure-tf-foundation
       type: git
       name: azure-tf-foundation
@@ -46,7 +46,6 @@ stages:
       dependsOn: ValidateAndBuildDBTRunCompletedFunctionDev
       function_name: func-dbtcompleted-cdp-preprd-dev-we-ojsu
       environment: Development
-      env_path: dev
       service_connection: scn-sub-cdp-preprd-we-001
       agent_pool_name: cdp-runners-prd
       root_folder: dbt_run_completed_function
@@ -71,7 +70,6 @@ stages:
       dependsOn: ValidateAndBuildDBTRunCompletedFunctionAcp
       function_name: func-dbtcompleted-cdp-preprd-acp-we-ojsu
       environment: Acceptance
-      env_path: acp
       service_connection: scn-sub-cdp-preprd-we-001
       agent_pool_name: cdp-runners-prd
       root_folder: dbt_run_completed_function

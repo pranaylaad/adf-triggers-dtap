@@ -3,7 +3,7 @@ resources:
     - repository: templateRepo
       type: git
       name: azure-devops-templates
-      ref: refs/tags/1.0.23
+      ref: refs/tags/1.0.24
     - repository: azure-tf-foundation
       type: git
       name: azure-tf-foundation
@@ -40,7 +40,6 @@ stages:
   - template: release-stage/terraform.yaml@templateRepo
     parameters:
       name: Production
-      env_path: prd
       service_connection: scn-cdp-prd-we-001
       skip_apply: ${{ eq(variables['Build.Reason'], 'Manual') }}
       dependsOn: approve_release_to_production
