@@ -6,18 +6,18 @@ repos:
     - id: check-yaml
     - id: end-of-file-fixer
 - repo: https://github.com/python-jsonschema/check-jsonschema
-  rev: 0.31.0
+  rev: 0.31.1
   hooks:
     - id: check-renovate
     - id: check-jsonschema
       files: ^env/.*trigger_info.yaml$
       args: ["--schemafile", ".trigger-schema.json", "--verbose"]    
 - repo: https://github.com/gitleaks/gitleaks
-  rev: v8.23.2
+  rev: v8.23.3
   hooks:
     - id: gitleaks
 - repo: https://github.com/antonbabenko/pre-commit-terraform
-  rev: "v1.97.0" # Get the latest from: https://github.com/antonbabenko/pre-commit-terraform/releases
+  rev: "v1.97.3" # Get the latest from: https://github.com/antonbabenko/pre-commit-terraform/releases
   hooks:
     - id: terraform_fmt
     - id: terraform_tflint
