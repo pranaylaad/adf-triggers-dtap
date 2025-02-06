@@ -1,0 +1,55 @@
+{
+    "type": "TabularTranslator",
+    "mappings": [
+        {
+            "source": {
+                "path": "['Id']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "id",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['MOJO_FacilityID__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "mojo_facilityid_c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['MOJO_Purpose__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "mojo_purpose_c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['attributes']['type']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "attributes_type",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['attributes']['url']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "attributes_url",
+                "type": "String"
+            }
+        }
+    ]
+}

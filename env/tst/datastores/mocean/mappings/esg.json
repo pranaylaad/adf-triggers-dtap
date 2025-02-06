@@ -1,0 +1,77 @@
+{
+    "type": "TabularTranslator",
+    "mappings": [
+        {
+            "source": { "path": "['CurrencyIsoCode']", "type": "String" },
+            "sink": { "name": "currencyisocode", "type": "String" }
+        },
+        {
+            "source": { "path": "['Id']", "type": "String" },
+            "sink": { "name": "id", "type": "String" }
+        },
+        {
+            "source": { "path": "['MOJO_Account__c']", "type": "String" },
+            "sink": { "name": "mojo_account_c", "type": "String" }
+        },
+        {
+            "source": { "path": "['MOJO_Account__r']['Id']", "type": "String" },
+            "sink": { "name": "mojo_account_r_id", "type": "String" }
+        },
+        {
+            "source": { "path": "['MOJO_Account__r']['MOJO_GoldenClientID__c']", "type": "String" },
+            "sink": { "name": "mojo_account_r_mojo_goldenclientid_c", "type": "String" }
+        },
+        {
+            "source": { "path": "['MOJO_AssetClass__c']", "type": "String" },
+            "sink": { "name": "mojo_assetclass_c", "type": "String" }
+        },
+        {
+            "source": { "path": "['MOJO_ClimateKPIs__c']", "type": "String" },
+            "sink": { "name": "mojo_climatekpis_c", "type": "String" }
+        },
+        {
+            "source": { "path": "['MOJO_HumanRightsKPIs__c']", "type": "String" },
+            "sink": { "name": "mojo_humanrightskpis_c", "type": "String" }
+        },
+        {
+            "source": { "path": "['MOJO_GovernanceKPIs__c']", "type": "String" },
+            "sink": { "name": "mojo_governancekpis_c", "type": "String" }
+        },
+        {
+            "source": { "path": "['MOJO_NIBCShare__c']", "type": "Int64" },
+            "sink": { "name": "mojo_nibcshare_c", "type": "Int64" }
+        },
+        {
+            "source": { "path": "['MOJO_SubmitDate__c']", "type": "String" },
+            "sink": { "name": "mojo_submitdate_c", "type": "String" }
+        },
+        {
+            "source": { "path": "['MOJO_Status__c']", "type": "String" },
+            "sink": { "name": "mojo_status_c", "type": "String" }
+        },
+        {
+            "source": { "path": "['MOJO_SubmittedBy__c']", "type": "String" },
+            "sink": { "name": "mojo_submittedby_c", "type": "String" }
+        },
+        {
+            "source": { "path": "['MOJO_SubmittedBy__r']['Id']", "type": "String" },
+            "sink": { "name": "mojo_submittedby_r_id", "type": "String" }
+        },
+        {
+            "source": { "path": "['MOJO_SubmittedBy__r']['Name']", "type": "String" },
+            "sink": { "name": "mojo_submittedby_r_name", "type": "String" }
+        },
+        {
+            "source": { "path": "['Name']", "type": "String" },
+            "sink": { "name": "name", "type": "String" }
+        },
+        {
+            "source": { "path": "['attributes']['type']", "type": "String" },
+            "sink": { "name": "attributes_type", "type": "String" }
+        },
+        {
+            "source": { "path": "['attributes']['url']", "type": "String" },
+            "sink": { "name": "attributes_url", "type": "String" }
+        }
+    ]
+}
