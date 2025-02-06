@@ -44,10 +44,13 @@ stages:
     parameters:
       name: DeployDBTRunCompleteFunctionDev
       dependsOn: ValidateAndBuildDBTRunCompletedFunctionDev
-      function_name: func-dbtcompleted-cdp-preprd-dev-we-ojsu
+      function_name: func-dbtcompleted-cdp-dev-dev-we-ojsu
+      # function_name: func-dbtcompleted-cdp-preprd-dev-we-ojsu
       environment: Development
-      service_connection: scn-sub-cdp-preprd-we-001
-      agent_pool_name: cdp-runners-prd
+      # service_connection: scn-sub-cdp-preprd-we-001
+      service_connection: scn-dataplatform-dev-we-001
+      # agent_pool_name: cdp-runners-prd
+      agent_pool_name: cdp-runners-nonprd
       root_folder: dbt_run_completed_function
       app_settings: "-DBT_CLOUD_AUTH_TOKEN  $(dbt_run_completed_webhook_token_dev)"
       artifact_name_suffix: _dev
