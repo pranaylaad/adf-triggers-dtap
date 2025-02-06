@@ -22,6 +22,19 @@ datasets:
   - name: t_entity
   - name: t_profit_centre
   - name: t_str_account_view_fa_2018
+  - name: t_str_account_view_ma
   - name: t_str_legal_view
   - name: t_str_management_view_2019
   - name: t_str_management_view_new
+  - name: t_tfi_bond_default
+  - name: t_tfi_bond_position_valuation
+  - name: t_trn_loan_default
+  - name: t_trn_loan_valuation
+  - name: v_dwh_cdc_t_common_key
+  - name: v_dwh_cdc_t_deal_balance
+  - name: v_dwh_cdc_t_posted
+  - name: v_dwh_cdc_t_posted_header
+  - name: v_dwh_full_t_common_key
+  - name: v_dwh_full_t_deal_balance
+  - name: v_dwh_full_t_posted
+  - name: v_dwh_full_t_posted_header
