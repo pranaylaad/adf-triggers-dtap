@@ -44,7 +44,7 @@ stages:
     parameters:
       name: DeployDBTRunCompleteFunctionDev
       dependsOn: ValidateAndBuildDBTRunCompletedFunctionDev
-      function_name: func-dbtcompleted-cdp-dev-dev-we-ojsu
+      function_name: func-dbtcompleted-dev-dev-we-nwgm
       # function_name: func-dbtcompleted-cdp-preprd-dev-we-ojsu
       environment: Development
       # service_connection: scn-sub-cdp-preprd-we-001
