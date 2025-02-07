@@ -4,7 +4,7 @@ resources:
     - repository: templateRepo
       type: git
       name: azure-devops-templates
-      ref: refs/tags/1.0.24
+      ref: refs/tags/1.0.26
     - repository: azure-tf-foundation
       type: git
       name: azure-tf-foundation
