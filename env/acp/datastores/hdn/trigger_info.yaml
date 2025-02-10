@@ -8,7 +8,7 @@ schedule:
   minutes: [30]
 
 datastore_parameters:
-  sftp_host: 'qliksense3.hdn.nl'
+  sftp_host: 'ftp.hdn.nl'
   sftp_port: 22
   sftp_fingerprint: 'ssh-ed25519 32 01:d1:0c:35:32:c7:32:57:13:19:78:88:78:51:00:7d'
   sftp_username: 'NIBC'
