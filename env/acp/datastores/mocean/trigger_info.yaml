@@ -1,0 +1,21 @@
+pipeline_name: pl_rest_api_cloud
+
+schedule:
+  frequency: Day
+  interval: 1
+  hours: [6]
+
+datastore_parameters:
+  base_url: https://apim.acp.cloud.nibc.com/internal/mocean-api/1.0
+  key_vault_secret_name: apim-authorization-access-token
+  microsoft_entra_cid: b708124d-fac6-4065-b04f-9043d890a256
+  microsoft_entra_scope: 8a6cebb3-ad36-48a7-80b9-de2fcf14f6e6/.default
+
+datasets:
+  - name: anacredit
+    dataset_parameters:
+      relative_url: anacredit
+
+  - name: esg
+    dataset_parameters:
+      relative_url: esg
