@@ -23,41 +23,41 @@ datasets:
       source_file_name_pattern: 'hds_t_kadaster_cbs_index*'
       skip_line_count: '0'
       column_delimiter: ','
-      
+
   - name: hds_t_foreclosures
     dataset_parameters:
       source_file_name_pattern: 'hds_t_foreclosures_file*'
       skip_line_count: '2'
-      
+
   - name: hds_t_fraud
     dataset_parameters:
       source_file_name_pattern: 'hds_t_fraud_file*'
       skip_line_count: '2'
-      
+
   - name: hds_t_fraud_rent_addition
     dataset_parameters:
       source_file_name_pattern: 'hds_t_fraud_rent_addition_file*'
       skip_line_count: '2'
-      
+
   - name: hds_t_loan_part
     dataset_parameters:
       source_file_name_pattern: 'hds_t_loan_part_file*'
       skip_line_count: '2'
-      
+
   - name: hds_t_policy
     dataset_parameters:
       source_file_name_pattern: 'hds_t_policy_file*'
       skip_line_count: '2'
-      
+
   - name: hds_t_servicer
     dataset_parameters:
       source_file_name_pattern: 'hds_t_servicer_file*'
       skip_line_count: '2'
-      
+
   - name: hds_t_loan
     pipeline_name: pl_fileserver_csv_on_prem_ods_metadata
     dataset_parameters:
-      source_file_name_pattern: 'hds_t_loan_file*'  
+      source_file_name_pattern: 'hds_t_loan_file*'
       skip_line_count: '2'
       metadata_column_delimiter: ','
 
@@ -98,47 +98,47 @@ datasets:
   - name: hds_t_arrears
     dataset_parameters:
       source_file_name_pattern: 'hds_t_arrears_file*'
-      skip_line_count: '2' 
+      skip_line_count: '2'
 
   - name: hds_t_brdg_offer_offer_client
     dataset_parameters:
       source_file_name_pattern: 'hds_t_brdg_offer_offer_client_file*'
-      skip_line_count: '2' 
+      skip_line_count: '2'
 
   - name: hds_t_brdg_offer_offer_part
     dataset_parameters:
       source_file_name_pattern: 'hds_t_brdg_offer_offer_part_file*'
-      skip_line_count: '2' 
-      
+      skip_line_count: '2'
+
   - name: hds_t_brdg_offer_offer_part_seq
     dataset_parameters:
       source_file_name_pattern: 'hds_t_brdg_offer_offer_part_seq_file*'
-      skip_line_count: '2' 
-      
+      skip_line_count: '2'
+
   - name: hds_t_brdg_offer_offer_property
     dataset_parameters:
       source_file_name_pattern: 'hds_t_brdg_offer_offer_property_file*'
-      skip_line_count: '2' 
-      
+      skip_line_count: '2'
+
   - name: hds_t_loan_e_consument_data
     dataset_parameters:
       source_file_name_pattern: 'hds_t_loan_e_consument_data_file*'
-      skip_line_count: '2' 
-      
+      skip_line_count: '2'
+
   - name: hds_t_offer
     dataset_parameters:
       source_file_name_pattern: 'hds_t_offer_file*'
-      skip_line_count: '2' 
-      
+      skip_line_count: '2'
+
   - name: hds_t_salesforce_case
     dataset_parameters:
       source_file_name_pattern: 'hds_t_salesforce_case_file*'
-      skip_line_count: '2' 
-      
+      skip_line_count: '2'
+
   - name: hds_t_salesforce_measure
     dataset_parameters:
       source_file_name_pattern: 'hds_t_salesforce_measure_file*'
-      skip_line_count: '2' 
+      skip_line_count: '2'
 
   - name: hds_t_offer_part
     dataset_parameters:
@@ -154,8 +154,8 @@ datasets:
     dataset_parameters:
       source_file_name_pattern: 'hds_t_offer_property*'
       skip_line_count: '2'
-  
-## monthly incremental loads  
+
+## monthly incremental loads
 
   - name: hds_t_client_mortgage_savings
     pipeline_name: pl_fileserver_csv_on_prem_append_only_last_month
@@ -180,19 +180,19 @@ datasets:
     dataset_parameters:
       source_file_name_pattern: 'hds_t_brdg_loan_loan_part_file*{functional_date}.csv'
       skip_line_count: '2'
-      
+
   - name: hds_t_brdg_loan_part_policy
     pipeline_name: pl_fileserver_csv_on_prem_append_only_last_month
     dataset_parameters:
       source_file_name_pattern: 'hds_t_brdg_loan_part_policy_file*{functional_date}.csv'
       skip_line_count: '2'
-      
+
   - name: hds_t_brdg_loan_period
     pipeline_name: pl_fileserver_csv_on_prem_append_only_last_month
     dataset_parameters:
       source_file_name_pattern: 'hds_t_brdg_loan_period_file*{functional_date}.csv'
       skip_line_count: '2'
-      
+
   - name: hds_t_brdg_loan_property
     pipeline_name: pl_fileserver_csv_on_prem_ods_append_only_last_month_metadata
     dataset_parameters:
@@ -222,74 +222,74 @@ datasets:
   #   dataset_parameters:
   #     source_file_name_pattern: 'hds_mortgage_history.hds.t_arrears.csv'
   #     skip_line_count: '0'
-  #     
+  #
 
   # - name: hds_history_t_brdg_loan_arrears
   #   dataset_parameters:
   #     source_file_name_pattern: 'hds_mortgage_history.hds.t_brdg_loan_arrears.csv'
   #     skip_line_count: '0'
-  #     
+  #
 
   # - name: hds_history_t_brdg_loan_client
   #   dataset_parameters:
   #     source_file_name_pattern: 'hds_mortgage_history.hds.t_brdg_loan_client.csv'
   #     skip_line_count: '0'
-  #     
+  #
 
   # - name: hds_history_t_brdg_loan_loan_part
   #   dataset_parameters:
   #     source_file_name_pattern: 'hds_mortgage_history.hds.t_brdg_loan_loan_part.csv'
   #     skip_line_count: '0'
-  #         
+  #
 
   # - name: hds_history_t_brdg_loan_part_policy
   #   dataset_parameters:
   #     source_file_name_pattern: 'hds_mortgage_history.hds.t_brdg_loan_part_policy.csv'
   #     skip_line_count: '0'
-  #         
+  #
 
   # - name: hds_history_t_brdg_loan_period
   #   dataset_parameters:
   #     source_file_name_pattern: 'hds_mortgage_history.hds.t_brdg_loan_period.csv'
   #     skip_line_count: '0'
-  #         
-     
+  #
+
   # - name: hds_history_t_brdg_loan_property
   #   dataset_parameters:
   #     source_file_name_pattern: 'hds_mortgage_history.hds.t_brdg_loan_property.csv'
   #     skip_line_count: '0'
-  #         
+  #
 
   # - name: hds_history_t_loan
   #   dataset_parameters:
   #     source_file_name_pattern: 'hds_mortgage_history.hds.t_loan.csv'
   #     skip_line_count: '0'
-  #         
+  #
 
   # - name: hds_history_t_loan_part
   #   dataset_parameters:
   #     source_file_name_pattern: 'hds_mortgage_history.hds.t_loan_part.csv'
   #     skip_line_count: '0'
-  #             
+  #
 
   # - name: hds_history_t_offer_part
   #   dataset_parameters:
   #     source_file_name_pattern: 'hds_mortgage_history.hds.t_offer_part.csv'
   #     skip_line_count: '0'
-  #         
-     
+  #
+
   # - name: hds_history_t_policy
   #   dataset_parameters:
   #     source_file_name_pattern: 'hds_mortgage_history.hds.t_policy.csv'
   #     skip_line_count: '0'
-  #         
+  #
 
   # - name: legacy_history_fiducia_conversion
   #   dataset_parameters:
   #     source_file_name_pattern: 'hds_mortgage_history.legacy.fiducia_conversion.csv'
   #     skip_line_count: '0'
-  #         
-    
+  #
+
   # - name: hds_history_t_servicers
   #   dataset_parameters:
   #     source_file_name_pattern: 'hds_mortgage_history.legacy.t_servicers.csv'
@@ -320,7 +320,7 @@ datasets:
     dataset_parameters:
       source_file_name_pattern: 'ab_t_campaign_report_bt_file*'
       skip_line_count: '2'
-      
+
   - name: ab_t_campaigns_overview
     dataset_parameters:
       source_file_name_pattern: 'ab_t_campaigns_overview_file*'
@@ -330,22 +330,22 @@ datasets:
     dataset_parameters:
       source_file_name_pattern: 'ab_t_client_session_file*'
       skip_line_count: '2'
-      
+
   - name: ab_t_debtor
     dataset_parameters:
       source_file_name_pattern: 'ab_t_debtor_file*'
       skip_line_count: '2'
-      
+
   - name: ab_t_financial_event
     dataset_parameters:
       source_file_name_pattern: 'ab_t_financial_event_file*'
       skip_line_count: '2'
-      
+
   - name: ab_t_loan_part
     dataset_parameters:
       source_file_name_pattern: 'ab_t_loan_part_file*'
       skip_line_count: '2'
-      
+
   - name: ab_t_qu_session_report
     dataset_parameters:
       source_file_name_pattern: 'ab_t_qu_session_report_file*'
@@ -377,7 +377,7 @@ datasets:
     dataset_parameters:
       source_file_name_pattern: 'mda_t_loan_file*'
       skip_line_count: '0'
-      
+
   - name: mda_t_loan_part
     dataset_parameters:
       source_file_name_pattern: 'mda_t_loan_part_file*'
@@ -413,7 +413,7 @@ datasets:
     dataset_parameters:
       source_file_name_pattern: 'dm_t_rep_offer_part_status_file*'
       skip_line_count: '2'
-      
+
   - name: mda_t_loannr_duplicates_hotfix
     pipeline_name: pl_fileserver_csv_on_prem_append_only_last_month
     dataset_parameters:
@@ -497,11 +497,11 @@ datasets:
   - name: lookup_t_nuts_category
     dataset_parameters:
       source_file_name_pattern: 't_nuts_category_file*'
-      skip_line_count: '2'     
+      skip_line_count: '2'
 
 
 
-      
+
 ####  audit schema ####
 
 

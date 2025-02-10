@@ -38,4 +38,4 @@ datasets:
 
   - name: nibc_maatwerkrapport_3_aansluitnummers
     dataset_parameters:
-      file_name_template: "NIBC_maatwerkrapport_3_aansluitnummers_{yyyymmdd}.csv"                  
+      file_name_template: "NIBC_maatwerkrapport_3_aansluitnummers_{yyyymmdd}.csv"

@@ -15,7 +15,7 @@ parameters:
     - cdp-runners-prd
 
 resources:
-  repositories: 
+  repositories:
     - repository: templateRepo
       type: git
       name: Data Platform/azure-devops-templates
@@ -29,7 +29,7 @@ trigger: none
 stages:
 - template: templates/modify_state.yaml@templateRepo
   parameters:
-    env_path: ${{ parameters.env_path }} 
+    env_path: ${{ parameters.env_path }}
     service_connection: ${{ parameters.service_connection }}
     custom_command: ${{ parameters.custom_command }}
     custom_command_arguments: ${{ parameters.custom_command_arguments }}

@@ -1,5 +1,5 @@
 resources:
-  repositories: 
+  repositories:
     - repository: templateRepo
       type: git
       name: azure-devops-templates

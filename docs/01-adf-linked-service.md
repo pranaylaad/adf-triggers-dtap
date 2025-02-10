@@ -22,7 +22,7 @@
 
     ![](images/4dynamic.png)
 
-    - A new tab will be open and you can click on parameter you want to add dynamically. 
+    - A new tab will be open and you can click on parameter you want to add dynamically.
 
     ![](images/5add.png)
 
@@ -66,10 +66,3 @@ You can see that for `uri_keyvault` parameter we are using a global parameter as
 Sink configuration:
 
 ![](images/sink_configuration.png)
-
-
-
- 
-
-
-    

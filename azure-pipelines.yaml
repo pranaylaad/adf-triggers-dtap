@@ -23,7 +23,7 @@ pr:
   autoCancel: false
   branches:
     include:
-      - main  
+      - main
 
 trigger:
   branches:

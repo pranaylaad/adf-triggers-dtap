@@ -142,7 +142,7 @@ datasets:
 You will want to have one `trigger_info.yaml` file for each datastore, for each environment of
 this datastore for which you want to pull data from.
 
-You'll want to place it in the folder structure described 
+You'll want to place it in the folder structure described
 [above](#required-parameters-for-each-pipeline).
 
 Inside this yaml, is all information needed to create your pipeline trigger, as shown in this example below:

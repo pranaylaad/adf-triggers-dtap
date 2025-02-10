@@ -4,6 +4,7 @@ repos:
   hooks:
     - id: check-merge-conflict
     - id: check-yaml
+    - id: trailing-whitespace
     - id: end-of-file-fixer
 - repo: https://github.com/python-jsonschema/check-jsonschema
   rev: 0.31.1
@@ -11,7 +12,7 @@ repos:
     - id: check-renovate
     - id: check-jsonschema
       files: ^env/.*trigger_info.yaml$
-      args: ["--schemafile", ".trigger-schema.json", "--verbose"]    
+      args: ["--schemafile", ".trigger-schema.json", "--verbose"]
 - repo: https://github.com/gitleaks/gitleaks
   rev: v8.23.3
   hooks:
@@ -32,7 +33,7 @@ repos:
   rev: "v0.19.0"
   hooks:
     - id: terraform-docs-go
-      args: ["--config", ".terraform-docs.yml", "."]        
+      args: ["--config", ".terraform-docs.yml", "."]
 # python specific formatters
 -   repo: https://github.com/psf/black
     rev: 24.10.0
