@@ -2,17 +2,21 @@
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "packageRules": [
         {
-            "groupName": "all non-major dependencies",
-            "groupSlug": "all-minor-patch",
+            "groupName": "all dependencies",
+            "groupSlug": "all",
             "matchPackagePatterns": [
                 "*"
             ],
             "matchUpdateTypes": [
+                "major",
                 "minor",
                 "patch"
-            ]
+            ],
+            "automerge" : true,
+            "autoApprove" : true
         }
     ],
+    "separateMajorMinor": false,
     "postUpgradeTasks": {
         "commands": [
             "pre-commit run -a || true"
