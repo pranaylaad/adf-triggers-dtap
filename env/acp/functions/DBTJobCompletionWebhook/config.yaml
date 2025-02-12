@@ -3,7 +3,7 @@ pipeline_parameters:
   dbx_workspace_url: https://adb-7348359736582708.8.azuredatabricks.net
   dbx_job_id_check: 915171780847061
   dbx_job_id_model: 1010959370097240
-  fileserver_host_name: \\SVNIBCFILA101\E
+  fileserver_host_name: \\SVNIBCFILA101\e$
   fileserver_user_name: PRD\SRV_AA_ACP
   fileserver_credentials_secret_name: fileserver-credentials-ods
   fileserver_directory: Interfac\AA\aa_retail\Monthly\IRB
