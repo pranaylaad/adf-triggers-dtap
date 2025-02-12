@@ -40,6 +40,7 @@ stages:
   - template: release-stage/terraform.yaml@templateRepo
     parameters:
       name: Production
+      env_path: prd
       service_connection: scn-cdp-prd-we-001
       skip_apply: ${{ eq(variables['Build.Reason'], 'Manual') }}
       dependsOn: approve_release_to_production
