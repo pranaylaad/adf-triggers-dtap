@@ -57,7 +57,12 @@
         },
         "datastore_parameters":{
             "description": "Additional parameters passed to each dataset trigger.",
-            "type": "object"
+            "type": "object",
+            "allOf": [
+                { "not": { "required" : ["environment"] }},
+                { "not": { "required" : ["datastore_name"] }},
+                { "not": { "required" : ["dataset_name"] }}
+            ]
         },
         "datasets": {
 			"description": "The list of datasets for each of which a trigger will be created",
@@ -74,7 +79,12 @@
                     },
                     "dataset_parameters": {
                         "description": "Additional parameters passed to this specific dataset trigger.",
-                        "type": "object"
+                        "type": "object",
+                        "allOf": [
+                            { "not": { "required" : ["environment"] }},
+                            { "not": { "required" : ["datastore_name"] }},
+                            { "not": { "required" : ["dataset_name"] }}
+                        ]
                     }
                 },
                 "required": [ "name" ],
