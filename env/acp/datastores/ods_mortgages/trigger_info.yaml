@@ -3,7 +3,7 @@ pipeline_name: pl_fileserver_csv_on_prem
 schedule:
   frequency: Day
   interval: 1
-  hours: [11]
+  hours: [15]
 
 
 datastore_parameters:
@@ -106,12 +106,10 @@ datasets:
       source_file_name_pattern: 'hds_t_brdg_offer_offer_part_seq_file*'
       skip_line_count: '2'
 
-  - name: hds_t_offer_property
-    pipeline_name: pl_fileserver_csv_on_prem_ods_metadata
+  - name: hds_t_brdg_offer_offer_property
     dataset_parameters:
-      source_file_name_pattern: 'hds_t_offer_property*'
+      source_file_name_pattern: 'hds_t_brdg_offer_offer_property_file*'
       skip_line_count: '2'
-      metadata_column_delimiter: ','
 
   - name: hds_t_loan_e_consument_data
     dataset_parameters:
