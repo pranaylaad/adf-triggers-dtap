@@ -3,7 +3,8 @@ pipeline_name: pl_fileserver_csv_on_prem
 schedule:
   frequency: Day
   interval: 1
-  hours: [15]
+  hours: [14]
+  minutes: [30]
 
 
 datastore_parameters:
@@ -142,9 +143,11 @@ datasets:
       skip_line_count: '2'
 
   - name: hds_t_offer_property
+    pipeline_name: pl_fileserver_csv_on_prem_ods_metadata
     dataset_parameters:
-      source_file_name_pattern: 'hds_t_offer_property*'
+      source_file_name_pattern: 'hds_t_offer_property_file*'
       skip_line_count: '2'
+      metadata_column_delimiter: ','
 
 
 ## monthly incremental loads
