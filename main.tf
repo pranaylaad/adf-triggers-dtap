@@ -3,17 +3,17 @@ locals {
   time_zone = "W. Europe Standard Time"
 
   datastore_path    = "${var.env_path}/datastores"
-  datastore_pattern = "^(?P<datastore>[0-9A-Za-z_]+)/trigger_info\\.yaml"
+  datastore_pattern = "^(?P<datastore>[0-9A-Za-z_]+)/.*trigger_info\\.yaml"
 
   environment = replace(var.env_path, "env/", "")
 
-  datastore_configs = {
+  schedule_trigger_configs = {
     for filename in fileset(local.datastore_path, "**/trigger_info.yaml") :
     filename => yamldecode(file("${local.datastore_path}/${filename}"))
   }
 
-  triggers = merge(flatten([
-    for filename, datastore in local.datastore_configs : [
+  schedule_triggers = merge(flatten([
+    for filename, datastore in local.schedule_trigger_configs : [
       for dataset in datastore.datasets : {
         # spaargids_be/trigger_info.yaml -> spaargids_be__rentes_nibc_all
         "${replace(replace(filename, "/trigger_info.yaml", ""), "/", "_")}__${dataset.name}" = {
@@ -39,6 +39,26 @@ locals {
       }
     ]
   ])...)
+
+
+  storage_trigger_configs = {
+    for filename in fileset(local.datastore_path, "**/storage_trigger_info.yaml") :
+    filename => yamldecode(file("${local.datastore_path}/${filename}"))
+  }
+
+  storage_triggers = {
+    for filename, datastore in local.storage_trigger_configs :
+    # Use the datastore name as map key
+    regex(local.datastore_pattern, filename).datastore => {
+      "description" = datastore.description
+
+      "blob_path_begins_with" = datastore.blob_path_begins_with
+      "blob_path_ends_with"   = datastore.blob_path_ends_with
+
+      "pipeline_name"       = datastore.pipeline_name
+      "pipeline_parameters" = datastore.pipeline_parameters
+    }
+  }
 }
 
 data "azurerm_data_factory" "this" {
@@ -48,7 +68,7 @@ data "azurerm_data_factory" "this" {
 
 
 resource "azurerm_data_factory_trigger_schedule" "this" {
-  for_each = local.triggers
+  for_each = local.schedule_triggers
 
   name            = each.key
   data_factory_id = data.azurerm_data_factory.this.id
@@ -79,5 +99,32 @@ resource "azurerm_data_factory_trigger_schedule" "this" {
       each.value.dataset_parameters,
       each.value.mapping,
     ]...)
+  }
+}
+
+
+data "azurerm_storage_account" "ingestion" {
+  name                = var.storage_account_name
+  resource_group_name = var.storage_account_resource_group_name
+}
+
+
+resource "azurerm_data_factory_trigger_blob_event" "this" {
+  for_each           = local.storage_triggers
+  name               = each.key
+  data_factory_id    = data.azurerm_data_factory.this.id
+  storage_account_id = data.azurerm_storage_account.ingestion.id
+  events             = ["Microsoft.Storage.BlobCreated"]
+
+  blob_path_begins_with = each.value.blob_path_begins_with
+  blob_path_ends_with   = each.value.blob_path_ends_with
+  ignore_empty_blobs    = true
+  activated             = true
+
+  description = each.value.description
+
+  pipeline {
+    name       = each.value.pipeline_name
+    parameters = each.value.pipeline_parameters
   }
 }

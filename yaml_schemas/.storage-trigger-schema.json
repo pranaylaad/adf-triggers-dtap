@@ -1,0 +1,37 @@
+{
+    "$id": "https://example.com/storage-trigger.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Storage Trigger Info",
+    "description": "A definition of storage triggers for a pipeline",
+    "type": "object",
+    "properties": {
+        "description": {
+            "description": "Description for the trigger visible in ADF UI",
+            "type": "string"
+        },
+        "blob_path_begins_with": {
+            "description": "First part of the blob path to create storage trigger on",
+            "type": "string"
+        },
+        "blob_path_ends_with": {
+            "description": "Last part of the blob path to create storage trigger on",
+            "type": "string"
+        },
+        "pipeline_name": {
+            "description": "The exact name of the ADF pipeline which should be triggered",
+            "type": "string"
+        },
+        "pipeline_parameters": {
+            "description": "Additional parameters passed to the pipeline.",
+            "type": "object"
+        }
+    },
+    "required": [
+        "description",
+        "blob_path_begins_with",
+        "blob_path_ends_with",
+        "pipeline_name",
+        "pipeline_parameters"
+    ],
+    "additionalProperties": false
+}

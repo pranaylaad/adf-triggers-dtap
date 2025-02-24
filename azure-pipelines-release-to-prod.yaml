@@ -3,7 +3,7 @@ resources:
     - repository: templateRepo
       type: git
       name: azure-devops-templates
-      ref: refs/tags/1.0.29
+      ref: refs/tags/1.0.32
     - repository: azure-tf-foundation
       type: git
       name: azure-tf-foundation
@@ -37,7 +37,7 @@ stages:
     approval_environment: production-approvers-infra
 # only release from tag, or a manual run which disables apply
 - ${{ if or(startsWith(variables['Build.SourceBranch'], 'refs/tags/'), eq(variables['Build.Reason'], 'Manual')) }}:
-  - template: release-stage/terraform.yaml@templateRepo
+  - template: release-stage/terraform-with-lock-toggle.yaml@templateRepo
     parameters:
       name: Production
       env_path: prd
@@ -45,6 +45,9 @@ stages:
       skip_apply: ${{ eq(variables['Build.Reason'], 'Manual') }}
       dependsOn: approve_release_to_production
       agent_pool_name: cdp-runners-prd
+      storage_account_resource_group_name: rg-ingestion-cdp-prd-we-kutk
+      storage_account_name: stingcdpprdprdwekutk
+
 # we do not have function in prod yet, this is just a placeholder for future development
 # - ${{ if startsWith(variables['Build.SourceBranch'], 'refs/tags/') }}:
 #   - template: test-stage/function.yaml@templateRepo

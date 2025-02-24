@@ -3,7 +3,7 @@ resources:
     - repository: templateRepo
       type: git
       name: azure-devops-templates
-      ref: refs/tags/1.0.29
+      ref: refs/tags/1.0.32
     - repository: azure-tf-foundation
       type: git
       name: azure-tf-foundation
@@ -38,8 +38,9 @@ stages:
 - template: test-stage/terraform.yaml@templateRepo
   parameters:
     name: Validate
+
 - ${{ if or(eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['Build.Reason'], 'PullRequest'), eq(variables['Build.Reason'], 'Manual')) }}:
-  - template: release-stage/terraform.yaml@templateRepo
+  - template: release-stage/terraform-with-lock-toggle.yaml@templateRepo
     parameters:
       name: Development
       env_path: dev
@@ -47,8 +48,11 @@ stages:
       skip_apply: ${{ parameters.skipApply }}
       dependsOn: Validate
       agent_pool_name: cdp-runners-prd
+      storage_account_resource_group_name: rg-ingestion-cdp-preprd-we-ojsu
+      storage_account_name: stingcdppreprddevweojsu
+
 - ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/main') }}:
-  - template: release-stage/terraform.yaml@templateRepo
+  - template: release-stage/terraform-with-lock-toggle.yaml@templateRepo
     parameters:
       name: Test
       env_path: tst
@@ -56,8 +60,11 @@ stages:
       skip_apply: ${{ parameters.skipApply }}
       dependsOn: Development
       agent_pool_name: cdp-runners-prd
+      storage_account_resource_group_name: rg-ingestion-cdp-preprd-we-ojsu
+      storage_account_name: stingcdppreprdtstweojsu
+
 - ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/main') }}:
-  - template: release-stage/terraform.yaml@templateRepo
+  - template: release-stage/terraform-with-lock-toggle.yaml@templateRepo
     parameters:
       name: Acceptance
       env_path: acp
@@ -65,3 +72,5 @@ stages:
       skip_apply: ${{ parameters.skipApply }}
       dependsOn: Test
       agent_pool_name: cdp-runners-prd
+      storage_account_resource_group_name: rg-ingestion-cdp-preprd-we-ojsu
+      storage_account_name: stingcdppreprdacpweojsu

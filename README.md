@@ -17,16 +17,24 @@ and creating a separate trigger for each dataset, providing values for the pipel
 parameters specific to that dataset.
 
 - [How to schedule a new pipeline?](#how-to-schedule-a-new-pipeline)
-  - [Creating a parameterized pipeline](#creating-a-parameterized-pipeline)
-    - [Required parameters for each pipeline](#required-parameters-for-each-pipeline)
-    - [Optional parameter for column mapping](#optional-parameter-for-column-mapping)
-    - [Pipeline specific parameters](#pipeline-specific-parameters)
-      - [Parameters on the datastore level](#parameters-on-the-datastore-level)
-      - [Parameters on the dataset level](#parameters-on-the-dataset-level)
-  - [Creating a `trigger_info.yaml`](#creating-a-trigger_infoyaml)
-  - [\[Optionally\] Provide a mapping](#optionally-provide-a-mapping)
+  - [Using scheduled triggers](#using-scheduled-triggers)
+    - [Creating a parameterized pipeline](#creating-a-parameterized-pipeline)
+      - [Required parameters for each pipeline](#required-parameters-for-each-pipeline)
+      - [Optional parameter for column mapping](#optional-parameter-for-column-mapping)
+      - [Pipeline specific parameters](#pipeline-specific-parameters)
+        - [Parameters on the datastore level](#parameters-on-the-datastore-level)
+        - [Parameters on the dataset level](#parameters-on-the-dataset-level)
+    - [Creating a `trigger_info.yaml`](#creating-a-trigger_infoyaml)
+    - [\[Optionally\] Provide a mapping](#optionally-provide-a-mapping)
+  - [Using storage triggers](#using-storage-triggers)
 - [How does it work?](#how-does-it-work)
   - [Configuration of environments](#configuration-of-environments)
+- [Requirements](#requirements)
+- [Providers](#providers)
+- [Modules](#modules)
+- [Resources](#resources)
+- [Inputs](#inputs)
+- [Outputs](#outputs)
 
 
 
@@ -38,14 +46,19 @@ To get a working triggered pipeline, you need to:
 2. [Create a `trigger_info.yaml`](#creating-a-trigger_infoyaml)
 3. [\[Optionally\] Provide a mapping](#optionally-provide-a-mapping)
 
-### Creating a parameterized pipeline
+
+There is an exception to this. If you want to have your triggers activated on a storage event, there is a separate approach. For example if somehow, we get files to land on our internal ingestion storage acccount (perhaps we put them there ourselves through another pipeline), we can trigger an ADF pipeline run.
+
+### Using scheduled triggers
+
+#### Creating a parameterized pipeline
 
 Using ADF, create a pipeline and define parameters to be filled by this repository. You can find an
 explanation on pipeline parameters [here](https://learn.microsoft.com/en-us/azure/data-factory/concepts-parameters-variables).
 
 These are some parameters you want to define:
 
-#### Required parameters for each pipeline
+##### Required parameters for each pipeline
 These are 3 parameters that identify your dataset which must be defined for all pipelines:
 
 1. `datastore_name` - the name of the datastore you get data from, fill out with `camel_case`, like `spaargids_be`
@@ -72,7 +85,7 @@ They are used to determine:
                         └── <dataset_name>.json
 ```
 
-#### Optional parameter for column mapping
+##### Optional parameter for column mapping
 
 Your pipeline may include setting a column mapping. You can provide this column
 dynamically, using the `column_mapping` parameter. If you:
@@ -97,12 +110,12 @@ we recommend to:
 You can check the existing mappings to see what the end-result should look like.
 
 
-#### Pipeline specific parameters
+##### Pipeline specific parameters
 
 For each pipeline, you may need additional bits of information, this can be provided separately
 and could be on two different levels:
 
-##### Parameters on the datastore level
+###### Parameters on the datastore level
 
 Examples could be:
 
@@ -118,7 +131,7 @@ datastore_parameters:
 ```
 
 
-##### Parameters on the dataset level
+###### Parameters on the dataset level
 
 Examples could be:
 
@@ -137,7 +150,7 @@ datasets:
 ```
 
 
-### Creating a `trigger_info.yaml`
+#### Creating a `trigger_info.yaml`
 
 You will want to have one `trigger_info.yaml` file for each datastore, for each environment of
 this datastore for which you want to pull data from.
@@ -173,7 +186,7 @@ datasets:
 
 ```
 
-### \[Optionally\] Provide a mapping
+#### \[Optionally\] Provide a mapping
 
 You can provide a column mapping, as is described [above](#optional-parameter-for-column-mapping).
 
@@ -225,6 +238,29 @@ Example mapping generated with the help of ADF:
 }
 ```
 
+### Using storage triggers
+
+If you want to create a storage trigger instead of a scheduled trigger, you'll need to create a `storage_trigger_info.yaml` file in the same location you would otherwise place the `trigger_info.yaml` file.
+
+An example storage_trigger_info file looks like this:
+
+```yaml
+description: |
+  FRL run for pipeline X will create csv files
+  When those are created, this trigger will fire
+
+blob_path_begins_with: "/internal/blobs/datastore_frl/"
+blob_path_ends_with: ".csv"
+
+pipeline_name: pl_blob_escaped_new_line_csv_cloud
+pipeline_parameters:
+  datastore_name: frl
+  dataset_name: "@replace(triggerBody().fileName, '.csv', '')"
+
+```
+
+More information on storage event triggers in ADF can be found [here](https://learn.microsoft.com/en-us/azure/data-factory/how-to-create-event-trigger?tabs=data-factory)
+
 ## How does it work?
 
 This codebase uses Terraform to deploy and manage the triggers in an Azure Data Factory. The [main.tf](./main.tf) file is used to:
@@ -235,9 +271,8 @@ This codebase uses Terraform to deploy and manage the triggers in an Azure Data 
 
 Deployment is done using the Azure DevOps pipeline [available here](./azure-pipelines.yaml)
 
+
 ### Configuration of environments
-
-
 
 Most likely the triggers need to be deployed to multiple environments. Every environment has its own configuration for Terraform.
 Inputs for terraform, and for the DevOps pipelines can be found in subscription specific folder like the one [here](./env/cdp-preprd/vars/)
@@ -245,6 +280,7 @@ Inputs for terraform, and for the DevOps pipelines can be found in subscription 
 There are two files in each environment:
 - **backend.tfvars** This file contains all the configuration needed to connect to the Terraform backend (StateFile). This file can be passed to `terraform init -backend-config`
 - **vars.tfvars** This files contains configuration to locate the Azure Data Factory
+
 
 <!-- BEGIN_TF_DOCS -->
 # Automatically generated documentation
@@ -271,8 +307,10 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [azurerm_data_factory_trigger_blob_event.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.19.0/docs/resources/data_factory_trigger_blob_event) | resource |
 | [azurerm_data_factory_trigger_schedule.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.19.0/docs/resources/data_factory_trigger_schedule) | resource |
 | [azurerm_data_factory.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.19.0/docs/data-sources/data_factory) | data source |
+| [azurerm_storage_account.ingestion](https://registry.terraform.io/providers/hashicorp/azurerm/4.19.0/docs/data-sources/storage_account) | data source |
 
 ## Inputs
 
@@ -281,6 +319,8 @@ No modules.
 | <a name="input_adf_name"></a> [adf\_name](#input\_adf\_name) | Name of data factory instance to deploy schedules | `string` | n/a | yes |
 | <a name="input_adf_resource_group_name"></a> [adf\_resource\_group\_name](#input\_adf\_resource\_group\_name) | Resource group name of data factory instance to deploy schedules | `string` | n/a | yes |
 | <a name="input_env_path"></a> [env\_path](#input\_env\_path) | The path where vars and configs are. Eg, env/prd etc. | `string` | n/a | yes |
+| <a name="input_storage_account_name"></a> [storage\_account\_name](#input\_storage\_account\_name) | Name of storage account used for storage triggers | `string` | n/a | yes |
+| <a name="input_storage_account_resource_group_name"></a> [storage\_account\_resource\_group\_name](#input\_storage\_account\_resource\_group\_name) | Name of resource group containing storage account used for storage triggers | `string` | n/a | yes |
 
 ## Outputs
 

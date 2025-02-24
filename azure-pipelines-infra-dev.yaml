@@ -1,0 +1,37 @@
+resources:
+  repositories:
+    - repository: templateRepo
+      type: git
+      name: azure-devops-templates
+      ref: refs/tags/1.0.32
+    - repository: azure-tf-foundation
+      type: git
+      name: azure-tf-foundation
+
+parameters:
+- name: skipApply
+  displayName: Skip Apply?
+  type: boolean
+  default: false
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+trigger: none
+
+variables:
+- name: working_directory
+  value: ./
+
+stages:
+
+- ${{ if eq(variables['Build.Reason'], 'Manual') }}:
+  - template: release-stage/terraform-with-lock-toggle.yaml@templateRepo
+    parameters:
+      name: Development
+      env_path: hub_infra_dev
+      service_connection: scn-dataplatform-dev-we-001
+      skip_apply: ${{ parameters.skipApply }}
+      agent_pool_name: cdp-runners-nonprd
+      storage_account_resource_group_name: rg-ingestion-dev-we-nwgm
+      storage_account_name: stingdevdevwenwgm
