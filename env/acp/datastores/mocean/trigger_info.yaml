@@ -19,3 +19,7 @@ datasets:
   - name: esg
     dataset_parameters:
       relative_url: esg
+
+  - name: party
+    dataset_parameters:
+      relative_url: party

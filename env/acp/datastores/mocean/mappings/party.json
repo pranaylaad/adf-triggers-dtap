@@ -1,0 +1,205 @@
+{
+    "type": "TabularTranslator",
+    "mappings": [
+        {
+            "source": {
+                "path": "['AnnualRevenue']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "AnnualRevenue",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['BillingCity']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "BillingCity",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['BillingPostalCode']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "BillingPostalCode",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['BillingStreet']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "BillingStreet",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['CurrencyIsoCode']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "CurrencyIsoCode",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['Id']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "Id",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['ItemInternalId']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "ItemInternalId",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['MOJO_EnterpriseSize__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "MOJO_EnterpriseSize__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['MOJO_FinancialInformationDate__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "MOJO_FinancialInformationDate__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['MOJO_GoldenClientID__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "MOJO_GoldenClientID__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['MOJO_IntiateLegalProceedingsDate__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "MOJO_IntiateLegalProceedingsDate__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['MOJO_LegalForm__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "MOJO_LegalForm__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['MOJO_NationalIdentifier__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "MOJO_NationalIdentifier__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['MOJO_NationalIdentifierDistrict__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "MOJO_NationalIdentifierDistrict__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['MOJO_NationalIdentifierType__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "MOJO_NationalIdentifierType__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['MOJO_StatusOfLegalProceedings__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "MOJO_StatusOfLegalProceedings__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['MOJO_StatutoryCountryISOCode__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "MOJO_StatutoryCountryISOCode__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['MOJO_TotalBalanceSheet__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "MOJO_TotalBalanceSheet__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['Name']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "Name",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['NumberOfEmployees']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "NumberOfEmployees",
+                "type": "String"
+            }
+        }
+    ]
+}
