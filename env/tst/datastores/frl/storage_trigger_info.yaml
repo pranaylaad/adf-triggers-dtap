@@ -1,0 +1,11 @@
+description: |
+  FRL run for pipeline X will create csv files
+  When those are created, this trigger will fire
+
+blob_path_begins_with: "/internal/blobs/datastore_frl/"
+blob_path_ends_with: ".csv"
+
+pipeline_name: pl_blob_escaped_new_line_csv_cloud
+pipeline_parameters:
+  datastore_name: frl
+  dataset_name: "@replace(triggerBody().fileName, '.csv', '')"
