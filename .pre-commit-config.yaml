@@ -7,7 +7,7 @@ repos:
     - id: trailing-whitespace
     - id: end-of-file-fixer
 - repo: https://github.com/python-jsonschema/check-jsonschema
-  rev: 0.31.1
+  rev: 0.31.2
   hooks:
     - id: check-renovate
     - id: check-jsonschema
@@ -17,7 +17,7 @@ repos:
       files: ^env/.*/storage_trigger_info.yaml$
       args: ["--schemafile", "yaml_schemas/.storage-trigger-schema.json", "--verbose"]
 - repo: https://github.com/gitleaks/gitleaks
-  rev: v8.23.3
+  rev: v8.24.0
   hooks:
     - id: gitleaks
 - repo: https://github.com/antonbabenko/pre-commit-terraform
