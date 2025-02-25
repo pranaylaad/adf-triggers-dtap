@@ -1,0 +1,23 @@
+pipeline_name: pl_rest_api_subscription_cloud
+
+schedule:
+  frequency: Day
+  interval: 1
+  hours: [12]
+  minutes: [30]
+
+datastore_parameters:
+  apim_cid: 'a1bb61c1-d7c6-468b-9e6a-720dcd63ce91'
+  apim_scope: 'https://apim.tst.cloud.nibc.com/.default'
+  base_url: 'https://apim.tst.cloud.nibc.com'
+  relative_url: '/internal/consumer/1.0/'
+  key_vault_secret_name: 'apim-authorization-access-token'
+  service_bus_topic: 'ods-savings'
+  service_bus_topic_subscription: 'cdp'
+  service_bus_scope: 'https://servicebus.azure.net/.default'
+  storage_scope: 'https://storage.azure.com/.default'
+  token_url: 'https://login.microsoftonline.com/8614d95f-762b-4789-a741-2589e3d0b08b/oauth2/v2.0/token'
+
+datasets:
+  - name: dummy
+    #a fake dataset name that is not used in the pipeline
