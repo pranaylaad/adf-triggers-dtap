@@ -52,8 +52,8 @@ locals {
     regex(local.datastore_pattern, filename).datastore => {
       "description" = datastore.description
 
-      "blob_path_begins_with" = datastore.blob_path_begins_with
-      "blob_path_ends_with"   = datastore.blob_path_ends_with
+      "blob_path_begins_with" = datastore.storage_trigger.blob_path_begins_with
+      "blob_path_ends_with"   = datastore.storage_trigger.blob_path_ends_with
 
       "pipeline_name"       = datastore.pipeline_name
       "pipeline_parameters" = datastore.pipeline_parameters

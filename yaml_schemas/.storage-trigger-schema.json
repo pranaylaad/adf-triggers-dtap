@@ -9,13 +9,23 @@
             "description": "Description for the trigger visible in ADF UI",
             "type": "string"
         },
-        "blob_path_begins_with": {
-            "description": "First part of the blob path to create storage trigger on",
-            "type": "string"
-        },
-        "blob_path_ends_with": {
-            "description": "Last part of the blob path to create storage trigger on",
-            "type": "string"
+        "storage_trigger": {
+            "type": "object",
+            "properties": {
+                "blob_path_begins_with": {
+                    "description": "First part of the blob path to create storage trigger on",
+                    "type": "string"
+                },
+                "blob_path_ends_with": {
+                    "description": "Last part of the blob path to create storage trigger on",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "blob_path_begins_with",
+                "blob_path_ends_with"
+            ],
+            "additionalProperties": false
         },
         "pipeline_name": {
             "description": "The exact name of the ADF pipeline which should be triggered",
@@ -28,8 +38,7 @@
     },
     "required": [
         "description",
-        "blob_path_begins_with",
-        "blob_path_ends_with",
+        "storage_trigger",
         "pipeline_name",
         "pipeline_parameters"
     ],
