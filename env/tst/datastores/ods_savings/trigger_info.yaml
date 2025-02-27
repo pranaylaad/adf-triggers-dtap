@@ -7,7 +7,7 @@ schedule:
   minutes: [30]
 
 datastore_parameters:
-  apim_cid: 'a1bb61c1-d7c6-468b-9e6a-720dcd63ce91'
+  apim_cid: 'bc1a0fee-283b-41a7-800c-4eb40419c7a1'
   apim_scope: 'https://apim.tst.cloud.nibc.com/.default'
   base_url: 'https://apim.tst.cloud.nibc.com'
   relative_url: '/internal/consumer/1.0/'
