@@ -12,7 +12,7 @@ datastore_parameters:
   base_url: 'https://apim.tst.cloud.nibc.com'
   relative_url: '/internal/consumer/1.0/'
   key_vault_secret_name: 'apim-authorization-access-token'
-  service_bus_topic: 'ods-savings'
+  service_bus_topic: 'ods-savings-tables'
   service_bus_topic_subscription: 'cdp'
   service_bus_scope: 'https://servicebus.azure.net/.default'
   storage_scope: 'https://storage.azure.com/.default'
