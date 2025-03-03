@@ -113,11 +113,11 @@
         },
         {
             "source": {
-                "path": "['MOJO_Contract__c']",
+                "path": "['MOJO_Contract__c']['id']",
                 "type": "String"
             },
             "sink": {
-                "name": "MOJO_Contract__c",
+                "name": "MOJO_Contract__c_id",
                 "type": "String"
             }
         },
