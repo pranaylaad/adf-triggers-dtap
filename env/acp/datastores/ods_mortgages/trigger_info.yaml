@@ -58,9 +58,11 @@ datasets:
       metadata_column_delimiter: ','
 
   - name: hds_t_calcasa_property
+    pipeline_name: pl_fileserver_csv_on_prem_ods_metadata
     dataset_parameters:
       source_file_name_pattern: 'hds_t_calcasa_property_file*'
       skip_line_count: '2'
+      metadata_column_delimiter: ','
 
   - name: hds_t_property
     pipeline_name: pl_fileserver_csv_on_prem_ods_metadata
@@ -107,9 +109,11 @@ datasets:
       skip_line_count: '2'
 
   - name: hds_t_brdg_offer_offer_property
+    pipeline_name: pl_fileserver_csv_on_prem_ods_metadata
     dataset_parameters:
       source_file_name_pattern: 'hds_t_brdg_offer_offer_property_file*'
       skip_line_count: '2'
+      metadata_column_delimiter: ','
 
   - name: hds_t_loan_e_consument_data
     dataset_parameters:
@@ -127,9 +131,11 @@ datasets:
       skip_line_count: '2'
 
   - name: hds_t_salesforce_measure
+    pipeline_name: pl_fileserver_csv_on_prem_ods_metadata
     dataset_parameters:
       source_file_name_pattern: 'hds_t_salesforce_measure_file*'
       skip_line_count: '2'
+      metadata_column_delimiter: ','
 
   - name: hds_t_offer_part
     dataset_parameters:
@@ -182,10 +188,11 @@ datasets:
       skip_line_count: '2'
 
   - name: hds_t_brdg_loan_period
-    pipeline_name: pl_fileserver_csv_on_prem_append_only_last_month
+    pipeline_name: pl_fileserver_csv_on_prem_ods_append_only_last_month_metadata
     dataset_parameters:
       source_file_name_pattern: 'hds_t_brdg_loan_period_file*{functional_date}.csv'
       skip_line_count: '2'
+      metadata_column_delimiter: ','
 
   - name: hds_t_brdg_loan_property
     pipeline_name: pl_fileserver_csv_on_prem_ods_append_only_last_month_metadata
