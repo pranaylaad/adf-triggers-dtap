@@ -6,12 +6,12 @@ schedule:
   hours: [7,14]
 
 datastore_parameters:
-  base_url: https://apim.dev.cloud.nibc.com
+  base_url: https://apim.tst.cloud.nibc.com
   relative_url_listing: /internal/cddn/bagpro-api/1.0/list
   relative_url_retrival: /internal/cddn/bagpro-api/1.0/retrieve
   key_vault_secret_name: apim-authorization-access-token
-  microsoft_entra_cid: a1bb61c1-d7c6-468b-9e6a-720dcd63ce91
-  microsoft_entra_scope: https://apim.dev.cloud.nibc.com/.default
+  microsoft_entra_cid: bc1a0fee-283b-41a7-800c-4eb40419c7a1
+  microsoft_entra_scope: https://apim.tst.cloud.nibc.com/.default
   column_delimiter: ';'
 
 datasets:

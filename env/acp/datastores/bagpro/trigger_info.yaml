@@ -1,4 +1,4 @@
-pipeline_name: pl_fileserver_zipped_csv_bagpro
+pipeline_name: pl_rest_api_cloud_zip
 
 schedule:
   frequency: Day
@@ -6,16 +6,13 @@ schedule:
   hours: [7,14]
 
 datastore_parameters:
-  keyvault_secret_name: 'fileserver-credentials-ods'
-  fileserver_user_name: 'PRD\SRV_AA_ACP'
-  fileserver_host_name: '\\SVNIBCFILA101\E'
-  fileserver_directory: 'Interfac\BagPro'
+  base_url: https://apim.acp.cloud.nibc.com
+  relative_url_listing: /internal/cddn/bagpro-api/1.0/list
+  relative_url_retrival: /internal/cddn/bagpro-api/1.0/retrieve
+  key_vault_secret_name: apim-authorization-access-token
+  microsoft_entra_cid: b708124d-fac6-4065-b04f-9043d890a256
+  microsoft_entra_scope: https://apim.acp.cloud.nibc.com/.default
   column_delimiter: ';'
 
 datasets:
   - name: cddn_export_bag_pro
-    dataset_parameters:
-      # The wildcard character (*) is used here to allow the lookup job to not fail
-      # in case the file is not there.
-      source_file_name_pattern: 'cddn_export_bag_pro_*{file_date}.zip'
-      skip_line_count: '0'
