@@ -5,3 +5,7 @@ opencensus-ext-azure==1.1.14
 # https://github.com/Azure/azure-functions-python-worker/issues/1050
 protobuf >=5.27.4, ==5.*
 pyyaml==6.0.2
+# https://github.com/Azure/azure-functions-python-worker/issues/1050
+# Pinning cryptography due to function deployment error `glibc_2.33 not found`:
+# https://learn.microsoft.com/en-us/answers/questions/2125184/azure-function-not-able-to-index-functions
+cryptography==43.0.3
