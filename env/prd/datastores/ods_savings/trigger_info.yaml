@@ -8,8 +8,8 @@ schedule:
 
 datastore_parameters:
   apim_cid: 'f2228e0b-145f-4ee1-ace4-7d66ef1d826a'
-  apim_scope: 'https://apim.prd.cloud.nibc.com/.default'
-  base_url: 'https://apim.prd.cloud.nibc.com'
+  apim_scope: 'https://apim.<environment>.cloud.nibc.com/.default'
+  base_url: 'https://apim.<environment>.cloud.nibc.com'
   relative_url: '/internal/consumer/1.0/'
   key_vault_secret_name: 'apim-authorization-access-token'
   service_bus_topic: 'ods-savings-tables'
@@ -19,5 +19,6 @@ datastore_parameters:
   token_url: 'https://login.microsoftonline.com/8614d95f-762b-4789-a741-2589e3d0b08b/oauth2/v2.0/token'
 
 datasets:
-  - name: dummy
-    #a fake dataset name that is not used in the pipeline
+  - name: service_bus
+    # a fake dataset name that is not used in the pipeline.
+    # the dataset name comes from Data-Name which is in the response of peeking the service bus
