@@ -12,11 +12,11 @@ datastore_parameters:
   microsoft_entra_scope: https://apim.dev.cloud.nibc.com/.default
 
 datasets:
-  - name: anacredit
+  - name: facility
     dataset_parameters:
       relative_url: anacredit
 
-  - name: esg
+  - name: questionnaire
     dataset_parameters:
       relative_url: esg
 

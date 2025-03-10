@@ -12,11 +12,11 @@ datastore_parameters:
   microsoft_entra_scope: 39da4ca4-390d-4365-8e91-a073b3171433/.default
 
 datasets:
-  - name: anacredit
+  - name: facility
     dataset_parameters:
       relative_url: anacredit
 
-  - name: esg
+  - name: questionnaire
     dataset_parameters:
       relative_url: esg
 
