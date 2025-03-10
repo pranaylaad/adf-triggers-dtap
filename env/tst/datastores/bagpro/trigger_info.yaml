@@ -3,7 +3,7 @@ pipeline_name: pl_rest_api_cloud_zip
 schedule:
   frequency: Day
   interval: 1
-  hours: [7,14]
+  hours: [6]
 
 datastore_parameters:
   base_url: https://apim.tst.cloud.nibc.com
