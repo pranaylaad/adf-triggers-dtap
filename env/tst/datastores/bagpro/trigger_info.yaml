@@ -9,10 +9,12 @@ datastore_parameters:
   base_url: https://apim.tst.cloud.nibc.com
   relative_url_listing: /internal/cddn/bagpro-api/1.0/list
   relative_url_retrival: /internal/cddn/bagpro-api/1.0/retrieve
+  relative_url_delete: /internal/cddn/bagpro-api/1.0/delete
   key_vault_secret_name: apim-authorization-access-token
   microsoft_entra_cid: bc1a0fee-283b-41a7-800c-4eb40419c7a1
   microsoft_entra_scope: https://apim.tst.cloud.nibc.com/.default
   column_delimiter: ';'
+  delete_file_after_download: false
 
 datasets:
   - name: cddn_export_bag_pro
