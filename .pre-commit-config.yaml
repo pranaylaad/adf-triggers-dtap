@@ -7,7 +7,7 @@ repos:
     - id: trailing-whitespace
     - id: end-of-file-fixer
 - repo: https://github.com/python-jsonschema/check-jsonschema
-  rev: 0.31.2
+  rev: 0.31.3
   hooks:
     - id: check-renovate
     - id: check-jsonschema
