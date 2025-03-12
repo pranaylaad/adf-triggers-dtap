@@ -1,0 +1,355 @@
+{
+    "type": "TabularTranslator",
+    "mappings": [
+        {
+            "source": {
+                "path": "['Id']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "id",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['Status']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "Status",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['isClosed']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "isClosed",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['Loan_Number_Display__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "Loan_Number_Display__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['Date_opened__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "Date_opened__c",
+                "type": "String"
+            }
+        },
+                {
+            "source": {
+                "path": "['Date_closed__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "Date_closed__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['NonCollaborativeMode__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "NonCollaborativeMode__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['MotivationNoChange__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "MotivationNoChange__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['CaseNumber']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "CaseNumber",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['AnnualIncomeClient1__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "AnnualIncomeClient1__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['AnnualIncomeClient2__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "AnnualIncomeClient2__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['AnnualPensionClient1__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "AnnualPensionClient1__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['AnnualPensionClient2__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "AnnualPensionClient2__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['PaymentPension__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "PaymentPension__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['PaymentEndFiscal__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "PaymentEndFiscal__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['PaymentEndLoan__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "PaymentEndLoan__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['IntentionConversion__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "IntentionConversion__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['IntentionExtendLoan__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "IntentionExtendLoan__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['IntentionInterestRateAveraging__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "IntentionInterestRateAveraging__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['IntentionInternalRefinance__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "IntentionInternalRefinance__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['IntentionMoving__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "IntentionMoving__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['IntentionNewRepaymentTypeAnn__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "IntentionNewRepaymentTypeAnn__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['IntentionNewRepaymentTypeLin__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "IntentionNewRepaymentTypeLin__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['IntentionPrepayOnce__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "IntentionPrepayOnce__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['IntentionOther__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "IntentionOther__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['IntentionPrepayOnceAmount__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "IntentionPrepayOnceAmount__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['IntentionPrepayPeriodAmount__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "IntentionPrepayPeriodAmount__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['IntentionPrepayPeriodEndDate__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "IntentionPrepayPeriodEndDate__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['IntentionPrepayPeriodically__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "IntentionPrepayPeriodically__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['IntentionUpdatePropertyValue__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "IntentionUpdatePropertyValue__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['IntentionVisitAdvisor__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "IntentionVisitAdvisor__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['NoIntentionReason__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "NoIntentionReason__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['OpenIntentionDescr__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "OpenIntentionDescr__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['Follow_up_Date__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "Follow_up_Date__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['FollowUpAction__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "FollowUpAction__c",
+                "type": "String"
+            }
+        }
+    ]
+}
