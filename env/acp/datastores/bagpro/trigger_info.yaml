@@ -3,7 +3,13 @@ pipeline_name: pl_rest_api_cloud_zip
 schedule:
   frequency: Day
   interval: 1
-  hours: [6]
+  # The DTA connection via CIP platform points to the same dataset dataset.
+  # It is intended that in a couple of months, the delete_file_after_download will be set to true,
+  # and hence only one of the ADF pipelines will need to delete the file in order to allow the other
+  # 2 to also ingest the data. This pipeline will also need to run after the other 2 pipelines.
+  # This ACP pipeline was chosen to be the one to delete the file so it it scheduled to a different time
+  # than the other 2 pipelines.
+  hours: [1]
 
 datastore_parameters:
   base_url: https://apim.acp.cloud.nibc.com
