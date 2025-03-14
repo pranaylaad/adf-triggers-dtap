@@ -2,6 +2,9 @@
 **/.terraform/*
 .terraform
 
+
+#exclude venv
+venv/
 # .tfstate files
 *.tfstate
 *.tfstate.*
