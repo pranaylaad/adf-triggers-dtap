@@ -3,7 +3,7 @@ pipeline_name: pl_databricks_job
 schedule:
   frequency: Week
   interval: 1
-  hours: [15]
+  hours: [6]
 
 datasets:
   - name: transformation
