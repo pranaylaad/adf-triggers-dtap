@@ -1,0 +1,34 @@
+pipeline_name: pl_oracle_on_prem
+
+schedule:
+  frequency: Day
+  interval: 1
+  hours: [3]
+
+datastore_parameters:
+  connection_string_secret_name: 'oracle-connection-string-acbs-dev'
+  schema_name: dls_dm
+
+datasets:
+  - name: cl_transaction_dimension
+  - name: cl_transaction_fact
+  - name: additional_data_elements_add
+  - name: accrual_dimension
+  - name: balance_category_dimension
+  - name: ca_detail_fact
+  - name: ca_fee_fact
+  - name: ca_fee_invoice_dimension
+  - name: ca_limit_restrictions
+  - name: ca_product_dimension
+  - name: ca_summary_fact
+  - name: cl_accrual_details_fact
+  - name: cl_detail_fact
+  - name: cl_invoice_dimension
+  - name: cl_invoice_fact
+  - name: customer_dimension
+  - name: fee_billing_fact
+  - name: fee_dimension
+  - name: lf_cl_cashflow
+  - name: investor_dimension
+  - name: limit_dimension
+  - name: loan_product_dimension
