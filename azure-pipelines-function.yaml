@@ -39,6 +39,17 @@ stages:
     root_folder: dbt_run_completed_function
     additional_source_dir: env/dev/functions/DBTJobCompletionWebhook
     artifact_name_suffix: _dev
+- template: release-stage/function.yaml@templateRepo
+  parameters:
+    name: DeployDBTRunCompleteFunctionInfraDev
+    dependsOn: ValidateAndBuildDBTRunCompletedFunctionDev
+    function_name: func-dbtcompleted-cdp-preprd-dev-we-ojsu
+    environment: Development
+    service_connection: scn-dataplatform-dev-we-001
+    agent_pool_name: cdp-runners-nonprd
+    root_folder: dbt_run_completed_function
+    app_settings: "-DBT_CLOUD_AUTH_TOKEN  $(dbt_run_completed_webhook_token_dev)"
+    artifact_name_suffix: _dev
 - ${{ if or(eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['Build.Reason'], 'PullRequest'), eq(variables['Build.Reason'], 'Manual')) }}:
   - template: release-stage/function.yaml@templateRepo
     parameters:
