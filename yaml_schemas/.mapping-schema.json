@@ -1,0 +1,89 @@
+{
+    "$id": "https://example.com/adf.mapping.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Mapping Schema",
+    "description": "A definition of mapping for a single pipeline",
+    "type": "object",
+    "properties": {
+        "type": {
+            "description": "The type of the mapping",
+            "const": "TabularTranslator"
+        },
+        "mappings": {
+            "type": "array",
+			"description": "The list of column mappings",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "source": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "ordinal": {
+                                "type": "string"
+                            },
+                            "path": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "physicalType": {
+                                "type": "string"
+                            },
+                            "culture": {
+                                "type": "string"
+                            },
+                            "format": {
+                                "type": "string"
+                            }
+                        },
+                        "additionalProperties": false
+                    },
+                    "sink": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "pattern": "^[^,;{}()= ]*$"
+                            },
+                            "ordinal": {
+                                "type": "string"
+                            },
+                            "path": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "physicalType": {
+                                "type": "string"
+                            },
+                            "culture": {
+                                "type": "string"
+                            },
+                            "format": {
+                                "type": "string"
+                            }
+                        },
+                        "additionalProperties": false
+                    }
+                },
+                "required": [ "source", "sink" ],
+                "additionalProperties": false
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "collectionReference": {
+            "type": "string"
+        },
+        "mapComplexValuesToString": {
+            "type": "boolean"
+        }
+    },
+    "additionalProperties": false,
+    "required": [ "type", "mappings" ]
+}

@@ -16,6 +16,9 @@ repos:
     - id: check-jsonschema
       files: ^env/.*/storage_trigger_info.yaml$
       args: ["--schemafile", "yaml_schemas/.storage-trigger-schema.json", "--verbose"]
+    - id: check-jsonschema
+      files: ^env/.*/mappings/.*.json$
+      args: ["--schemafile", "yaml_schemas/.mapping-schema.json", "--verbose"]
 - repo: https://github.com/gitleaks/gitleaks
   rev: v8.24.0
   hooks:
