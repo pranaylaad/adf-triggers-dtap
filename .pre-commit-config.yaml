@@ -45,3 +45,11 @@ repos:
     rev: 25.1.0
     hooks:
     -   id: black
+- repo: local
+  hooks:
+    - id: custom-python-validation
+      name: custom-python-validation
+      entry: python validation_scripts/mapping_json.py
+      language: python
+      pass_filenames: false
+      verbose: true
