@@ -1,0 +1,15 @@
+pipeline_name: pl_sql_server_on_prem
+
+schedule:
+  frequency: Day
+  interval: 1
+  hours: [3]
+
+datastore_parameters:
+  connection_string_secret_name: 'sql-connection-string-mds-dev'
+  schema_name: mdm
+
+datasets:
+  - name: party
+  - name: partyregistration
+  - name: relationship
