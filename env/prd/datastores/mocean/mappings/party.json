@@ -1,0 +1,215 @@
+{
+    "type": "TabularTranslator",
+    "mappings": [
+        {
+            "source": {
+                "path": "['ItemInternalId']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "iteminternalid",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['AnnualRevenue']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "annualrevenue",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['BillingCity']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "billingcity",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['BillingPostalCode']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "billingpostalcode",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['BillingStreet']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "billingstreet",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['CurrencyIsoCode']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "currencyisocode",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['Id']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "accountid",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['Name']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "name",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['NumberOfEmployees']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "numberofemployees",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['MOJO_EnterpriseSize__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "mojo_enterprisesize__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['MOJO_FinancialInformationDate__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "mojo_financialinformationdate__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['MOJO_GoldenClientID__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "mojo_goldenclientid__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['MOJO_IntiateLegalProceedingsDate__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "mojo_intiatelegalproceedingsdate__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['MOJO_LegalForm__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "mojo_legalform__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['MOJO_NationalIdentifierDistrict__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "mojo_nationalidentifierdistrict__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['MOJO_NationalIdentifierType__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "mojo_nationalidentifiertype__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['MOJO_NationalIdentifier__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "mojo_nationalidentifier__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['MOJO_StatusOfLegalProceedings__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "mojo_statusoflegalproceedings__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['MOJO_StatutoryCountryISOCode__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "mojo_statutorycountryisocode__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['MOJO_TotalBalanceSheet__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "mojo_totalbalancesheet__c",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['@odata.etag']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "odata_etag",
+                "type": "String"
+            }
+        }
+    ]
+}
