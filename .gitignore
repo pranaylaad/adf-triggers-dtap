@@ -37,3 +37,4 @@ override.tf.json
 .idea
 .env
 .vscode
+.venv
