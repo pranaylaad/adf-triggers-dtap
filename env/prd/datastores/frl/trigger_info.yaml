@@ -1,10 +1,8 @@
 pipeline_name: pl_service_bus_binary_download
 
 schedule:
-  frequency: Week
+  frequency: Hour
   interval: 1
-  days_of_week: [Monday,Friday]
-  hours: [21]
 
 datastore_parameters:
   topic: acm-frl

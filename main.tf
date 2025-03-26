@@ -83,8 +83,8 @@ resource "azurerm_data_factory_trigger_schedule" "this" {
   schedule {
     days_of_month = lookup(each.value.schedule, "days_of_month", null)
     days_of_week  = lookup(each.value.schedule, "days_of_week", null)
-    hours         = lookup(each.value.schedule, "hours", [0])
-    minutes       = lookup(each.value.schedule, "minutes", [0])
+    hours         = each.value.schedule.frequency == "Hour" ? null : lookup(each.value.schedule, "hours", [0])
+    minutes       = each.value.schedule.frequency == "Hour" ? null : lookup(each.value.schedule, "minutes", [0])
   }
 
   pipeline {
