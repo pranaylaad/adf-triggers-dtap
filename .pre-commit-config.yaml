@@ -7,7 +7,7 @@ repos:
     - id: trailing-whitespace
     - id: end-of-file-fixer
 - repo: https://github.com/python-jsonschema/check-jsonschema
-  rev: 0.31.3
+  rev: 0.32.1
   hooks:
     - id: check-renovate
     - id: check-jsonschema
@@ -21,7 +21,7 @@ repos:
   hooks:
     - id: gitleaks
 - repo: https://github.com/antonbabenko/pre-commit-terraform
-  rev: "v1.97.4" # Get the latest from: https://github.com/antonbabenko/pre-commit-terraform/releases
+  rev: "v1.98.0" # Get the latest from: https://github.com/antonbabenko/pre-commit-terraform/releases
   hooks:
     - id: terraform_fmt
     - id: terraform_tflint
