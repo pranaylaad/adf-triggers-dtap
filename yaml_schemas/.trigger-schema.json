@@ -11,7 +11,7 @@
         },
         "schedule": {
             "type": "object",
-			"description": "The schedule at which the ADF pipeline should be triggered",
+            "description": "The schedule at which the ADF pipeline should be triggered",
             "properties": {
                 "frequency": {
                     "type": "string"
@@ -52,20 +52,46 @@
                     "uniqueItems": true
                 }
             },
-            "required": [ "frequency", "interval" ],
+            "required": [
+                "frequency",
+                "interval"
+            ],
             "additionalProperties": false
         },
-        "datastore_parameters":{
+        "datastore_parameters": {
             "description": "Additional parameters passed to each dataset trigger.",
             "type": "object",
             "allOf": [
-                { "not": { "required" : ["environment"] }},
-                { "not": { "required" : ["datastore_name"] }},
-                { "not": { "required" : ["dataset_name"] }}
+                {
+                    "not": {
+                        "required": [
+                            "environment"
+                        ]
+                    }
+                },
+                {
+                    "not": {
+                        "required": [
+                            "datastore_name"
+                        ]
+                    }
+                },
+                {
+                    "not": {
+                        "required": [
+                            "dataset_name"
+                        ]
+                    }
+                }
             ]
         },
+        "start_time": {
+            "description": "The start time of the trigger",
+            "type": "string",
+            "format": "date-time"
+        },
         "datasets": {
-			"description": "The list of datasets for each of which a trigger will be created",
+            "description": "The list of datasets for each of which a trigger will be created",
             "type": "array",
             "items": {
                 "type": "object",
@@ -81,13 +107,33 @@
                         "description": "Additional parameters passed to this specific dataset trigger.",
                         "type": "object",
                         "allOf": [
-                            { "not": { "required" : ["environment"] }},
-                            { "not": { "required" : ["datastore_name"] }},
-                            { "not": { "required" : ["dataset_name"] }}
+                            {
+                                "not": {
+                                    "required": [
+                                        "environment"
+                                    ]
+                                }
+                            },
+                            {
+                                "not": {
+                                    "required": [
+                                        "datastore_name"
+                                    ]
+                                }
+                            },
+                            {
+                                "not": {
+                                    "required": [
+                                        "dataset_name"
+                                    ]
+                                }
+                            }
                         ]
                     }
                 },
-                "required": [ "name" ],
+                "required": [
+                    "name"
+                ],
                 "additionalProperties": false
             },
             "minItems": 1

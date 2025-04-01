@@ -28,6 +28,8 @@ locals {
           "datastore_parameters" = try(datastore.datastore_parameters, {})
           "dataset_parameters"   = try(dataset.dataset_parameters, {})
 
+          "start_time" = try(dataset.start_time, datastore.start_time, null)
+
           # If there is a column_mapping JSON, provide it as a parameter
           "mapping" = try(
             { "column_mapping" = file(
@@ -79,6 +81,8 @@ resource "azurerm_data_factory_trigger_schedule" "this" {
   time_zone = local.time_zone
   interval  = each.value.schedule.interval
   frequency = each.value.schedule.frequency
+
+  start_time = each.value.start_time
 
   schedule {
     days_of_month = lookup(each.value.schedule, "days_of_month", null)
