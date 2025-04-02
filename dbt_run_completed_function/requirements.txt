@@ -1,4 +1,4 @@
-azure-functions==1.21.3
+azure-functions==1.22.1
 azure-mgmt-datafactory==9.1.0
 azure-identity==1.21.0
 opencensus-ext-azure==1.1.14
