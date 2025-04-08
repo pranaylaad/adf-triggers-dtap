@@ -1,0 +1,20 @@
+pipeline_name: pl_service_bus_binary_download
+
+schedule:
+  frequency: Hour
+  interval: 1
+
+datastore_parameters:
+  topic: acm-frl
+  subscription: cdp
+  apim_scope: https://apim.tst.cloud.nibc.com/.default
+  servicebus_scope: https://servicebus.azure.net/.default
+  storage_scope: https://storage.azure.com/.default
+  apim_url: https://apim.tst.cloud.nibc.com
+  microsoft_tenant_login: https://login.microsoftonline.com/8614d95f-762b-4789-a741-2589e3d0b08b/oauth2/v2.0/token
+  microsoft_entra_client_id: bc1a0fee-283b-41a7-800c-4eb40419c7a1
+  microsoft_entra_cid_scope: 39da4ca4-390d-4365-8e91-a073b3171433/.default
+  key_vault_apim_authorization: apim-authorization-access-token
+
+datasets:
+  - name: frl
