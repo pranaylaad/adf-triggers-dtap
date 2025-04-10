@@ -3,7 +3,7 @@ resources:
     - repository: templateRepo
       type: git
       name: azure-devops-templates
-      ref: refs/tags/1.0.33
+      ref: refs/tags/1.0.34
     - repository: azure-tf-foundation
       type: git
       name: azure-tf-foundation
@@ -55,6 +55,7 @@ stages:
       root_folder: dbt_run_completed_function
       dependsOn: approve_release_to_production
       additional_source_dir: env/prd/functions/DBTJobCompletionWebhook
+      python_version: 3.10
   - template: release-stage/function.yaml@templateRepo
     parameters:
       name: DeployDBTRunCompleteFunction

@@ -4,7 +4,7 @@ resources:
     - repository: templateRepo
       type: git
       name: azure-devops-templates
-      ref: refs/tags/1.0.33
+      ref: refs/tags/1.0.34
     - repository: azure-tf-foundation
       type: git
       name: azure-tf-foundation
@@ -39,6 +39,7 @@ stages:
     root_folder: dbt_run_completed_function
     additional_source_dir: env/dev/functions/DBTJobCompletionWebhook
     artifact_name_suffix: _dev
+    python_version: 3.10
 - ${{ if or(eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['Build.Reason'], 'PullRequest'), eq(variables['Build.Reason'], 'Manual')) }}:
   - template: release-stage/function.yaml@templateRepo
     parameters:
@@ -63,6 +64,7 @@ stages:
       additional_source_dir: env/acp/functions/DBTJobCompletionWebhook
       dependsOn: DeployDBTRunCompleteFunctionDev
       artifact_name_suffix: _acp
+      python_version: 3.10
 - ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/main') }}:
   - template: release-stage/function.yaml@templateRepo
     parameters:
