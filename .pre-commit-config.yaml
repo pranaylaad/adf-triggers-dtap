@@ -7,7 +7,7 @@ repos:
     - id: trailing-whitespace
     - id: end-of-file-fixer
 - repo: https://github.com/python-jsonschema/check-jsonschema
-  rev: 0.32.1
+  rev: 0.33.0
   hooks:
     - id: check-renovate
     - id: check-jsonschema
@@ -17,11 +17,11 @@ repos:
       files: ^env/.*/storage_trigger_info.yaml$
       args: ["--schemafile", "yaml_schemas/.storage-trigger-schema.json", "--verbose"]
 - repo: https://github.com/gitleaks/gitleaks
-  rev: v8.24.2
+  rev: v8.24.3
   hooks:
     - id: gitleaks
 - repo: https://github.com/antonbabenko/pre-commit-terraform
-  rev: "v1.98.0" # Get the latest from: https://github.com/antonbabenko/pre-commit-terraform/releases
+  rev: "v1.98.1" # Get the latest from: https://github.com/antonbabenko/pre-commit-terraform/releases
   hooks:
     - id: terraform_fmt
     - id: terraform_tflint
@@ -33,7 +33,7 @@ repos:
       args:
         - --args=--config=__GIT_WORKING_DIR__/.tflint.hcl
 - repo: https://github.com/terraform-docs/terraform-docs
-  rev: "v0.19.0"
+  rev: "v0.20.0"
   hooks:
     - id: terraform-docs-go
       args: ["--config", ".terraform-docs.yml", "."]

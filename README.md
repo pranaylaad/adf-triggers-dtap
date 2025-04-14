@@ -292,13 +292,13 @@ Below documentation is generated using the [Terraform docs](https://terraform-do
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.4.2 |
-| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | 4.25.0 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | 4.26.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 4.25.0 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 4.26.0 |
 
 ## Modules
 
@@ -308,10 +308,10 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [azurerm_data_factory_trigger_blob_event.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.25.0/docs/resources/data_factory_trigger_blob_event) | resource |
-| [azurerm_data_factory_trigger_schedule.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.25.0/docs/resources/data_factory_trigger_schedule) | resource |
-| [azurerm_data_factory.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.25.0/docs/data-sources/data_factory) | data source |
-| [azurerm_storage_account.ingestion](https://registry.terraform.io/providers/hashicorp/azurerm/4.25.0/docs/data-sources/storage_account) | data source |
+| [azurerm_data_factory_trigger_blob_event.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.26.0/docs/resources/data_factory_trigger_blob_event) | resource |
+| [azurerm_data_factory_trigger_schedule.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.26.0/docs/resources/data_factory_trigger_schedule) | resource |
+| [azurerm_data_factory.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.26.0/docs/data-sources/data_factory) | data source |
+| [azurerm_storage_account.ingestion](https://registry.terraform.io/providers/hashicorp/azurerm/4.26.0/docs/data-sources/storage_account) | data source |
 
 ## Inputs
 
