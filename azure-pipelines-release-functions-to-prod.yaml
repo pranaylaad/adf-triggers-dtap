@@ -1,0 +1,55 @@
+resources:
+  repositories:
+    - repository: templateRepo
+      type: git
+      name: azure-devops-templates
+      ref: refs/tags/1.0.34
+    - repository: azure-tf-foundation
+      type: git
+      name: azure-tf-foundation
+
+name: terraform-prod-release
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+pr:
+  autoCancel: false
+
+trigger:
+  tags:
+    include:
+    - '*'
+  paths:
+    include:
+    - monitoring_function
+
+stages:
+- template: test-stage/terraform.yaml@templateRepo
+  parameters:
+    name: Validate
+# csf:3.3.11a:Manual approval to release to Production
+- template: utils/approval.yaml@templateRepo
+  parameters:
+    name: approve_release_to_production
+    dependsOn: Validate
+    approval_environment: production-approvers-infra
+# We do no want to run the following step when the pipeline is manually triggered as it does not have a "dry run" setting available
+- ${{ if and(startsWith(variables['Build.SourceBranch'], 'refs/tags/'), ne(variables['Build.Reason'], 'Manual')) }}:
+  - template: test-stage/function.yaml@templateRepo
+    parameters:
+      name: ValidateAndBuildFunctionDBTRunCompleted
+      root_folder: dbt_run_completed_function
+      dependsOn: approve_release_to_production
+      additional_source_dir: env/prd/functions/DBTJobCompletionWebhook
+      python_version: 3.10
+  - template: release-stage/function.yaml@templateRepo
+    parameters:
+      name: DeployDBTRunCompleteFunction
+      environment: CDPProdFunction
+      service_connection: scn-cdp-prd-we-001
+      dependsOn: ValidateAndBuildFunctionDBTRunCompleted
+      agent_pool_name: cdp-runners-prd
+      function_name: func-dbtcompleted-cdp-prd-prd-we-kutk
+      root_folder: dbt_run_completed_function
+      app_settings: "-DBT_CLOUD_AUTH_TOKEN  $(dbt_run_completed_webhook_token_prd)"
