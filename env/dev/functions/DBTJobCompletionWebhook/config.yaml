@@ -1,8 +1,8 @@
 pipeline_name: pl_basel_iv_orchestration
 pipeline_parameters:
     dbx_workspace_url: https://adb-7348359736582708.8.azuredatabricks.net
-    dbx_job_id_check: 587733919011562
-    dbx_job_id_model: 922408450420182
+    dbx_job_id_check: 650147904911611
+    dbx_job_id_model: 847945421205995
     fileserver_host_name: \\SVNIBCFILD101\e$
     fileserver_user_name: PRD\SRV_AA_DEV
     fileserver_credentials_secret_name: fileserver-credentials-ods
