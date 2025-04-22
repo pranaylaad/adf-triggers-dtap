@@ -1,0 +1,57 @@
+# For testing purposes, we can use this script to deploy the function to the infra- environment.
+resources:
+  repositories:
+    - repository: templateRepo
+      type: git
+      name: azure-devops-templates
+      ref: refs/tags/1.0.35
+  pipelines:
+    - pipeline: "hub-infra-validate+dev,tst,acp"
+      source: "hub-infra - validate + dev, tst, acp"
+      trigger:
+        branches:
+          include:
+            - main
+
+name: function-to-infra-dev
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+trigger:
+  branches:
+    include:
+    - main
+  paths:
+    include:
+    - dbt_run_completed_function
+
+pr:
+  autoCancel: false
+  branches:
+    include:
+      - main
+  paths:
+    include:
+    - dbt_run_completed_function
+
+stages:
+- template: test-stage/function.yaml@templateRepo
+  parameters:
+    name: ValidateAndBuildDBTRunCompletedFunctionInfraDev
+    root_folder: dbt_run_completed_function
+    additional_source_dir: env/dev/functions/DBTJobCompletionWebhook
+    artifact_name_suffix: _infra_dev
+- template: release-stage/function.yaml@templateRepo
+  parameters:
+    name: DeployDBTRunCompleteFunctionInfraDev
+    dependsOn: ValidateAndBuildDBTRunCompletedFunctionInfraDev
+    function_name: func-dbtcompleted-dev-dev-we-nwgm
+    environment: Development
+    service_connection: scn-dataplatform-dev-we-001
+    agent_pool_name: cdp-runners-nonprd
+    root_folder: dbt_run_completed_function
+    # Note - this token is used for the cdp-dev environment as well since we do
+    # not have a dedicated infra-dev webhook
+    app_settings: "-DBT_CLOUD_AUTH_TOKEN  $(dbt_run_completed_webhook_token_dev)"
+    artifact_name_suffix: _infra_dev
