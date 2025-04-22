@@ -21,6 +21,7 @@ trigger:
   paths:
     include:
     - dbt_run_completed_function
+    - env/*/functions
 
 pr:
   autoCancel: false
@@ -30,6 +31,7 @@ pr:
   paths:
     include:
     - dbt_run_completed_function
+    - env/*/functions
 
 stages:
 # dev deployment
