@@ -1,0 +1,460 @@
+{
+    "type": "TabularTranslator",
+    "mappings": [
+        {
+            "source": {
+                "path": "['Id']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "CaseId",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['CaseNumber']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "CaseNumber",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['Status']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "Status",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['IsClosed']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "IsClosed",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['Loan_Number_Display__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "LoanNumberDisplay",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['Date_opened__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "DateOpened",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['Date_closed__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "DateClosed",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['NonCollaborativeMode__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "NonCollaborativeMode",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['MotivationNoChange__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "MotivationNoChange",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['Notice__c']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "Notice",
+                "type": "String"
+            }
+        },
+        {
+            "source": {
+                "path": "['Tasks']['records'][0]['Id']",
+                "type": "String"
+            },
+            "sink": {
+                "name": "TaskId",
+                "type": "String"
+            },
+            "transformation": {
+                "type": "Expression",
+                "expression": "iif(Tasks == null, null, Tasks.records[0].Id)"
+            }
+        },
+        {
+            "source": {
+                "path": "['Tasks']['records'][0]['AnnualIncomeClient1__c']"
+            },
+            "sink": {
+                "name": "AnnualIncomeClient1",
+                "type": "String"
+            },
+            "transformation": {
+                "type": "Expression",
+                "expression": "iif(Tasks == null, null, Tasks.records[0].AnnualIncomeClient1__c)"
+            }
+        },
+        {
+            "source": {
+                "path": "['Tasks']['records'][0]['AnnualIncomeClient2__c']"
+            },
+            "sink": {
+                "name": "AnnualIncomeClient2",
+                "type": "String"
+            },
+            "transformation": {
+                "type": "Expression",
+                "expression": "iif(Tasks == null, null, Tasks.records[0].AnnualIncomeClient2__c)"
+            }
+        },
+        {
+            "source": {
+                "path": "['Tasks']['records'][0]['AnnualPensionClient1__c']"
+            },
+            "sink": {
+                "name": "AnnualPensionClient1",
+                "type": "String"
+            },
+            "transformation": {
+                "type": "Expression",
+                "expression": "iif(Tasks == null, null, Tasks.records[0].AnnualPensionClient1__c)"
+            }
+        },
+        {
+            "source": {
+                "path": "['Tasks']['records'][0]['AnnualPensionClient2__c']"
+            },
+            "sink": {
+                "name": "AnnualPensionClient2",
+                "type": "String"
+            },
+            "transformation": {
+                "type": "Expression",
+                "expression": "iif(Tasks == null, null, Tasks.records[0].AnnualPensionClient2__c)"
+            }
+        },
+        {
+            "source": {
+                "path": "['Tasks']['records'][0]['PaymentPension__c']"
+            },
+            "sink": {
+                "name": "PaymentPension",
+                "type": "String"
+            },
+            "transformation": {
+                "type": "Expression",
+                "expression": "iif(Tasks == null, null, Tasks.records[0].PaymentPension__c)"
+            }
+        },
+        {
+            "source": {
+                "path": "['Tasks']['records'][0]['PaymentEndFiscal__c']"
+            },
+            "sink": {
+                "name": "PaymentEndFiscal",
+                "type": "String"
+            },
+            "transformation": {
+                "type": "Expression",
+                "expression": "iif(Tasks == null, null, Tasks.records[0].PaymentEndFiscal__c)"
+            }
+        },
+        {
+            "source": {
+                "path": "['Tasks']['records'][0]['PaymentEndLoan__c']"
+            },
+            "sink": {
+                "name": "PaymentEndLoan",
+                "type": "String"
+            },
+            "transformation": {
+                "type": "Expression",
+                "expression": "iif(Tasks == null, null, Tasks.records[0].PaymentEndLoan__c)"
+            }
+        },
+        {
+            "source": {
+                "path": "['Tasks']['records'][0]['IntentionConversion__c']"
+            },
+            "sink": {
+                "name": "IntentionConversion",
+                "type": "String"
+            },
+            "transformation": {
+                "type": "Expression",
+                "expression": "iif(Tasks == null, null, Tasks.records[0].IntentionConversion__c)"
+            }
+        },
+        {
+            "source": {
+                "path": "['Tasks']['records'][0]['IntentionExtendLoan__c']"
+            },
+            "sink": {
+                "name": "IntentionExtendLoan",
+                "type": "String"
+            },
+            "transformation": {
+                "type": "Expression",
+                "expression": "iif(Tasks == null, null, Tasks.records[0].IntentionExtendLoan__c)"
+            }
+        },
+        {
+            "source": {
+                "path": "['Tasks']['records'][0]['IntentionInterestRateAveraging__c']"
+            },
+            "sink": {
+                "name": "IntentionInterestRateAveraging",
+                "type": "String"
+            },
+            "transformation": {
+                "type": "Expression",
+                "expression": "iif(Tasks == null, null, Tasks.records[0].IntentionInterestRateAveraging__c)"
+            }
+        },
+        {
+            "source": {
+                "path": "['Tasks']['records'][0]['IntentionInternalRefinance__c']"
+            },
+            "sink": {
+                "name": "IntentionInternalRefinance",
+                "type": "String"
+            },
+            "transformation": {
+                "type": "Expression",
+                "expression": "iif(Tasks == null, null, Tasks.records[0].IntentionInternalRefinance__c)"
+            }
+        },
+        {
+            "source": {
+                "path": "['Tasks']['records'][0]['IntentionMoving__c']"
+            },
+            "sink": {
+                "name": "IntentionMoving",
+                "type": "String"
+            },
+            "transformation": {
+                "type": "Expression",
+                "expression": "iif(Tasks == null, null, Tasks.records[0].IntentionMoving__c)"
+            }
+        },
+        {
+            "source": {
+                "path": "['Tasks']['records'][0]['IntentionNewRepaymentTypeAnn__c']"
+            },
+            "sink": {
+                "name": "IntentionNewRepaymentTypeAnn",
+                "type": "String"
+            },
+            "transformation": {
+                "type": "Expression",
+                "expression": "iif(Tasks == null, null, Tasks.records[0].IntentionNewRepaymentTypeAnn__c)"
+            }
+        },
+        {
+            "source": {
+                "path": "['Tasks']['records'][0]['IntentionNewRepaymentTypeLin__c']"
+            },
+            "sink": {
+                "name": "IntentionNewRepaymentTypeLin",
+                "type": "String"
+            },
+            "transformation": {
+                "type": "Expression",
+                "expression": "iif(Tasks == null, null, Tasks.records[0].IntentionNewRepaymentTypeLin__c)"
+            }
+        },
+        {
+            "source": {
+                "path": "['Tasks']['records'][0]['IntentionPrepayOnce__c']"
+            },
+            "sink": {
+                "name": "IntentionPrepayOnce",
+                "type": "String"
+            },
+            "transformation": {
+                "type": "Expression",
+                "expression": "iif(Tasks == null, null, Tasks.records[0].IntentionPrepayOnce__c)"
+            }
+        },
+        {
+            "source": {
+                "path": "['Tasks']['records'][0]['IntentionOther__c']"
+            },
+            "sink": {
+                "name": "IntentionOther",
+                "type": "String"
+            },
+            "transformation": {
+                "type": "Expression",
+                "expression": "iif(Tasks == null, null, Tasks.records[0].IntentionOther__c)"
+            }
+        },
+        {
+            "source": {
+                "path": "['Tasks']['records'][0]['IntentionPrepayOnceAmount__c']"
+            },
+            "sink": {
+                "name": "IntentionPrepayOnceAmount",
+                "type": "String"
+            },
+            "transformation": {
+                "type": "Expression",
+                "expression": "iif(Tasks == null, null, Tasks.records[0].IntentionPrepayOnceAmount__c)"
+            }
+        },
+        {
+            "source": {
+                "path": "['Tasks']['records'][0]['IntentionPrepayPeriodAmount__c']"
+            },
+            "sink": {
+                "name": "IntentionPrepayPeriodAmount",
+                "type": "String"
+            },
+            "transformation": {
+                "type": "Expression",
+                "expression": "iif(Tasks == null, null, Tasks.records[0].IntentionPrepayPeriodAmount__c)"
+            }
+        },
+        {
+            "source": {
+                "path": "['Tasks']['records'][0]['IntentionPrepayPeriodEndDate__c']"
+            },
+            "sink": {
+                "name": "IntentionPrepayPeriodEndDate",
+                "type": "String"
+            },
+            "transformation": {
+                "type": "Expression",
+                "expression": "iif(Tasks == null, null, Tasks.records[0].IntentionPrepayPeriodEndDate__c)"
+            }
+        },
+        {
+            "source": {
+                "path": "['Tasks']['records'][0]['IntentionPrepayPeriodically__c']"
+            },
+            "sink": {
+                "name": "IntentionPrepayPeriodically",
+                "type": "String"
+            },
+            "transformation": {
+                "type": "Expression",
+                "expression": "iif(Tasks == null, null, Tasks.records[0].IntentionPrepayPeriodically__c)"
+            }
+        },
+        {
+            "source": {
+                "path": "['Tasks']['records'][0]['IntentionUpdatePropertyValue__c']"
+            },
+            "sink": {
+                "name": "IntentionUpdatePropertyValue",
+                "type": "String"
+            },
+            "transformation": {
+                "type": "Expression",
+                "expression": "iif(Tasks == null, null, Tasks.records[0].IntentionUpdatePropertyValue__c)"
+            }
+        },
+        {
+            "source": {
+                "path": "['Tasks']['records'][0]['IntentionVisitAdvisor__c']"
+            },
+            "sink": {
+                "name": "IntentionVisitAdvisor",
+                "type": "String"
+            },
+            "transformation": {
+                "type": "Expression",
+                "expression": "iif(Tasks == null, null, Tasks.records[0].IntentionVisitAdvisor__c)"
+            }
+        },
+        {
+            "source": {
+                "path": "['Tasks']['records'][0]['NoIntentionReason__c']"
+            },
+            "sink": {
+                "name": "NoIntentionReason",
+                "type": "String"
+            },
+            "transformation": {
+                "type": "Expression",
+                "expression": "iif(Tasks == null, null, Tasks.records[0].NoIntentionReason__c)"
+            }
+        },
+        {
+            "source": {
+                "path": "['Tasks']['records'][0]['OpenIntentionDescr__c']"
+            },
+            "sink": {
+                "name": "OpenIntentionDescr",
+                "type": "String"
+            },
+            "transformation": {
+                "type": "Expression",
+                "expression": "iif(Tasks == null, null, Tasks.records[0].OpenIntentionDescr__c)"
+            }
+        },
+        {
+            "source": {
+                "path": "['Tasks']['records'][0]['Follow_up_Date__c']"
+            },
+            "sink": {
+                "name": "Follow_up_Date",
+                "type": "String"
+            },
+            "transformation": {
+                "type": "Expression",
+                "expression": "iif(Tasks == null, null, Tasks.records[0].Follow_up_Date__c)"
+            }
+        },
+        {
+            "source": {
+                "path": "['Tasks']['records'][0]['FollowUpAction__c']"
+            },
+            "sink": {
+                "name": "FollowUpAction",
+                "type": "String"
+            },
+            "transformation": {
+                "type": "Expression",
+                "expression": "iif(Tasks == null, null, Tasks.records[0].FollowUpAction__c)"
+            }
+        }
+    ],
+
+    "collectionReference": "$['compositeResponse'][0]['body']['records']"
+
+}
