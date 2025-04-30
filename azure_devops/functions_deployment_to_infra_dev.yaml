@@ -4,7 +4,7 @@ resources:
     - repository: templateRepo
       type: git
       name: azure-devops-templates
-      ref: refs/tags/1.0.37
+      ref: refs/tags/1.0.40
   pipelines:
     - pipeline: "hub-infra-validate+dev,tst,acp"
       source: "hub-infra - validate + dev, tst, acp"
@@ -42,6 +42,7 @@ stages:
     root_folder: dbt_run_completed_function
     additional_source_dir: env/dev/functions/DBTJobCompletionWebhook
     artifact_name_suffix: _infra_dev
+    deploy_from_tag: true
 - template: release-stage/function.yaml@templateRepo
   parameters:
     name: DeployDBTRunCompleteFunctionInfraDev

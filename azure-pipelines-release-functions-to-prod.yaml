@@ -3,10 +3,7 @@ resources:
     - repository: templateRepo
       type: git
       name: azure-devops-templates
-      ref: refs/tags/1.0.37
-    - repository: azure-tf-foundation
-      type: git
-      name: azure-tf-foundation
+      ref: refs/tags/1.0.40
 
 name: terraform-prod-release
 
@@ -43,6 +40,7 @@ stages:
       dependsOn: approve_release_to_production
       additional_source_dir: env/prd/functions/DBTJobCompletionWebhook
       python_version: 3.10
+      deploy_from_tag: true
   - template: release-stage/function.yaml@templateRepo
     parameters:
       name: DeployDBTRunCompleteFunction
