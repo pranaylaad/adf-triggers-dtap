@@ -4,6 +4,13 @@ resources:
       type: git
       name: azure-devops-templates
       ref: refs/tags/1.0.40
+  pipelines:
+    - pipeline: "hub-infra-Releasestep2(automatic)-ReleaseCode"
+      source: "hub-infra - Release step 2 (automatic) - Release Code"
+      trigger:
+        branches:
+          include:
+            - main
 
 name: terraform-prod-release
 
@@ -19,7 +26,8 @@ trigger:
     - '*'
   paths:
     include:
-    - monitoring_function
+      - dbt_run_completed_function
+      - env/*/functions
 
 stages:
 - template: test-stage/terraform.yaml@templateRepo
@@ -31,8 +39,8 @@ stages:
     name: approve_release_to_production
     dependsOn: Validate
     approval_environment: production-approvers-infra
-# We do no want to run the following step when the pipeline is manually triggered as it does not have a "dry run" setting available
-- ${{ if and(startsWith(variables['Build.SourceBranch'], 'refs/tags/'), ne(variables['Build.Reason'], 'Manual')) }}:
+# We do no want to run the following step when the pipeline is manually triggered as it does not have a "dry run" setting available.
+- ${{ if or(and(startsWith(variables['Build.SourceBranch'], 'refs/tags/'), ne(variables['Build.Reason'], 'Manual')), eq(variables['Build.Reason'], 'ResourceTrigger')) }}:
   - template: test-stage/function.yaml@templateRepo
     parameters:
       name: ValidateAndBuildFunctionDBTRunCompleted

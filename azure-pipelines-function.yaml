@@ -5,6 +5,13 @@ resources:
       type: git
       name: azure-devops-templates
       ref: refs/tags/1.0.40
+  pipelines:
+    - pipeline: "hub-infra-Releasestep2(automatic)-ReleaseCode"
+      source: "hub-infra - Release step 2 (automatic) - Release Code"
+      trigger:
+        branches:
+          include:
+            - main
 
 name: terraform
 
@@ -40,7 +47,7 @@ stages:
     artifact_name_suffix: _dev
     python_version: 3.10
     deploy_from_tag: false
-- ${{ if or(eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['Build.Reason'], 'PullRequest'), eq(variables['Build.Reason'], 'Manual')) }}:
+- ${{ if or(eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['Build.Reason'], 'PullRequest'), eq(variables['Build.Reason'], 'Manual'), eq(variables['Build.Reason'], 'ResourceTrigger')) }}:
   - template: release-stage/function.yaml@templateRepo
     parameters:
       name: DeployDBTRunCompleteFunctionDev
