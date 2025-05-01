@@ -17,7 +17,7 @@ repos:
       files: ^env/.*/storage_trigger_info.yaml$
       args: ["--schemafile", "yaml_schemas/.storage-trigger-schema.json", "--verbose"]
 - repo: https://github.com/gitleaks/gitleaks
-  rev: v8.24.3
+  rev: v8.25.1
   hooks:
     - id: gitleaks
 - repo: https://github.com/antonbabenko/pre-commit-terraform
