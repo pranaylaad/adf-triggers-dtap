@@ -1,0 +1,10 @@
+{
+    "type": "TabularTranslator",
+    "mappings": [
+      {
+        "source": {"path": "$['value']"},
+        "sink": {"name": "$['value']"}
+      }
+    ],
+    "mapComplexValuesToString": true
+  }

@@ -40,3 +40,19 @@ datasets:
   - name: cbs_province_hpi_oom_85792NED
     dataset_parameters:
       relative_url: 85792NED
+
+  - name: cbs_kwb_2024_85984NED_nested
+    dataset_parameters:
+      relative_url: 85984NED
+
+  - name: cbs_kwb_2023_85618NED_nested
+    dataset_parameters:
+      relative_url: 85618NED
+
+  - name: cbs_kwb_2022_85318NED_nested
+    dataset_parameters:
+      relative_url: 85318NED
+
+  - name: cbs_kwb_2021_85039NED_nested
+    dataset_parameters:
+      relative_url: 85039NED
