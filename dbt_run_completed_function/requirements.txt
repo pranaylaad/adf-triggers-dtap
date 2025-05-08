@@ -1,6 +1,6 @@
 azure-functions==1.23.0
 azure-mgmt-datafactory==9.2.0
-azure-identity==1.21.0
+azure-identity==1.22.0
 opencensus-ext-azure==1.1.14
 # https://github.com/Azure/azure-functions-python-worker/issues/1050
 protobuf >=6.30, ==6.*
