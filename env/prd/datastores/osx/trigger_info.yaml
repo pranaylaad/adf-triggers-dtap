@@ -1,7 +1,7 @@
 pipeline_name: pl_sql_server_on_prem
 
 schedule:
-  frequency: Day  
+  frequency: Day
   interval: 1
   hours: [16]
 
