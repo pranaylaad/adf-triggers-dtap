@@ -1,10 +1,9 @@
 pipeline_name: pl_sql_server_on_prem
 
 schedule:
-  frequency: Month
-  days_of_month: [25]
+  frequency: Day  
   interval: 1
-  hours: [3]
+  hours: [16]
 
 datastore_parameters:
   connection_string_secret_name: 'sql-connection-string-osx-prd'
