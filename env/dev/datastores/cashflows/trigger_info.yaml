@@ -1,0 +1,23 @@
+pipeline_name: pl_fileserver_custom_csv
+
+schedule:
+  frequency: Day
+  interval: 1
+  hours: [6]
+
+datastore_parameters:
+    keyvault_secret_name: 'fileserver-credentials-ods'
+    fileserver_user_name: 'PRD\SRV_AA_DEV'
+    fileserver_host_name: '\\SVNIBCFILD101\e$'
+    fileserver_directory: 'CDP'
+    enable_delete: false
+
+datasets:
+
+    - name: IFRSPPMBSMortgages
+      dataset_parameters:
+        source_file_name_pattern: 'IFRSPPMBSMortgages*'
+
+    - name: MortgageOffers
+      dataset_parameters:
+        source_file_name_pattern: 'MortgageOffers*'
