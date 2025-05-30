@@ -1,0 +1,20 @@
+pipeline_name: pl_fileserver_csv_on_prem_append_only_last_month_default_row_delimiter
+
+schedule:
+  frequency: Day
+  interval: 1
+  hours: [0]
+
+datastore_parameters:
+  keyvault_secret_name: 'fileserver-credentials-ods'
+  fileserver_user_name: 'PRD\SRV_AA_DEV'
+  fileserver_host_name: '\\SVNIBCFILD101\e$'
+  fileserver_directory: 'AA_Processed\PRIMA\CDP\CPRcurves'
+  column_delimiter: ';'
+  enable_delete: false
+
+datasets:
+  - name: CPRcurves
+    dataset_parameters:
+      source_file_name_pattern: 'CPRcurves_{functional_date}.csv'
+      skip_line_count: '0'
