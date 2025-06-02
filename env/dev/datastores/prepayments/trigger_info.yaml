@@ -16,5 +16,5 @@ datastore_parameters:
 datasets:
   - name: CPRcurves
     dataset_parameters:
-      source_file_name_pattern: 'CPRcurves_{functional_date}.csv'
+      source_file_name_pattern: 'CPRcurves_*{functional_date}.csv'
       skip_line_count: '0'
