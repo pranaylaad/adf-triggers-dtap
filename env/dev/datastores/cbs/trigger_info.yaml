@@ -1,16 +1,21 @@
-pipeline_name: pl_rest_api_cloud
+pipeline_name: pl_cbs_through_cip_cloud
+
+# For testing purposes, i will change the schedule to run more often
+# schedule:
+#   frequency: Month
+#   interval: 1
+#   days_of_month: [2]
+#   hours: [6]
 
 schedule:
-  frequency: Month
+  frequency: Day
   interval: 1
-  days_of_month: [2]
-  hours: [6]
+  hours: [7, 11, 15]
 
 datastore_parameters:
   base_url: https://apim.dev.cloud.nibc.com/internal/cbs/kadaster-api/1.0/dataset
   key_vault_secret_name: apim-authorization-access-token
-  microsoft_entra_cid: a1bb61c1-d7c6-468b-9e6a-720dcd63ce91
-  microsoft_entra_scope: 0c28ca60-24cd-45bd-95f1-01fdaee9c41c/.default
+  page_size: 9999
 
 datasets:
   - name: cbs_corop_codes_85755NED
