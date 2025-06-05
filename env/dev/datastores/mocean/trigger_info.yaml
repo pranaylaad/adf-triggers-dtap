@@ -1,4 +1,4 @@
-pipeline_name: pl_rest_api_cloud
+pipeline_name: pl_rest_api_cloud_get
 
 schedule:
   frequency: Day
@@ -8,18 +8,16 @@ schedule:
 datastore_parameters:
   base_url: https://apim.dev.cloud.nibc.com/internal/mocean-api/1.0
   key_vault_secret_name: apim-authorization-access-token
-  microsoft_entra_cid: a1bb61c1-d7c6-468b-9e6a-720dcd63ce91
-  microsoft_entra_scope: https://apim.dev.cloud.nibc.com/.default
 
 datasets:
   - name: facility
     dataset_parameters:
       relative_url: anacredit
 
-  - name: questionnaire
-    dataset_parameters:
-      relative_url: esg
-
   - name: party
     dataset_parameters:
       relative_url: party
+
+  - name: questionnaire
+    dataset_parameters:
+      relative_url: esg
