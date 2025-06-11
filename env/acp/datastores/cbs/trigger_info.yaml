@@ -1,16 +1,10 @@
 pipeline_name: pl_cbs_through_cip_cloud
 
-# For testing purposes, i will change the schedule to run more often
-# schedule:
-#   frequency: Month
-#   interval: 1
-#   days_of_month: [2]
-#   hours: [6]
-
 schedule:
-  frequency: Day
+  frequency: Month
   interval: 1
-  hours: [7, 11, 15]
+  days_of_month: [2]
+  hours: [6]
 
 
 datastore_parameters:

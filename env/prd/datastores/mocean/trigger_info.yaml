@@ -1,4 +1,4 @@
-pipeline_name: pl_rest_api_cloud
+pipeline_name: pl_rest_api_cloud_get
 
 schedule:
   frequency: Day
@@ -8,8 +8,6 @@ schedule:
 datastore_parameters:
   base_url: https://apim.prd.cloud.nibc.com/internal/mocean-api/1.0
   key_vault_secret_name: apim-authorization-access-token
-  microsoft_entra_cid: f2228e0b-145f-4ee1-ace4-7d66ef1d826a
-  microsoft_entra_scope: https://apim.prd.cloud.nibc.com/.default
 
 datasets:
   - name: facility

@@ -1,4 +1,4 @@
-pipeline_name: pl_rest_api_cloud
+pipeline_name: pl_cbs_through_cip_cloud
 
 schedule:
   frequency: Month
@@ -9,8 +9,8 @@ schedule:
 datastore_parameters:
   base_url: https://apim.prd.cloud.nibc.com/internal/cbs/kadaster-api/1.0/dataset
   key_vault_secret_name: apim-authorization-access-token
-  microsoft_entra_cid: f2228e0b-145f-4ee1-ace4-7d66ef1d826a
-  microsoft_entra_scope: https://apim.prd.cloud.nibc.com/.default
+  page_size: 9999
+
 
 datasets:
   - name: cbs_corop_codes_85755NED
