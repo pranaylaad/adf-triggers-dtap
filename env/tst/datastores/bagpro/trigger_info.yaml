@@ -17,7 +17,7 @@ datastore_parameters:
   microsoft_entra_cid: bc1a0fee-283b-41a7-800c-4eb40419c7a1
   microsoft_entra_scope: https://apim.tst.cloud.nibc.com/.default
   column_delimiter: ';'
-  delete_file_after_download: false
+  delete_file_after_download: true
 
 datasets:
   - name: cddn_export_bag_pro
