@@ -1,0 +1,95 @@
+pipeline_name: pl_fileserver_csv_on_prem_full_load_specific_date
+
+#### Amsterdam timezone ####
+
+schedule:
+  frequency: Week
+  interval: 1
+  days_of_week: [Monday, Tuesday, Wednesday, Thursday, Friday]
+  hours: [12]
+  minutes: [30]
+
+datastore_parameters:
+  keyvault_secret_name: 'fileserver-credentials-ods'
+  fileserver_user_name: 'PRD\SRV_AA_PRD'
+  fileserver_host_name: '\\SVNIBCFILP101\E'
+  fileserver_directory: 'Interfac\Retail_ODS\hds_mortgages\Monthly'
+  column_delimiter: '|&|'
+  skip_line_count: 2
+  metadata_column_delimiter: ','
+  functional_date: '{yyyy-MM-dd}'
+  delta_days: 0
+  copy_binary_data: false
+  delete_data_on_fileserver: true
+
+datasets:
+
+####  hds schema  ####
+
+## daily full load
+
+  - name: hds_t_brdg_account_counter_account
+    dataset_parameters:
+      source_file_name_pattern: 'hds_t_brdg_account_counter_account_file_*{functional_date}.csv'
+  - name: hds_t_brdg_account_product
+    dataset_parameters:
+      source_file_name_pattern: 'hds_t_brdg_account_product_file_*{functional_date}.csv'
+  - name: hds_t_brdg_legaldocument_client
+    dataset_parameters:
+      source_file_name_pattern: 'hds_t_brdg_legaldocument_client_file_*{functional_date}.csv'
+  - name: hds_t_brdg_product_intrest
+    dataset_parameters:
+      source_file_name_pattern: 'hds_t_brdg_product_intrest_file_*{functional_date}.csv'
+  - name: hds_t_brdg_role_account_client
+    dataset_parameters:
+      source_file_name_pattern: 'hds_t_brdg_role_account_client_file_*{functional_date}.csv'
+
+  - name: hds_t_dim_account
+    dataset_parameters:
+      source_file_name_pattern: 'hds_t_dim_account_file_*{functional_date}.csv'
+  - name: hds_t_dim_blockades
+    dataset_parameters:
+      source_file_name_pattern: 'hds_t_dim_blockades_file_*{functional_date}.csv'
+  - name: hds_t_dim_client
+    dataset_parameters:
+      source_file_name_pattern: 'hds_t_dim_client_file_*{functional_date}.csv'
+  - name: hds_t_dim_domain
+    dataset_parameters:
+      source_file_name_pattern: 'hds_t_dim_domain_file_*{functional_date}.csv'
+  - name: hds_t_dim_product
+    dataset_parameters:
+      source_file_name_pattern: 'hds_t_dim_product_file_*{functional_date}.csv'
+  - name: hds_t_dim_time
+    dataset_parameters:
+      source_file_name_pattern: 'hds_t_dim_time_file_*{functional_date}.csv'
+  - name: hds_t_dim_transaction
+    dataset_parameters:
+      source_file_name_pattern: 'hds_t_dim_transaction_file_*{functional_date}.csv'
+
+  - name: hds_t_fct_accrual
+    dataset_parameters:
+      source_file_name_pattern: 'hds_t_fct_accrual_file_*{functional_date}.csv'
+  - name: hds_t_fct_accrual_agg
+    dataset_parameters:
+      source_file_name_pattern: 'hds_t_fct_accrual_agg_file_*{functional_date}.csv'
+  - name: hds_t_fct_balance
+    dataset_parameters:
+      source_file_name_pattern: 'hds_t_fct_balance_file_*{functional_date}.csv'
+  - name: hds_t_fct_transaction
+    dataset_parameters:
+      source_file_name_pattern: 'hds_t_fct_transaction_file_*{functional_date}.csv'
+
+## monthly full_load
+
+  - name: hds_t_fct_accrual_eom
+    pipeline_name: pl_fileserver_csv_on_prem_full_load_specific_date_monthly
+    dataset_parameters:
+      source_file_name_pattern: 'hds_t_fct_accrual_eom_file_*{functional_date}.csv'
+
+####  lookup schema  ####
+
+## daily full load
+
+  - name: lookup_t_thaler_transactiontypes
+    dataset_parameters:
+      source_file_name_pattern: 'lookup_t_thaler_transactiontypes_file_*{functional_date}.csv'
