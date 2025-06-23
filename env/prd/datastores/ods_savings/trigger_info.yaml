@@ -19,7 +19,7 @@ datastore_parameters:
   metadata_column_delimiter: ','
   functional_date: '{yyyy-MM-dd}'
   delta_days: 0
-  copy_binary_data: false
+  copy_binary_data: true
   delete_data_on_fileserver: true
 
 datasets:
