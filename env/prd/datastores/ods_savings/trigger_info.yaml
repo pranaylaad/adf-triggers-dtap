@@ -20,6 +20,7 @@ datastore_parameters:
   delta_days: 0
   copy_binary_data: true
   delete_data_on_fileserver: true
+  is_monthly_run: false
 
 datasets:
 
@@ -81,9 +82,9 @@ datasets:
 ## monthly full_load
 
   - name: hds_t_fct_accrual_eom
-    pipeline_name: pl_fileserver_csv_on_prem_full_load_specific_date_monthly
     dataset_parameters:
       source_file_name_pattern: 'hds_t_fct_accrual_eom_file_*{functional_date}.csv'
+      is_monthly_run: true
 
 ####  lookup schema  ####
 
