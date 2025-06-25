@@ -4,11 +4,21 @@
 ## Why this PR is needed:
 
 
+## 🚦 Does this PR affect production?
+
+<!-- Production related changes could be for example releasing a new dataset to production,
+updating a model or documentation of a model which already has a model maturity set to prod. -->
+
+- [ ] This change **affects production**
+- [ ] This change **does not affect production**
+
+
 ## Related Tickets & Documents
 
 - link to Jira issue to be solved by this PR:
   - https://jira/browse/CDP-UPDATE-THIS-URL
 - related PR's in other repositories:
+- (if applicable) approved RFC ticket:
 
 
 ## Example outcome of this change
